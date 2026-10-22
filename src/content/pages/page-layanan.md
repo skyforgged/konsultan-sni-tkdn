@@ -1,4 +1,3 @@
----
 id: "page-layanan"
 type: "page"
 slug: "layanan"
@@ -17,5 +16,10 @@ relatedServices: ["konsultan-sni", "konsultan-tkdn", "konsultan-bmp", "layanan-t
 relatedPages: ["kontak", "faq"]
 relatedArticles: ["perbedaan-konsultasi-pengujian-sertifikasi"]
 relatedGuides: ["persiapan-sni", "persiapan-dokumen-tkdn"]
+blocks:
+  - component: "section"
+    heading: "Bagaimana menentukan layanan yang sesuai?"
+    content:
+      - text: "Jenis produk, ruang lingkup jasa, tujuan pengajuan, data yang tersedia, serta peraturan yang berlaku akan memengaruhi kebutuhan persiapan. Konsultasi awal digunakan untuk memetakan konteks sebelum ruang lingkup dan penawaran disepakati."
+      - text: "Konsultan membantu persiapan dan pendampingan. Pengujian, verifikasi, penetapan hasil, atau penerbitan sertifikat dilakukan oleh pihak berwenang sesuai skema yang berlaku."
 ---
-Jenis produk, ruang lingkup jasa, tujuan pengajuan, data yang tersedia, serta peraturan yang berlaku akan memengaruhi kebutuhan persiapan. Konsultasi awal digunakan untuk memetakan konteks sebelum ruang lingkup dan penawaran disepakati.
