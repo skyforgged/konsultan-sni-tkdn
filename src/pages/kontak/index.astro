@@ -10,5 +10,5 @@ const whatsappNumber=siteConfig.whatsapp.replace(/\D/g,'');
 ---
 <BaseLayout title={entry.data.title} description={entry.data.description} image={entry.data.socialImage} canonical={entry.data.canonical}>
 <section class="content-hero"><div class="container"><p class="breadcrumbs"><a href="/">Beranda</a> / Kontak</p><p class="section-kicker">KONTAK & KONSULTASI</p><h1>{entry.data.heroTitle}</h1><p class="lead">{entry.data.heroIntro}</p></div></section>
-<section class="section"><div class="container content-layout"><article class="prose"><PageBlocks blocks={entry.data.blocks}/></article><aside class="article-aside"><h2>Hubungi tim konsultasi</h2>{siteConfig.email&&<a href={`mailto:${siteConfig.email}`}>Email: {siteConfig.email} →</a>}{siteConfig.phone&&<p>Telepon: {siteConfig.phone}</p>}{whatsappNumber&&<a href={`https://wa.me/${whatsappNumber}`} rel="noopener noreferrer">WhatsApp bisnis →</a>}{!siteConfig.email&&!siteConfig.phone&&!whatsappNumber&&<p>Kanal kontak resmi belum dikonfigurasi. Isi nilai yang benar pada <code>src/config/site.ts</code> sebelum peluncuran.</p>}<a href="/layanan/">Lihat layanan →</a><a href="/faq/">Baca FAQ →</a></aside></div></section>
+<section class="section"><div class="container"><article class="prose"><PageBlocks blocks={entry.data.blocks}/></article></div></section>
 </BaseLayout>
