@@ -1,16 +1,16 @@
 import { defineCollection, z } from 'astro:content';
 
 const relationshipFields = {
-  relatedServices: z.array(z.string().min(1)).default([]),
-  relatedPages: z.array(z.string().min(1)).default([]),
-  relatedArticles: z.array(z.string().min(1)).default([]),
-  relatedGuides: z.array(z.string().min(1)).default([]),
+  relatedServices: z.array(z.union([z.string().min(1), z.number().int().positive()])).default([]),
+  relatedPages: z.array(z.union([z.string().min(1), z.number().int().positive()])).default([]),
+  relatedArticles: z.array(z.union([z.string().min(1), z.number().int().positive()])).default([]),
+  relatedGuides: z.array(z.union([z.string().min(1), z.number().int().positive()])).default([]),
 };
 
 const base = z.object({
-  // id/ulid are optional internal identifiers; the stable public URL is always slug.
-  id: z.union([z.string(), z.number()]).optional(),
-  ulid: z.string().optional(),
+  // Preserve the identifier contract: integer ID, stable ULID, and public URL slug.
+  id: z.number().int().positive(),
+  ulid: z.string().regex(/^[0-7][0-9A-HJKMNP-TV-Z]{25}$/, 'ulid harus berupa ULID valid 26 karakter'),
   type: z.enum(['page', 'service', 'article', 'guide', 'faq']).optional(),
   title: z.string().min(3),
   description: z.string().min(30).max(180),
