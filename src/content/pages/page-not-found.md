@@ -1,4 +1,3 @@
----
 id: "page-not-found"
 type: "page"
 slug: "not-found"
@@ -11,5 +10,7 @@ status: active
 pageKind: "not-found"
 canonical: "/404/"
 socialImage: "/images/og-default.svg"
+blocks:
+  - component: "note"
+    text: "Halaman mungkin dipindahkan atau alamatnya tidak tepat. Kembali ke beranda atau jelajahi layanan kami."
 ---
-Halaman mungkin dipindahkan atau alamatnya tidak tepat. Kembali ke beranda atau jelajahi layanan kami.
