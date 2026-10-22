@@ -24,7 +24,7 @@
     "check:components": "node scripts/check-component-coverage.mjs"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
+    "@astrojs/check": "0.9.4",
     "@astrojs/sitemap": "^3.6.0",
     "astro": "^5.14.1",
     "typescript": "^5.9.2",
@@ -34,5 +34,8 @@
     "png-to-ico": "^2.1.8",
     "sharp": "^0.34.4",
     "@playwright/test": "^1.56.1"
+  },
+  "overrides": {
+    "@volar/typescript": "2.4.28"
   }
 }
