@@ -17,10 +17,8 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const blocks = entry.data.blocks;
 const heroBlock = blocks.find((block) => block.component === 'page-header');
-const heroCtaBlock = blocks.find((block) => block.component === 'cta' && !block.heading);
-const contentBlocks = blocks.filter((block) =>
-  block.component !== 'page-header' && !(block.component === 'cta' && !block.heading)
-);
+const contentBlocks = blocks.filter((block) => block.component !== 'page-header');
+const processBlock = blocks.find((block) => block.component === 'process-timeline');
 const pageUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;
 const schema = {
   '@context': 'https://schema.org',
@@ -31,6 +29,19 @@ const schema = {
   ...(pageUrl ? { url: pageUrl } : {}),
   provider: { '@type': 'Organization', name: siteConfig.name },
 };
+const processProps = processBlock?.props ?? processBlock;
+const howToSchema = processProps?.items?.length >= 2 ? {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: processProps.heading ?? `Tahapan ${entry.data.title}`,
+  description: entry.data.description,
+  step: processProps.items.map((item, index) => ({
+    '@type': 'HowToStep',
+    position: index + 1,
+    name: item.title,
+    text: item.description,
+  })),
+} : undefined;
 ---
 
 <BaseLayout
@@ -39,13 +50,15 @@ const schema = {
   image={entry.data.socialImage ?? entry.data.image}
   canonical={entry.data.canonical}
 >
-  <Fragment slot="head"><SeoJsonLd data={schema} /></Fragment>
+  <Fragment slot="head">
+    <SeoJsonLd data={schema} />
+    {howToSchema && <SeoJsonLd data={howToSchema} />}
+  </Fragment>
   <section class="content-hero">
     <div class="container">
       <p class="breadcrumbs"><a href={siteConfig.navigation[0].href}>{siteConfig.navigation[0].label}</a> / <a href={siteConfig.navigation[1].href}>{siteConfig.navigation[1].label}</a> / {entry.data.title}</p>
       <h1>{entry.data.title}</h1>
       {heroBlock && <BlockRenderer block={heroBlock} />}
-      {heroCtaBlock && <BlockRenderer block={heroCtaBlock} />}
     </div>
   </section>
   <section class="section">
