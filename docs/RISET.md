@@ -232,6 +232,22 @@ Contoh URL:
 
 Bangun halaman spesifik hanya jika kontennya dapat memberi jawaban yang berbeda dan berguna. Hindari membuat banyak halaman yang hanya mengganti nama layanan/kata kunci dengan isi hampir sama.
 
+### Kontrak frontmatter dan penghubung antarkonten
+
+Semua URL publik—termasuk beranda, halaman informasi, listing layanan, listing artikel, listing panduan, FAQ, halaman layanan, artikel, dan panduan—harus memiliki sumber data/frontmatter yang tervalidasi. Template Astro adalah presentasi, bukan tempat kedua untuk menulis isi dan metadata.
+
+Frontmatter minimal memakai satu konvensi konsisten untuk:
+- identitas dan routing: `type`, `slug`, `title`;
+- lifecycle: `pubDate`, `updatedDate`, `draft`;
+- SEO: `description`, `socialImage`, `canonical` (override opsional);
+- navigasi: `navLabel` bila relevan;
+- media: `image`, `imageAlt` bila relevan;
+- hubungan editorial: `relatedServices`, `relatedPages`, `relatedArticles`, `relatedGuides`.
+
+Gunakan slug sebagai referensi internal dan validasi target relasi pada build. Artikel tentang persiapan sertifikasi SNI, misalnya, harus dapat mengarahkan pembaca ke layanan Konsultan SNI; artikel/panduan TKDN harus mengarahkan ke layanan TKDN; dan setiap konten edukasi dapat menghubungkan ke FAQ atau kontak bila konteksnya relevan. Halaman layanan harus menghubungkan pembaca ke panduan atau artikel pendukung. Relasi harus tampil nyata sebagai tautan deskriptif, bukan sekadar metadata tersembunyi.
+
+Jangan membuat semua artikel memiliki sidebar hard-coded yang sama. Prioritaskan relasi spesifik per konten, lalu gunakan tautan umum ke daftar layanan atau kontak sebagai fallback. Pastikan tautan terkait tidak menunjuk ke draft, URL yang tidak ada, atau halaman itu sendiri.
+
 ## 8. SEO dan pengalaman pengguna
 
 - Gunakan satu maksud pencarian utama per halaman; jangan memaksakan semua kata kunci SNI/TKDN/BMP ke setiap halaman.
