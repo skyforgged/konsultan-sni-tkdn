@@ -29,13 +29,6 @@ const base = z.object({
   imageAlt: z.string().optional(),
   socialImage: z.string().optional(),
   ...relationshipFields,
-}).superRefine((data, ctx) => {
-  if (!data.pubDate && !data.publishDate) {
-    ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'Isi pubDate untuk konten baru (publishDate masih didukung sementara).' });
-  }
-  if (data.image && !data.imageAlt) {
-    ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'imageAlt wajib diisi jika image digunakan.' });
-  }
 });
 
 const services = defineCollection({
