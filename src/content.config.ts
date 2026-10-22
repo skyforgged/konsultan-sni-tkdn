@@ -12,7 +12,6 @@ const base = z.object({
   id: z.union([z.string(), z.number()]).optional(),
   ulid: z.string().optional(),
   type: z.enum(['page', 'service', 'article', 'guide', 'faq']).optional(),
-  slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
   title: z.string().min(3),
   description: z.string().min(30).max(180),
   pubDate: z.coerce.date(),
