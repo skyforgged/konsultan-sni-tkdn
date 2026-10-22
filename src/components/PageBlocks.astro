@@ -1,0 +1,5 @@
+---
+import BlockRenderer from './blocks/BlockRenderer.astro';
+const { blocks = [], class: className = '' } = Astro.props;
+---
+{blocks.length > 0 && <div class:list={['page-content-blocks', className]}>{blocks.map((block: any) => <BlockRenderer block={block}/>)}</div>}
