@@ -1,6 +1,6 @@
 ---
 type: "page"
-slug: "404"
+slug: "not-found"
 title: "Halaman tidak ditemukan"
 description: "Halaman yang Anda cari tidak tersedia."
 pubDate: 2026-10-22
