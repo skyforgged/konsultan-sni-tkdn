@@ -3,11 +3,27 @@ import { readFile } from 'node:fs/promises';
 const registryPath = 'src/components/blocks.ts';
 const catalogPath = 'src/pages/komponen.astro';
 const routes = ['src/pages/artikel/[slug].astro', 'src/pages/panduan/[slug].astro', 'src/pages/layanan/[slug].astro'];
+const requiredFiles = [
+  'ContentCard.astro','FaqBlock.astro','CtaBlock.astro','TableBlock.astro','NoteBlock.astro','StepsBlock.astro',
+  'StatsBlock.astro','GlossaryBlock.astro','QuoteBlock.astro','ArticleSectionBlock.astro','ProcessTimeline.astro',
+  'ChecklistCard.astro','ComparisonTable.astro','DocumentList.astro','ImagePanel.astro','FeatureCardGrid.astro',
+  'StatsGrid.astro','SourceLinks.astro','ContactPanel.astro','PageHeaderBlock.astro','HomeHeroBlock.astro',
+  'ServiceListBlock.astro','HomeProcessBlock.astro','ArticleListBlock.astro','HomeCtaBlock.astro','NotFoundBlock.astro',
+  'SiteHeader.astro','SiteFooter.astro','ArticlePreviousArticles.astro'
+];
 const failures = [];
 const registry = await readFile(registryPath, 'utf8');
 const catalog = await readFile(catalogPath, 'utf8');
 const keys = [...registry.matchAll(/^\s*([\w'-]+):\s*[A-Za-z][\w]*,?\s*$/gm)].map(match => match[1].replace(/^['"]|['"]$/g, ''));
 const examples = new Set([...catalog.matchAll(/component:\s*'([^']+)'/g)].map(match => match[1]));
+for (const filename of requiredFiles) {
+  try { await readFile('src/components/shared/' + filename, 'utf8'); }
+  catch { failures.push('Komponen bersama wajib tidak ditemukan: src/components/shared/' + filename); }
+}
+const layout = await readFile('src/layouts/BaseLayout.astro', 'utf8');
+if (!layout.includes('SiteHeader.astro') || !layout.includes('SiteFooter.astro')) failures.push('BaseLayout harus menggunakan SiteHeader dan SiteFooter reusable.');
+const articleRoute = await readFile('src/pages/artikel/[slug].astro', 'utf8');
+if (!articleRoute.includes('ArticlePreviousArticles.astro')) failures.push('Detail artikel harus menggunakan ArticlePreviousArticles.');
 for (const key of keys) if (!examples.has(key)) failures.push('Komponen registry "' + key + '" belum dipakai pada katalog reusable.');
 for (const key of examples) if (!keys.includes(key)) failures.push('Katalog memakai komponen "' + key + '" yang tidak terdaftar pada registry.');
 for (const route of routes) {
@@ -21,5 +37,5 @@ if (failures.length) {
   console.error('Component coverage check failed: ' + failures.length + ' issue(s).\n' + failures.join('\n'));
   process.exitCode = 1;
 } else {
-  console.log('Component coverage check passed: ' + keys.length + ' registered blocks are demonstrated in the catalog; article, guide, and service routes use BlockRenderer instead of Astro Markdown Content.');
+  console.log('Component coverage check passed: ' + keys.length + ' registered blocks are demonstrated in the catalog; all required shared component files exist; article, guide, and service routes use BlockRenderer instead of Astro Markdown Content.');
 }
