@@ -50,9 +50,9 @@ for (const collection of collections) {
       const value = cleanInline(unquote(match[1]));
       if (value.length >= 12) markers.add(value);
     }
-    const blockSection = frontmatter.match(/^blocks:\\s*\\r?\\n([\\s\\S]*)$/m)?.[1] ?? '';
-    for (const line of blockSection.split(/\\r?\\n/)) {
-      const inlineBlock = line.match(/^\\s*-\\s+(\\{.*\\})\\s*$/);
+    const blockSection = frontmatter.match(/^blocks:\s*\r?\n([\s\S]*)$/m)?.[1] ?? '';
+    for (const line of blockSection.split(/\r?\n/)) {
+      const inlineBlock = line.match(/^\s*-\s+(\{.*\})\s*$/);
       if (!inlineBlock) continue;
       try {
         collectTextMarkers(JSON.parse(inlineBlock[1]), markers);
