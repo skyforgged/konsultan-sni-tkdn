@@ -3,7 +3,7 @@ import {getCollection,render} from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQ from '../../components/FAQ.astro';
 import SeoJsonLd from '../../components/SeoJsonLd.astro';
-export async function getStaticPaths(){const entries=await getCollection('services',({data})=>!data.draft);return entries.map(entry=>({params:{slug:entry.id},props:{entry}}))}
+export async function getStaticPaths(){const entries=await getCollection('services',({data})=>!data.draft);return entries.map(entry=>({params:{slug:entry.id.replace(/\.md$/, '')},props:{entry}}))}
 const {entry}=Astro.props;const {Content}=await render(entry);const pageUrl=Astro.site?new URL(Astro.url.pathname,Astro.site).toString():undefined;
 const schema={'@context':'https://schema.org','@type':'Service',name:entry.data.title,description:entry.data.description,serviceType:entry.data.title,...(pageUrl?{url:pageUrl}:{}),provider:{'@type':'Organization',name:'Konsultan SNI–TKDN'}};
 ---
