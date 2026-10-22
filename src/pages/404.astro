@@ -1,4 +1,9 @@
 ---
+import {getEntry} from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+const page=await getEntry('pages','not-found');
+if(!page) throw new Error('Missing frontmatter source: pages/not-found.md');
 ---
-<BaseLayout title="Halaman tidak ditemukan" description="Halaman yang Anda cari tidak tersedia."><section class="section"><div class="container" style="max-width:700px"><p class="section-kicker">404 · HALAMAN TIDAK DITEMUKAN</p><h1>Sepertinya Anda mengambil jalan yang berbeda.</h1><p>Halaman mungkin dipindahkan atau alamatnya tidak tepat. Kembali ke beranda atau jelajahi layanan kami.</p><a class="button" href="/">Kembali ke beranda →</a></div></section></BaseLayout>
+<BaseLayout title={page.data.title} description={page.data.description} image={page.data.socialImage} canonical={page.data.canonical} noindex={true}>
+<section class="section"><div class="container" style="max-width:700px"><p class="section-kicker">404 · HALAMAN TIDAK DITEMUKAN</p><h1>{page.data.title}</h1><p>{page.body}</p><a class="button" href="/">Kembali ke beranda →</a></div></section>
+</BaseLayout>
