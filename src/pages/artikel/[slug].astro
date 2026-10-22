@@ -2,6 +2,7 @@
 import {getCollection} from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedLinks from '../../components/RelatedLinks.astro';
+import ArticlePreviousArticles from '../../components/shared/ArticlePreviousArticles.astro';
 import BlockRenderer from '../../components/blocks/BlockRenderer.astro';
 import {markdownToBlocks} from '../../utils/markdownToBlocks';
 export async function getStaticPaths(){const entries=await getCollection('articles',({data})=>!data.draft&&data.status==='active');return entries.map(entry=>({params:{slug:entry.slug??entry.id.replace(/\.md$/, '')},props:{entry}}))}
@@ -19,6 +20,7 @@ const renderedBlocks=blocks.length?blocks:[{component:'section',heading:'Ringkas
     <section class="section"><div class="container content-layout">
       <div class="prose component-article-content">{renderedBlocks.map(block=><BlockRenderer block={block}/>)}
         <aside class="tkdn-block tkdn-block--note"><h2 class="tkdn-block__title">Catatan editorial</h2><p>Artikel ini bersifat edukatif. Periksa sumber resmi untuk memastikan ketentuan yang berlaku bagi kasus Anda.</p><a class="button" href="/kontak/">Diskusikan kebutuhan ↗</a></aside>
+        <ArticlePreviousArticles currentSlug={entry.slug} limit={3}/>
       </div>
       <RelatedLinks services={entry.data.relatedServices} pages={entry.data.relatedPages} articles={entry.data.relatedArticles} guides={entry.data.relatedGuides} currentSlug={Astro.url.pathname} title="Lanjutkan membaca"/>
     </div></section>
