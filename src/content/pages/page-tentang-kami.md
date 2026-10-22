@@ -1,4 +1,6 @@
 ---
+id: 8
+ulid: "01K8SN00000000000000000008"
 type: "page"
 slug: "tentang-kami"
 title: "Tentang Kami"
