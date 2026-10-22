@@ -1,3 +1,4 @@
+---
 id: "page-faq"
 type: "page"
 slug: "faq"
