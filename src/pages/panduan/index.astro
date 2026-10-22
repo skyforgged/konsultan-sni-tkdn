@@ -1,7 +1,6 @@
 ---
 import {getCollection,getEntry} from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import RelatedLinks from '../../components/RelatedLinks.astro';
 import PageBlocks from '../../components/PageBlocks.astro';
 const page=await getEntry('pages','panduan');
 if(!page) throw new Error('Missing frontmatter source: pages/panduan.md');
@@ -9,6 +8,6 @@ const entries=(await getCollection('guides',({data})=>!data.draft)).sort((a,b)=>
 ---
 <BaseLayout title={page.data.title} description={page.data.description} image={page.data.socialImage} canonical={page.data.canonical}>
 <section class="content-hero"><div class="container"><p class="breadcrumbs"><a href="/">Beranda</a> / Panduan</p><p class="section-kicker">PANDUAN PRAKTIS</p><h1>{page.data.heroTitle}</h1><p class="lead">{page.data.heroIntro}</p><a class="button button-outline" href="/artikel/">Baca artikel →</a></div></section>
-<section class="section"><div class="container">{entries.length?<div class="article-grid">{entries.map(e=><a class="article-card" href={`/panduan/${e.slug??e.id}/`}><div class="article-card-body"><p class="article-tag">{e.data.category??'Panduan'} · LANGKAH DEMI LANGKAH</p><h3>{e.data.title}</h3><p>{e.data.description}</p><span class="text-link">Ikuti panduan →</span></div></a>)}</div>:<p class="empty-state">Panduan sedang disiapkan.</p>}<div style="margin-top:35px"><RelatedLinks services={page.data.relatedServices} pages={page.data.relatedPages} articles={page.data.relatedArticles} title="Layanan dan artikel terkait"/></div></div></section>
+<section class="section"><div class="container">{entries.length?<div class="article-grid">{entries.map(e=><a class="article-card" href={`/panduan/${e.slug??e.id}/`}><div class="article-card-body"><p class="article-tag">{e.data.category??'Panduan'} · LANGKAH DEMI LANGKAH</p><h3>{e.data.title}</h3><p>{e.data.description}</p><span class="text-link">Ikuti panduan →</span></div></a>)}</div>:<p class="empty-state">Panduan sedang disiapkan.</p>}<div style="margin-top:35px"></div></div></section>
 <PageBlocks blocks={page.data.blocks}/>
 </BaseLayout>
