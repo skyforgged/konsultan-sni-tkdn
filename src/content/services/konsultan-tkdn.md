@@ -36,6 +36,7 @@ relatedServices: ["konsultan-sni", "layanan-terpadu"]
 relatedPages: ["faq", "kontak"]
 relatedArticles: []
 relatedGuides: ["persiapan-dokumen-tkdn"]
+order: 20
 ---
 ## Apa yang dapat dibantu?
 Pendampingan dapat mencakup pemetaan kebutuhan data, penataan bukti pendukung, pemeriksaan konsistensi, serta simulasi awal apabila metode relevan telah dipastikan dan data tersedia.
