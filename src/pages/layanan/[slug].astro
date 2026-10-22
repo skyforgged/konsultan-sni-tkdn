@@ -1,5 +1,5 @@
 ---
-import {getCollection} from 'astro:content';
+import { getCollection } from 'astro:content';
 import BlockRenderer from '../../components/blocks/BlockRenderer.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SeoJsonLd from '../../components/SeoJsonLd.astro';
@@ -7,7 +7,7 @@ import RelatedLinks from '../../components/RelatedLinks.astro';
 import { siteConfig } from '../../config/site';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('services', ({ data }) => !data.draft && data.status === 'active');
+  const entries = await getCollection('services', ({ data }) => !data.draft);
   return entries.map((entry) => ({
     params: { slug: entry.slug ?? entry.id.replace(/\.md$/, '') },
     props: { entry },
@@ -15,6 +15,12 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
+const blocks = entry.data.blocks;
+const heroBlock = blocks.find((block) => block.component === 'page-header');
+const heroCtaBlock = blocks.find((block) => block.component === 'cta' && !block.heading);
+const contentBlocks = blocks.filter((block) =>
+  block.component !== 'page-header' && !(block.component === 'cta' && !block.heading)
+);
 const pageUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;
 const schema = {
   '@context': 'https://schema.org',
@@ -37,15 +43,15 @@ const schema = {
   <section class="content-hero">
     <div class="container">
       <p class="breadcrumbs"><a href={siteConfig.navigation[0].href}>{siteConfig.navigation[0].label}</a> / <a href={siteConfig.navigation[1].href}>{siteConfig.navigation[1].label}</a> / {entry.data.title}</p>
-      <p class="section-kicker">{entry.data.eyebrow}</p>
       <h1>{entry.data.title}</h1>
-      <p class="lead">{entry.data.intro}</p>
+      {heroBlock && <BlockRenderer block={heroBlock} />}
+      {heroCtaBlock && <BlockRenderer block={heroCtaBlock} />}
     </div>
   </section>
   <section class="section">
     <div class="container content-layout">
       <article class="prose component-article-content">
-        {entry.data.blocks.map((block) => <BlockRenderer block={block} />)}
+        {contentBlocks.map((block) => <BlockRenderer block={block} />)}
       </article>
       <RelatedLinks
         services={entry.data.relatedServices}
@@ -53,7 +59,6 @@ const schema = {
         articles={entry.data.relatedArticles}
         guides={entry.data.relatedGuides}
         currentSlug={Astro.url.pathname}
-        title={entry.data.relatedTitle}
       />
     </div>
   </section>
