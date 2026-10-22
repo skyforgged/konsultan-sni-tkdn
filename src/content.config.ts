@@ -12,7 +12,7 @@ const base = z.object({
   id: z.union([z.string(), z.number()]).optional(),
   ulid: z.string().optional(),
   type: z.enum(['page', 'service', 'article', 'guide', 'faq']).optional(),
-  slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/).optional(),
+  slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
   title: z.string().min(3),
   description: z.string().min(30).max(180),
   pubDate: z.coerce.date(),
@@ -25,7 +25,7 @@ const base = z.object({
   tags: z.array(z.string()).default([]),
   image: z.string().optional(),
   imageAlt: z.string().optional(),
-  socialImage: z.string().optional(),
+  socialImage: z.string().min(1),
   ...relationshipFields,
 });
 
