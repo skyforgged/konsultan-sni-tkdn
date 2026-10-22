@@ -28,8 +28,8 @@ const layout = await readFile('src/layouts/BaseLayout.astro', 'utf8');
 if (!layout.includes('SiteHeader.astro') || !layout.includes('SiteFooter.astro')) failures.push('BaseLayout harus menggunakan SiteHeader dan SiteFooter reusable.');
 const sharedUiExamples = ['Badge','Button','Dropdown','Modal','ArticleCard','RelatedArticles','ArticleRelatedArticles','PageUpdatedArticles','TestimonialGrid'];
 for (const name of sharedUiExamples) {
-  const importPattern = new RegExp("import\\s+" + name + "\\s+from\\s+['\\"]\\.\\./components/shared/" + name + "\\.astro['\\"]");
-  if (!importPattern.test(catalog)) failures.push('Katalog harus mengimpor komponen antarmuka ' + name + '.');
+  const expectedImport = "import " + name + " from '../components/shared/" + name + ".astro'";
+  if (!catalog.includes(expectedImport)) failures.push('Katalog harus mengimpor komponen antarmuka ' + name + '.');
   if (!catalog.includes('<' + name)) failures.push('Komponen antarmuka ' + name + ' harus benar-benar dirender pada katalog.');
 }
 const articleRoute = await readFile('src/pages/artikel/[slug].astro', 'utf8');
