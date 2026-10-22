@@ -61,6 +61,13 @@ export function markdownToBlocks(source = ''): ContentBlock[] {
     const raw = lines[i];
     const line = raw.trim();
     if (!line || /^---+$/.test(line)) { flushAll(); continue; }
+    const imageMatch = line.match(/^!\\[([^\\]]*)\\]\\(([^)]+)\\)$/);
+    if (imageMatch) {
+      flushAll();
+      blocks.push({ component: 'image-panel', ...(heading ? { heading } : {}), image: imageMatch[2], imageAlt: cleanInline(imageMatch[1]) });
+      heading = '';
+      continue;
+    }
     const headingMatch = line.match(/^#{2,6}\s+(.+)$/);
     if (headingMatch) {
       flushAll();
