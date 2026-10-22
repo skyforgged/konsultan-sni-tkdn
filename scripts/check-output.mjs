@@ -143,7 +143,7 @@ if (process.env.SITE_URL) {
 
   if (await isFile(robotsPath)) {
     const robots = await readFile(robotsPath, 'utf8');
-    const directives = [...robots.matchAll(/^Sitemap:\\s*(\\S+)\\s*$/gim)];
+    const directives = [...robots.matchAll(/^Sitemap:\s*(\S+)\s*$/gim)];
     if (directives.length !== 1) failures.push(`robots.txt harus memuat tepat satu deklarasi Sitemap, ditemukan ${directives.length}`);
     for (const [, url] of directives) {
       if (!absoluteHttp(url)) failures.push(`URL Sitemap pada robots.txt tidak valid: ${url}`);
@@ -157,7 +157,7 @@ if (process.env.SITE_URL) {
   if (await isFile(sitemapIndexPath)) {
     const index = await readFile(sitemapIndexPath, 'utf8');
     if (!index.includes('<sitemapindex') || !index.includes('</sitemapindex>')) failures.push('sitemap-index.xml tidak memiliki struktur sitemapindex yang valid');
-    const sitemapFiles = [...index.matchAll(/<loc>([\\s\\S]*?)<\\/loc>/gi)].map(match => decodeXml(match[1].trim()));
+    const sitemapFiles = [...index.matchAll(/<loc>([\s\S]*?)<\/loc>/gi)].map(match => decodeXml(match[1].trim()));
     if (!sitemapFiles.length) failures.push('sitemap-index.xml tidak menunjuk ke sitemap mana pun');
     const indexedUrls = new Set();
     for (const sitemapUrl of sitemapFiles) {
@@ -171,7 +171,7 @@ if (process.env.SITE_URL) {
       }
       const sitemap = await readFile(sitemapPath, 'utf8');
       if (!sitemap.includes('<urlset') || !sitemap.includes('</urlset>')) { failures.push(`Struktur urlset tidak valid: ${sitemapUrl}`); continue; }
-      for (const [, rawUrl] of sitemap.matchAll(/<loc>([\\s\\S]*?)<\\/loc>/gi)) {
+      for (const [, rawUrl] of sitemap.matchAll(/<loc>([\s\S]*?)<\/loc>/gi)) {
         const url = decodeXml(rawUrl.trim());
         if (!absoluteHttp(url)) { failures.push(`URL halaman di sitemap tidak valid: ${url}`); continue; }
         if (indexedUrls.has(url)) failures.push(`URL duplikat di sitemap: ${url}`);
@@ -189,7 +189,7 @@ if (failures.length) {
   for (const failure of failures) console.error(' - ' + failure);
   process.exitCode = 1;
 } else {
-  console.log(`SEO/output check lulus: ${htmlFiles.length} halaman HTML, canonical/meta unik, social metadata, ${jsonLdChecked} blok JSON-LD, ${imageCount} gambar, tautan/fragment internal, robots.txt, dan sitemap.xml.`);
+  console.log(`SEO/output check lulus: ${htmlFiles.length} halaman HTML, canonical/meta unik, social metadata, ${jsonLdChecked} blok JSON-LD, ${imageCount} gambar, tautan/fragment internal, robots.txt, dan sitemap-index.xml.`);
 }
 
 async function walk(dir) {
