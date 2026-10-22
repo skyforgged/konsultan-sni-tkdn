@@ -1,0 +1,28 @@
+---
+interface Props { kind: string; [key: string]: any }
+const { kind, ...props } = Astro.props as Props;
+const heading = props.heading ?? props.title ?? props.question ?? props.label ?? props.name;
+const text = props.text ?? props.description ?? props.intro ?? props.quote ?? props.answer ?? props.subtitle;
+const items = props.items ?? props.steps ?? props.features ?? props.rows ?? props.documents ?? props.links ?? props.checklist ?? props.stats ?? props.faqs ?? [];
+const content = props.content ?? [];
+const itemTitle = (item: any) => typeof item === 'string' ? item : item?.title ?? item?.heading ?? item?.name ?? item?.question ?? item?.label ?? item?.term ?? item?.value ?? '';
+const itemText = (item: any) => typeof item === 'string' ? '' : item?.text ?? item?.description ?? item?.answer ?? item?.definition ?? item?.detail ?? '';
+---
+<section class={`tkdn-block tkdn-block--${kind}`} id={props.id}>
+  {props.eyebrow && <p class="tkdn-block__eyebrow">{props.eyebrow}</p>}
+  {heading && <h2 class="tkdn-block__title">{heading}</h2>}
+  {text && <p class="tkdn-block__intro">{text}</p>}
+  {props.image && <figure class="tkdn-block__image"><img src={props.image.src ?? props.image} alt={props.image.alt ?? props.imageAlt ?? ''} loading="lazy"/>{props.image.caption && <figcaption>{props.image.caption}</figcaption>}</figure>}
+  {content.length > 0 && <div class="tkdn-block__content">{content.map((part: any) => <div>{part.heading && <h3>{part.heading}</h3>}{part.text && <p>{part.text}</p>}{part.items && <ul>{part.items.map((item: any) => <li>{itemTitle(item)} {itemText(item)}</li>)}</ul>}</div>)}</div>}
+  {items.length > 0 && <div class="tkdn-block__items">{items.map((item: any, index: number) => <article class="tkdn-block__item">
+    {item.icon && <span class="tkdn-block__icon" aria-hidden="true">{item.icon}</span>}
+    {item.number && <span class="tkdn-block__number">{item.number}</span>}
+    {itemTitle(item) && <h3>{itemTitle(item)}</h3>}
+    {itemText(item) && <p>{itemText(item)}</p>}
+    {item.items && <ul>{item.items.map((child: any) => <li>{itemTitle(child)} {itemText(child)}</li>)}</ul>}
+    {item.href && <a href={item.href}>{item.linkLabel ?? item.label ?? 'Pelajari selengkapnya'} <span aria-hidden="true">→</span></a>}
+    {item.src && <img src={item.src} alt={item.alt ?? ''} loading="lazy"/>}
+  </article>)}</div>}
+  {props.ctaHref && <p class="tkdn-block__action"><a class="button" href={props.ctaHref}>{props.ctaLabel ?? 'Konsultasikan kebutuhan'}</a></p>}
+  <slot />
+</section>
