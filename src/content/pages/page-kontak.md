@@ -1,4 +1,6 @@
 ---
+id: 4
+ulid: "01K8SN00000000000000000004"
 type: "page"
 slug: "kontak"
 title: "Kontak dan Konsultasi"
