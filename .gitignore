@@ -6,4 +6,5 @@ package-lock.json
 .env
 .env.*
 !.env.example
+public/robots.txt
 .DS_Store
