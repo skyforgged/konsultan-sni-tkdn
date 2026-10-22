@@ -2,7 +2,7 @@
 import {getEntry,render} from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
-const entry=await getEntry('pages','tentang-kami.md');
+const entry=await getEntry('pages','tentang-kami');
 if(!entry) throw new Error('Missing frontmatter source: pages/tentang-kami.md');
 const {Content}=await render(entry);
 ---
