@@ -2,7 +2,7 @@
 import {getCollection,getEntry} from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedLinks from '../../components/RelatedLinks.astro';
-const page=await getEntry('pages','artikel');
+const page=await getEntry('pages','artikel.md');
 if(!page) throw new Error('Missing frontmatter source: pages/artikel.md');
 const entries=(await getCollection('articles',({data})=>!data.draft&&data.status==='active')).sort((a,b)=>b.data.pubDate.valueOf()-a.data.pubDate.valueOf());
 ---
