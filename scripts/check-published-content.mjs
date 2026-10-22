@@ -2,7 +2,7 @@ import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 
 const contentRoot = path.resolve('src/content');
-const contentDirs = ['articles', 'pages', 'services'];
+const contentDirs = ['articles', 'pages', 'services', 'guides'];
 const files = [];
 const failures = [];
 let publishedFilesChecked = 0;
