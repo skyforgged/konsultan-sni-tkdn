@@ -1,4 +1,11 @@
 ---
-import BlockShell from './BlockShell.astro';
+const { heading = 'Langkah-langkah', title, items = [], steps = [] } = Astro.props;
+const entries = items.length ? items : steps;
 ---
-<BlockShell kind="steps" {...Astro.props} />
+<section class="tkdn-block tkdn-block--steps">
+  <h2 class="tkdn-block__title">{title ?? heading}</h2>
+  <ol class="tkdn-step-list">{entries.map((item: any, index: number) => <li class="tkdn-step-item">
+    <span class="tkdn-block__number">{String(index + 1).padStart(2, '0')}</span>
+    <div><h3>{typeof item === 'string' ? item : item.title ?? item.heading}</h3>{typeof item !== 'string' && <p>{item.text ?? item.description}</p>}</div>
+  </li>)}</ol>
+</section>
