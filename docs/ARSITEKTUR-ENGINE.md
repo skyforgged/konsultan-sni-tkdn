@@ -42,6 +42,8 @@ Jangan menganggap frontmatter hanya milik artikel Markdown. Metadata SEO, identi
 
 Nama field perlu konsisten. Bila implementasi memilih nama Astro yang sudah dipakai seperti `publishDate`, dokumentasikan pemetaan satu kali dan jangan mencampur `pubDate` serta `publishDate` tanpa alasan. Nilai tanggal harus valid; tanggal publikasi tidak boleh otomatis diganti setiap kali file diedit.
 
+**Catatan Astro:** `slug` merupakan metadata routing bawaan Content Collections, bukan field biasa di `entry.data`. Slug ditulis pada frontmatter, digunakan Astro untuk membentuk `entry.slug`, dan dipakai template/relasi untuk membentuk URL. Jangan menambahkannya sebagai properti schema Zod biasa yang wajib, karena Astro memprosesnya sebagai metadata entry.
+
 #### Relasi konten adalah bagian dari engine
 
 Artikel dan panduan harus dapat menghubungkan pembaca ke layanan yang relevan, panduan pendukung, artikel terkait, halaman kontak, dan halaman informasi. Jangan mengandalkan sidebar dengan tautan hard-coded yang sama di semua artikel.
