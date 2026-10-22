@@ -5,11 +5,12 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build && node scripts/check-output.mjs",
+    "build": "astro check && node scripts/check-content-integrity.mjs && node scripts/gen-social-images.mjs && astro build && node scripts/check-output.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "check:output": "node scripts/check-output.mjs",
-    "generate:favicon": "node scripts/genfavicon.mjs"
+    "generate:favicon": "node scripts/genfavicon.mjs",
+    "check:content": "node scripts/check-content-integrity.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
