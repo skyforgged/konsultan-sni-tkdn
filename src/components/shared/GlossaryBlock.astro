@@ -1,4 +1,8 @@
 ---
-import BlockShell from './BlockShell.astro';
+const { heading = 'Glosarium', title, items = [], terms = [] } = Astro.props;
+const entries = items.length ? items : terms;
 ---
-<BlockShell kind="glossary" {...Astro.props} />
+<section class="tkdn-block tkdn-block--glossary">
+  <h2 class="tkdn-block__title">{title ?? heading}</h2>
+  <dl class="tkdn-glossary">{entries.map((item: any) => <div><dt>{typeof item === 'string' ? item : item.term ?? item.title ?? item.name}</dt><dd>{typeof item !== 'string' ? item.definition ?? item.text ?? item.description : ''}</dd></div>)}</dl>
+</section>
