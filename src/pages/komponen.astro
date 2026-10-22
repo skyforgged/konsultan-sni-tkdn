@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BlockRenderer from '../components/blocks/BlockRenderer.astro';
+const examples = [
+  {component:'card',heading:'Kartu informasi',text:'Ringkasan informasi penting disajikan dalam kartu yang konsisten.'},
+  {component:'faq',heading:'Pertanyaan umum',items:[{question:'Apa fungsi komponen FAQ?',answer:'Menampilkan pertanyaan dan jawaban yang relevan.'}]},
+  {component:'cta',heading:'Butuh pendampingan?',text:'Diskusikan kebutuhan SNI, TKDN, atau BMP bersama tim kami.',ctaHref:'/kontak/',ctaLabel:'Hubungi konsultan'},
+  {component:'table',heading:'Contoh tabel persyaratan',headers:['Dokumen','Tujuan'],rows:[{title:'Data produk',text:'Identifikasi produk'},{title:'Dokumen perusahaan',text:'Verifikasi pemohon'}]},
+  {component:'note',heading:'Catatan penting',text:'Persyaratan final mengikuti skema sertifikasi dan ketentuan yang berlaku.'},
+  {component:'steps',heading:'Tahapan kerja',items:[{title:'Pemetaan kebutuhan',text:'Identifikasi skema dan ruang lingkup.'},{title:'Pemeriksaan dokumen',text:'Tinjau kelengkapan data.'}]},
+  {component:'stats',heading:'Ringkasan layanan',items:[{title:'SNI',text:'Standar produk'},{title:'TKDN',text:'Komponen dalam negeri'}]},
+  {component:'glossary',heading:'Istilah utama',items:[{title:'SNI',text:'Standar Nasional Indonesia.'},{title:'TKDN',text:'Tingkat Komponen Dalam Negeri.'}]},
+  {component:'quote',heading:'Prinsip pendampingan',quote:'Persiapan yang tertata membantu proses berjalan lebih jelas.',text:'Persiapan yang tertata membantu proses berjalan lebih jelas.'},
+  {component:'section',heading:'Bagian artikel',content:[{text:'Bagian isi artikel dirender melalui komponen semantik yang dapat digunakan ulang.'}]},
+  {component:'process-timeline',heading:'Alur proses',steps:[{title:'Konsultasi awal',text:'Pemetaan kebutuhan.'},{title:'Analisis',text:'Pemeriksaan data.'}]},
+  {component:'checklist-card',heading:'Checklist awal',items:[{title:'Identitas perusahaan'},{title:'Informasi produk'},{title:'Dokumen pendukung'}]},
+  {component:'comparison-table',heading:'Perbandingan skema',headers:['Aspek','SNI','TKDN'],rows:[{title:'Fokus',text:'Standar produk · Kandungan lokal'}]},
+  {component:'document-list',heading:'Dokumen yang disiapkan',items:[{title:'Data legalitas',text:'Dokumen identitas perusahaan.'},{title:'Spesifikasi produk',text:'Data teknis produk.'}]},
+  {component:'image-panel',heading:'Ilustrasi proses',image:'/images/og-default.svg',imageAlt:'Ilustrasi konsultasi SNI dan TKDN',text:'Visual pendukung dapat disertakan pada bagian konten.'},
+  {component:'feature-card-grid',heading:'Keunggulan pendampingan',items:[{title:'Terstruktur',text:'Tahapan dan keluaran jelas.'},{title:'Transparan',text:'Ruang lingkup dibahas sejak awal.'}]},
+  {component:'stats-grid',heading:'Area konsultasi',items:[{title:'SNI',text:'Standar Nasional Indonesia'},{title:'TKDN',text:'Tingkat Komponen Dalam Negeri'},{title:'BMP',text:'Bobot Manfaat Perusahaan'}]},
+  {component:'source-links',heading:'Sumber rujukan',items:[{title:'Kontak konsultan',href:'/kontak/',text:'Diskusikan kebutuhan secara langsung.'}]},
+  {component:'contact-panel',heading:'Hubungi tim',text:'Siapkan ringkasan produk dan kebutuhan sertifikasi.',ctaHref:'/kontak/',ctaLabel:'Halaman kontak'},
+  {component:'page-header',eyebrow:'PUSAT KOMPONEN',heading:'Header konten',text:'Komponen header untuk halaman informasi.'},
+  {component:'home-hero',eyebrow:'KONSULTAN SNI–TKDN',heading:'Hero berorientasi kebutuhan',text:'Pendampingan untuk persiapan sertifikasi dan pemenuhan persyaratan.'},
+  {component:'service-list',heading:'Contoh layanan',items:[{title:'Konsultasi SNI',text:'Pemetaan kebutuhan standar.'},{title:'Konsultasi TKDN',text:'Persiapan data kandungan lokal.'}]},
+  {component:'home-process',heading:'Proses pendampingan',items:[{title:'Pemetaan',text:'Identifikasi kebutuhan.'},{title:'Persiapan',text:'Penataan dokumen.'}]},
+  {component:'article-list',heading:'Artikel terkait',items:[{title:'Mengenal SNI',text:'Dasar memahami standar produk.',href:'/artikel/'}]},
+  {component:'home-cta',heading:'Mulai dengan konsultasi',text:'Tentukan langkah berikutnya berdasarkan kondisi produk dan perusahaan.',ctaHref:'/kontak/',ctaLabel:'Konsultasi'},
+  {component:'not-found',heading:'Konten tidak ditemukan',text:'Kembali ke halaman utama atau jelajahi layanan kami.',ctaHref:'/',ctaLabel:'Kembali ke beranda'}
+];
+---
+<BaseLayout title="Katalog Komponen" description="Katalog internal untuk verifikasi semua komponen konten reusable Konsultan SNI–TKDN." noindex={true}>
+  <section class="content-hero"><div class="container"><p class="section-kicker">INTERNAL QUALITY CHECK</p><h1>Katalog Komponen Reusable</h1><p class="lead">Halaman verifikasi: seluruh komponen dari arsitektur konsultan-slf dirender dengan gaya visual Konsultan SNI–TKDN.</p><p><strong>{examples.length} komponen konten</strong> diuji melalui renderer yang sama dengan artikel dan panduan.</p></div></section>
+  <section class="section"><div class="container component-catalog">{examples.map(block=><BlockRenderer block={block}/>)}</div></section>
+</BaseLayout>
