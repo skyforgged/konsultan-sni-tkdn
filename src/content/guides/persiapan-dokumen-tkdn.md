@@ -1,7 +1,7 @@
 ---
 title: "Cara Menyiapkan Dokumen Awal untuk Konsultasi TKDN"
 description: "Panduan menginventarisasi data produk, komponen, biaya, dan bukti yang berguna sebelum konsultasi awal terkait TKDN."
-pubDate: "2026-10-22T00:00:00Z"
+pubDate: "2026-10-22T00:00:02Z"
 category: "TKDN"
 tags: ["TKDN", "dokumen", "persiapan"]
 author: "Tim Editorial"
@@ -23,7 +23,7 @@ howTo:
       text: "Konsultan dapat meninjau kelengkapan awal dan menjelaskan langkah berikutnya."
 type: "guide"
 slug: "persiapan-dokumen-tkdn"
-updatedDate: "2026-10-22T00:00:00Z"
+updatedDate: "2026-10-22T12:00:02Z"
 socialImage: "/images/og-default.svg"
 relatedServices: ["konsultan-tkdn"]
 relatedPages: ["faq", "kontak"]
