@@ -2,7 +2,7 @@
 import {getEntry,render} from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import {siteConfig} from '../../config/site';
-const entry=await getEntry('pages','kontak');
+const entry=await getEntry('pages','kontak.md');
 if(!entry) throw new Error('Missing frontmatter source: pages/kontak.md');
 const {Content}=await render(entry);
 const whatsappNumber=siteConfig.whatsapp.replace(/\D/g,'');
