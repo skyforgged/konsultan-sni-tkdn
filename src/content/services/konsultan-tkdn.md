@@ -1,7 +1,7 @@
 ---
 title: "Konsultan TKDN"
 description: "Pendampingan pemetaan komponen dalam negeri, penataan data biaya dan bukti pendukung, serta pemeriksaan kesiapan awal pengajuan TKDN."
-publishDate: 2026-10-22
+pubDate: 2026-10-22
 eyebrow: "TINGKAT KOMPONEN DALAM NEGERI"
 intro: "Persiapan TKDN memerlukan data yang konsisten dan bukti yang dapat ditelusuri. Kami membantu memetakan komponen, mengidentifikasi data yang belum tersedia, dan menyiapkan dokumentasi untuk proses sesuai metode berlaku."
 audience:
@@ -28,6 +28,14 @@ faqs:
   - question: "Apakah data biaya perkiraan dapat langsung digunakan?"
     answer: "Data perlu mencerminkan kondisi aktual dan didukung bukti yang dapat ditelusuri. Asumsi harus ditandai jelas."
 tags: ["TKDN","komponen dalam negeri","dokumen"]
+type: "service"
+slug: "konsultan-tkdn"
+updatedDate: 2026-10-22
+socialImage: "/images/og-default.svg"
+relatedServices: ["konsultan-sni", "layanan-terpadu"]
+relatedPages: ["faq", "kontak"]
+relatedArticles: []
+relatedGuides: ["persiapan-dokumen-tkdn"]
 ---
 ## Apa yang dapat dibantu?
 Pendampingan dapat mencakup pemetaan kebutuhan data, penataan bukti pendukung, pemeriksaan konsistensi, serta simulasi awal apabila metode relevan telah dipastikan dan data tersedia.
