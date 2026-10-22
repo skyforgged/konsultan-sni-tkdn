@@ -1,5 +1,5 @@
 ---
-const { items = [], heading = 'Bacaan yang relevan' } = Astro.props as { items?: Array<{ title: string; href: string; description?: string }>; heading?: string };
+const { items = [], heading = 'Bacaan yang relevan' } = Astro.props;
 ---
 {items.length > 0 && <section class="tkdn-related-articles tkdn-block" aria-label={heading}>
   <h2 class="tkdn-block__title">{heading}</h2>

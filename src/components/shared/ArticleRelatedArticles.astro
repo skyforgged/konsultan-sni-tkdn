@@ -1,7 +1,7 @@
 ---
 import ArticleCard from './ArticleCard.astro';
-const { articles = [], relatedIds = [], heading = 'Artikel terkait' } = Astro.props as { articles?: Array<{ id?: string; slug?: string; data?: { id?: string; slug?: string; title?: string; description?: string; category?: string; pubDate?: Date | string } }>; relatedIds?: Array<string | number>; heading?: string };
-const selected = relatedIds.map((id) => articles.find((article) => String(article.data?.id ?? article.id ?? article.data?.slug) === String(id))).filter((article): article is NonNullable<typeof article> => Boolean(article));
+const { articles = [], relatedIds = [], heading = 'Artikel terkait' } = Astro.props;
+const selected = relatedIds.map((id) => articles.find((article) => String(article.data?.id ?? article.id ?? article.data?.slug) === String(id))).filter(Boolean);
 ---
 {selected.length > 0 && <section class="tkdn-related" aria-label={heading}>
   <h2 class="tkdn-block__title">{heading}</h2>

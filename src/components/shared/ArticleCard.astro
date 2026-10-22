@@ -3,7 +3,7 @@
 const { article, headingLevel = 3 } = Astro.props;
 const Heading = headingLevel === 2 ? 'h2' : 'h3';
 const data = article?.data ?? article ?? {};
-const slug = data.slug ?? article?.id?.replace(/\.md$/, '') ?? '';
+const slug = article?.slug ?? data.slug ?? article?.id?.replace(/\.md$/, '') ?? '';
 const href = `/artikel/${slug}/`;
 const date = data.pubDate instanceof Date ? data.pubDate : data.pubDate ? new Date(data.pubDate) : null;
 ---

@@ -170,7 +170,7 @@ for (const fallback of socialFallbacks) {
   } catch { failures.push(`Missing social image fallback: ${fallback.path}`); }
 }
 
-for (const requiredFile of ['robots.txt', 'sitemap.xml']) {
+for (const requiredFile of ['robots.txt']) {
   const target = path.join(root, requiredFile);
   try {
     if (!(await stat(target)).isFile()) failures.push(`Missing generated ${requiredFile}`);
@@ -191,59 +191,121 @@ try {
       continue;
     }
     robotsSitemapUrl = new URL(sitemapValue);
-    if (!robotsSitemapUrl.pathname.endsWith('/sitemap.xml')) {
-      failures.push(`robots.txt Sitemap URL must point to sitemap.xml: ${sitemapValue}`);
+    if (!robotsSitemapUrl.pathname.endsWith('/sitemap.xml') && !robotsSitemapUrl.pathname.endsWith('/sitemap-index.xml')) {
+      failures.push(`robots.txt Sitemap URL must point to sitemap.xml or sitemap-index.xml: ${sitemapValue}`);
     }
   }
 } catch {
   // Missing file is already reported above.
 }
 
+const sitemapIndexPath = path.join(root, 'sitemap-index.xml');
+const directSitemapPath = path.join(root, 'sitemap.xml');
+const sitemapPaths = [];
 try {
-  const sitemap = await readFile(path.join(root, 'sitemap.xml'), 'utf8');
-  if (!sitemap.includes('<urlset') || !sitemap.includes('</urlset>')) failures.push('sitemap.xml has an invalid urlset envelope.');
-  const locations = [...sitemap.matchAll(/<loc>([\s\S]*?)<\/loc>/gi)];
-  if (locations.length === 0) failures.push('sitemap.xml contains no <loc> entries.');
-  const seenLocations = new Set();
-  const sitemapOrigins = new Set();
-  for (const [, location] of locations) {
-    const decodedLocation = decodeXml(location.trim());
-    if (!isAbsoluteHttpUrl(decodedLocation)) {
-      failures.push(`sitemap.xml contains a non-absolute URL: ${location}`);
+  if ((await stat(sitemapIndexPath)).isFile()) sitemapPaths.push(sitemapIndexPath);
+} catch {}
+try {
+  if (sitemapPaths.length === 0 && (await stat(directSitemapPath)).isFile()) sitemapPaths.push(directSitemapPath);
+} catch {}
+if (sitemapPaths.length === 0) {
+  failures.push('Missing generated sitemap.xml or sitemap-index.xml');
+}
+
+const sitemapFilesToValidate = [];
+for (const sitemapPath of sitemapPaths) {
+  try {
+    const sitemapContent = await readFile(sitemapPath, 'utf8');
+    if (sitemapContent.includes('<sitemapindex') && sitemapContent.includes('</sitemapindex>')) {
+      const childLocations = [...sitemapContent.matchAll(/<loc>([\s\S]*?)<\/loc>/gi)];
+      if (childLocations.length === 0) failures.push('sitemap-index.xml contains no child sitemap locations.');
+      for (const [, location] of childLocations) {
+        const childUrlValue = decodeXml(location.trim());
+        if (!isAbsoluteHttpUrl(childUrlValue)) {
+          failures.push(`sitemap-index.xml contains a non-absolute child URL: ${location}`);
+          continue;
+        }
+        let childUrl;
+        try { childUrl = new URL(childUrlValue); } catch {
+          failures.push(`sitemap-index.xml contains an invalid child URL: ${location}`);
+          continue;
+        }
+        if (childUrl.origin !== new URL(robotsSitemapUrl ?? childUrl).origin) {
+          failures.push(`sitemap-index.xml child origin does not match robots.txt Sitemap origin: ${childUrlValue}`);
+        }
+        const childPath = path.resolve(root, `.${decodeURIComponent(childUrl.pathname)}`);
+        if (!childPath.startsWith(root + path.sep)) {
+          failures.push(`sitemap-index.xml child path escapes build output: ${childUrlValue}`);
+          continue;
+        }
+        try {
+          if (!(await stat(childPath)).isFile()) {
+            failures.push(`sitemap-index.xml references a missing child sitemap: ${childUrlValue}`);
+          } else {
+            sitemapFilesToValidate.push({ path: childPath, url: childUrlValue });
+          }
+        } catch {
+          failures.push(`sitemap-index.xml references a missing child sitemap: ${childUrlValue}`);
+        }
+      }
+    } else if (sitemapContent.includes('<urlset') && sitemapContent.includes('</urlset>')) {
+      sitemapFilesToValidate.push({ path: sitemapPath, url: null });
+    } else {
+      failures.push(`${path.basename(sitemapPath)} has an invalid sitemap envelope.`);
+    }
+  } catch (error) {
+    failures.push(`Could not read ${path.basename(sitemapPath)}: ${error instanceof Error ? error.message : String(error)}`);
+  }
+}
+
+const seenLocations = new Set();
+const sitemapOrigins = new Set();
+for (const sitemapFile of sitemapFilesToValidate) {
+  try {
+    const sitemap = await readFile(sitemapFile.path, 'utf8');
+    if (!sitemap.includes('<urlset') || !sitemap.includes('</urlset>')) {
+      failures.push(`${path.basename(sitemapFile.path)} has an invalid urlset envelope.`);
       continue;
     }
-    let sitemapUrl;
-    try {
-      sitemapUrl = new URL(decodedLocation);
-    } catch {
-      failures.push(`sitemap.xml contains an invalid URL: ${location}`);
-      continue;
+    const locations = [...sitemap.matchAll(/<loc>([\s\S]*?)<\/loc>/gi)];
+    if (locations.length === 0) failures.push(`${path.basename(sitemapFile.path)} contains no <loc> entries.`);
+    for (const [, location] of locations) {
+      const decodedLocation = decodeXml(location.trim());
+      if (!isAbsoluteHttpUrl(decodedLocation)) {
+        failures.push(`${path.basename(sitemapFile.path)} contains a non-absolute URL: ${location}`);
+        continue;
+      }
+      let sitemapUrl;
+      try { sitemapUrl = new URL(decodedLocation); } catch {
+        failures.push(`${path.basename(sitemapFile.path)} contains an invalid URL: ${location}`);
+        continue;
+      }
+      if (seenLocations.has(sitemapUrl.href)) failures.push(`Sitemap contains a duplicate URL: ${sitemapUrl.href}`);
+      seenLocations.add(sitemapUrl.href);
+      sitemapOrigins.add(sitemapUrl.origin);
+      if (canonicalUrls.size > 0 && !canonicalUrls.has(sitemapUrl.href)) {
+        failures.push(`Sitemap URL has no matching indexable page canonical: ${sitemapUrl.href}`);
+      }
     }
-    if (seenLocations.has(sitemapUrl.href)) failures.push(`sitemap.xml contains a duplicate URL: ${sitemapUrl.href}`);
-    seenLocations.add(sitemapUrl.href);
-    sitemapOrigins.add(sitemapUrl.origin);
-    if (canonicalUrls.size > 0 && !canonicalUrls.has(sitemapUrl.href)) {
-      failures.push(`sitemap.xml URL has no matching indexable page canonical: ${sitemapUrl.href}`);
-    }
+  } catch (error) {
+    failures.push(`Could not read sitemap file ${path.basename(sitemapFile.path)}: ${error instanceof Error ? error.message : String(error)}`);
   }
-  if (sitemapOrigins.size > 1) failures.push('sitemap.xml URLs must all use the same origin.');
-  if (robotsSitemapUrl && sitemapOrigins.size === 1 && robotsSitemapUrl.origin !== [...sitemapOrigins][0]) {
-    failures.push('robots.txt Sitemap URL origin does not match sitemap.xml URL origin.');
+}
+if (sitemapOrigins.size > 1) failures.push('Sitemap URLs must all use the same origin.');
+if (robotsSitemapUrl && sitemapOrigins.size === 1 && robotsSitemapUrl.origin !== [...sitemapOrigins][0]) {
+  failures.push('robots.txt Sitemap URL origin does not match sitemap URL origin.');
+}
+if (robotsSitemapUrl && canonicalUrls.size > 0) {
+  const canonicalOrigins = new Set([...canonicalUrls].map((url) => new URL(url).origin));
+  if (canonicalOrigins.size === 1 && robotsSitemapUrl.origin !== [...canonicalOrigins][0]) {
+    failures.push('robots.txt Sitemap URL origin does not match the indexable page canonical origin.');
   }
-  if (robotsSitemapUrl && canonicalUrls.size > 0) {
-    const canonicalOrigins = new Set([...canonicalUrls].map((url) => new URL(url).origin));
-    if (canonicalOrigins.size === 1 && robotsSitemapUrl.origin !== [...canonicalOrigins][0]) {
-      failures.push('robots.txt Sitemap URL origin does not match the indexable page canonical origin.');
-    }
+}
+if (sitemapOrigins.size === 1 && canonicalUrls.size > 0) {
+  const canonicalOrigins = new Set([...canonicalUrls].map((url) => new URL(url).origin));
+  if (canonicalOrigins.size === 1 && !canonicalOrigins.has([...sitemapOrigins][0])) {
+    failures.push('Sitemap origin does not match the indexable page canonical origin.');
   }
-  if (sitemapOrigins.size === 1 && canonicalUrls.size > 0) {
-    const canonicalOrigins = new Set([...canonicalUrls].map((url) => new URL(url).origin));
-    if (canonicalOrigins.size === 1 && !canonicalOrigins.has([...sitemapOrigins][0])) {
-      failures.push('sitemap.xml origin does not match the indexable page canonical origin.');
-    }
-  }
-} catch {
-  // Missing file is already reported above.
 }
 
 // Build produksi tidak boleh memakai origin placeholder (fallback konfigurasi: http://konsultan-slf.lan).
@@ -264,7 +326,7 @@ if (failures.length) {
   console.error(failures.map((failure) => `- ${failure}`).join('\n'));
   process.exitCode = 1;
 } else {
-  console.log(`SEO output check passed: ${pagesChecked} HTML pages, ${jsonLdChecked} valid JSON-LD blocks, ${socialImagesChecked} local social images, ${rasterFallbackChecked ? 'WebP and SVG social fallbacks' : 'social fallback validation incomplete'}, robots.txt, and sitemap.xml.`);
+  console.log(`SEO output check passed: ${pagesChecked} HTML pages, ${jsonLdChecked} valid JSON-LD blocks, ${socialImagesChecked} local social images, ${rasterFallbackChecked ? 'WebP and SVG social fallbacks' : 'social fallback validation incomplete'}, robots.txt, and sitemap XML/index.`);
 }
 
 function validateJsonLd(data, page, failures) {

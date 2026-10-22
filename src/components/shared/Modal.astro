@@ -1,8 +1,8 @@
 ---
-const { id, open: isOpen = false, title, size = 'md' } = Astro.props as { id: string; open?: boolean; title?: string; size?: 'sm' | 'md' | 'lg' | 'xl' };
+const { id, open = false, title, size = 'md' } = Astro.props;
 const sizeClass = ['sm','md','lg','xl'].includes(size) ? size : 'md';
 ---
-<dialog id={id} data-tkdn-modal data-open={isOpen ? 'true' : 'false'} aria-label={title ?? 'Dialog'} class={`tkdn-modal tkdn-modal--${sizeClass}`}>
+<dialog id={id} data-tkdn-modal data-open={open ? 'true' : 'false'} aria-label={title ?? 'Dialog'} class={`tkdn-modal tkdn-modal--${sizeClass}}>
   <section class="tkdn-modal__panel">
     <header class="tkdn-modal__header">{title && <h2>{title}</h2>}<form method="dialog"><button type="submit" aria-label="Tutup dialog">×</button></form></header>
     <div class="tkdn-modal__body"><slot /></div>

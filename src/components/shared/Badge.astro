@@ -1,6 +1,6 @@
 ---
 /** Small reusable status/category label. */
-const { variant = 'default', size = 'md' } = Astro.props as { variant?: 'default' | 'primary' | 'success' | 'warning' | 'danger' | 'info'; size?: 'sm' | 'md' };
+const { variant = 'default', size = 'md' } = Astro.props;
 const variants = { default:'neutral', primary:'primary', success:'success', warning:'warning', danger:'danger', info:'info' };
 ---
 <span class={`tkdn-badge tkdn-badge--${variants[variant] ?? 'neutral'} tkdn-badge--${size === 'sm' ? 'sm' : 'md'}`}><slot /></span>
