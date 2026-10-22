@@ -3,8 +3,8 @@ type: "page"
 slug: "faq"
 title: "FAQ SNI, TKDN, dan BMP"
 description: "Jawaban umum tentang ruang lingkup konsultasi, dokumen persiapan, biaya, durasi, dan batas kewenangan konsultan."
-pubDate: "2026-10-22T00:00:00Z"
-updatedDate: "2026-10-22T00:00:00Z"
+pubDate: "2026-10-22T00:00:05Z"
+updatedDate: "2026-10-22T12:00:05Z"
 draft: false
 status: active
 pageKind: "faq"
