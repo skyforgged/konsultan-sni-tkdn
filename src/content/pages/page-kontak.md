@@ -1,3 +1,4 @@
+---
 id: "page-kontak"
 type: "page"
 slug: "kontak"
