@@ -37,6 +37,8 @@ relatedPages: ["faq", "tentang-kami"]
 relatedArticles: []
 relatedGuides: ["persiapan-sni"]
 order: 10
+draft: false
+status: active
 ---
 ## Apa yang dapat dibantu?
 Ruang lingkup dapat meliputi identifikasi standar, peninjauan awal dokumen produk dan perusahaan, pemetaan kesenjangan, persiapan dokumen pendukung, serta koordinasi kebutuhan pengujian atau asesmen bila termasuk dalam ruang lingkup pekerjaan.
