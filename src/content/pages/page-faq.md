@@ -1,6 +1,6 @@
 ---
 id: 3
-ulid: "01K8SN00000000000000000003"
+ulid: "01M5GEGM00KSB114MD1FK9P4J8"
 type: "page"
 slug: "faq"
 title: "FAQ SNI, TKDN, dan BMP"
