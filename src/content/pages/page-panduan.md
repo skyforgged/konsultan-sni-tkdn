@@ -1,4 +1,3 @@
----
 id: "page-panduan"
 type: "page"
 slug: "panduan"
@@ -17,5 +16,7 @@ relatedServices: ["konsultan-sni", "konsultan-tkdn", "konsultan-bmp"]
 relatedPages: ["faq", "kontak"]
 relatedArticles: ["perbedaan-konsultasi-pengujian-sertifikasi"]
 relatedGuides: ["persiapan-sni", "persiapan-dokumen-tkdn"]
+blocks:
+  - component: "note"
+    text: "Panduan membantu pembaca melakukan langkah yang lebih praktis. Setiap panduan harus tetap diverifikasi untuk produk, pengajuan, dan ketentuan yang spesifik."
 ---
-Panduan membantu pembaca melakukan langkah yang lebih praktis. Setiap panduan harus tetap diverifikasi untuk produk, pengajuan, dan ketentuan yang spesifik.
