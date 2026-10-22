@@ -39,13 +39,8 @@ const services = defineCollection({
   type: 'content',
   schema: base.extend({
     type: z.literal('service').default('service'),
-    eyebrow: z.string(),
-    intro: z.string(),
-    audience: z.array(z.string()).min(1),
-    deliverables: z.array(z.string()).min(1),
     order: z.number().optional(),
-    process: z.array(z.object({ title: z.string(), description: z.string() })).min(3),
-    faqs: z.array(z.object({ question: z.string(), answer: z.string() })).default([]),
+    blocks: z.array(z.object({ component: z.string().min(1), props: z.record(z.any()).optional() }).passthrough()).min(1),
   }),
 });
 
