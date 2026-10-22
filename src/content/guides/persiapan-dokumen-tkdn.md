@@ -1,7 +1,7 @@
 ---
 title: "Cara Menyiapkan Dokumen Awal untuk Konsultasi TKDN"
 description: "Panduan menginventarisasi data produk, komponen, biaya, dan bukti yang berguna sebelum konsultasi awal terkait TKDN."
-publishDate: 2026-10-22
+pubDate: 2026-10-22
 category: "TKDN"
 tags: ["TKDN", "dokumen", "persiapan"]
 author: "Tim Editorial"
@@ -21,6 +21,14 @@ howTo:
       text: "Buat daftar informasi yang perlu dikonfirmasi agar konsultasi berfokus pada kebutuhan nyata."
     - title: "Minta pemeriksaan awal"
       text: "Konsultan dapat meninjau kelengkapan awal dan menjelaskan langkah berikutnya."
+type: "guide"
+slug: "persiapan-dokumen-tkdn"
+updatedDate: 2026-10-22
+socialImage: "/images/og-default.svg"
+relatedServices: ["konsultan-tkdn"]
+relatedPages: ["faq", "kontak"]
+relatedArticles: ["perbedaan-konsultasi-pengujian-sertifikasi"]
+relatedGuides: []
 ---
 ## Mengapa persiapan awal membantu?
 Data yang terorganisasi memudahkan tim memahami bagian yang sudah tersedia, yang belum lengkap, dan pertanyaan yang perlu dijawab.
