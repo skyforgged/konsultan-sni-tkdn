@@ -10,7 +10,9 @@ const requiredFiles = [
   'ChecklistCard.astro','ComparisonTable.astro','DocumentList.astro','ImagePanel.astro','FeatureCardGrid.astro',
   'StatsGrid.astro','SourceLinks.astro','ContactPanel.astro','PageHeaderBlock.astro','HomeHeroBlock.astro',
   'ServiceListBlock.astro','HomeProcessBlock.astro','ArticleListBlock.astro','HomeCtaBlock.astro','NotFoundBlock.astro',
-  'SiteHeader.astro','SiteFooter.astro','ArticlePreviousArticles.astro'
+  'SiteHeader.astro','SiteFooter.astro','ArticlePreviousArticles.astro',
+  'Badge.astro','Button.astro','Dropdown.astro','Modal.astro','ArticleCard.astro','RelatedArticles.astro',
+  'ArticleRelatedArticles.astro','PageUpdatedArticles.astro','TestimonialGrid.astro'
 ];
 const failures = [];
 const registry = await readFile(registryPath, 'utf8');
@@ -24,6 +26,12 @@ for (const filename of requiredFiles) {
 try { await readFile('src/components/PageBlocks.astro', 'utf8'); } catch { failures.push('Komponen halaman wajib tidak ditemukan: src/components/PageBlocks.astro'); }
 const layout = await readFile('src/layouts/BaseLayout.astro', 'utf8');
 if (!layout.includes('SiteHeader.astro') || !layout.includes('SiteFooter.astro')) failures.push('BaseLayout harus menggunakan SiteHeader dan SiteFooter reusable.');
+const sharedUiExamples = ['Badge','Button','Dropdown','Modal','ArticleCard','RelatedArticles','ArticleRelatedArticles','PageUpdatedArticles','TestimonialGrid'];
+for (const name of sharedUiExamples) {
+  const importPattern = new RegExp("import\\s+" + name + "\\s+from\\s+['\\"]\\.\\./components/shared/" + name + "\\.astro['\\"]");
+  if (!importPattern.test(catalog)) failures.push('Katalog harus mengimpor komponen antarmuka ' + name + '.');
+  if (!catalog.includes('<' + name)) failures.push('Komponen antarmuka ' + name + ' harus benar-benar dirender pada katalog.');
+}
 const articleRoute = await readFile('src/pages/artikel/[slug].astro', 'utf8');
 if (!articleRoute.includes('ArticlePreviousArticles.astro')) failures.push('Detail artikel harus menggunakan ArticlePreviousArticles.');
 for (const key of keys) if (!examples.has(key)) failures.push('Komponen registry "' + key + '" belum dipakai pada katalog reusable.');
