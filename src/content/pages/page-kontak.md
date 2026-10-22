@@ -1,4 +1,3 @@
----
 id: "page-kontak"
 type: "page"
 slug: "kontak"
@@ -17,12 +16,14 @@ relatedArticles: ["perbedaan-konsultasi-pengujian-sertifikasi"]
 relatedGuides: ["persiapan-sni", "persiapan-dokumen-tkdn"]
 heroTitle: "Mulai dari kebutuhan perusahaan Anda."
 heroIntro: "Sampaikan gambaran produk atau jasa, tujuan konsultasi, serta data awal yang tersedia."
+blocks:
+  - component: "section"
+    heading: "Informasi awal yang berguna"
+    content:
+      - items:
+          - "Nama dan jenis produk atau jasa."
+          - "Tujuan konsultasi atau pengajuan."
+          - "Gambaran dokumen yang telah tersedia."
+          - "Target waktu internal, jika ada."
+      - text: "Hindari mengirim dokumen rahasia sebelum kanal dan prosedur pertukaran data disepakati."
 ---
-## Informasi awal yang berguna
-
-- Nama dan jenis produk atau jasa.
-- Tujuan konsultasi atau pengajuan.
-- Gambaran dokumen yang telah tersedia.
-- Target waktu internal, jika ada.
-
-Hindari mengirim dokumen rahasia sebelum kanal dan prosedur pertukaran data disepakati.
