@@ -1,4 +1,6 @@
 ---
+id: 9
+ulid: "01K8SN00000000000000000009"
 title: "Konsultan SNI"
 description: "Pendampingan identifikasi standar, pemeriksaan kesiapan produk, dan persiapan dokumen untuk proses sertifikasi SNI sesuai skema relevan."
 pubDate: "2026-10-22T00:00:13Z"

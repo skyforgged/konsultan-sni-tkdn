@@ -1,4 +1,6 @@
 ---
+id: 5
+ulid: "01M5GEGM00GQ0412TASTG0ZDXY"
 type: "page"
 slug: "layanan"
 title: "Layanan Konsultan SNI, TKDN, dan BMP"
