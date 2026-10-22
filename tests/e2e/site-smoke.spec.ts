@@ -68,6 +68,6 @@ test('halaman artikel menggunakan blok komponen, bukan renderer Markdown langsun
   if (await firstArticle.count()) {
     await firstArticle.click();
     await expect(page.locator('.component-article-content .tkdn-block').first()).toBeVisible();
-    await expect(page.locator('.component-article-content')).not.toContainText(/^#{1,6}\\s/m);
+    await expect(page.locator('.component-article-content')).not.toContainText(/^#{1,6}\s/m);
   }
 });
