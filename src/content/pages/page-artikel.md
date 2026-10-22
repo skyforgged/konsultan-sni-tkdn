@@ -1,4 +1,3 @@
----
 id: "page-artikel"
 type: "page"
 slug: "artikel"
@@ -17,5 +16,7 @@ relatedServices: ["konsultan-sni", "konsultan-tkdn", "konsultan-bmp"]
 relatedPages: ["faq", "kontak"]
 relatedArticles: ["perbedaan-konsultasi-pengujian-sertifikasi"]
 relatedGuides: ["persiapan-sni", "persiapan-dokumen-tkdn"]
+blocks:
+  - component: "note"
+    text: "Artikel menjelaskan konsep, konteks, dan pertimbangan. Untuk instruksi yang berurutan dan berorientasi tindakan, lihat bagian Panduan."
 ---
-Artikel menjelaskan konsep, konteks, dan pertimbangan. Untuk instruksi yang berurutan dan berorientasi tindakan, lihat bagian Panduan.
