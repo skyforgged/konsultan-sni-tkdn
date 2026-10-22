@@ -170,6 +170,40 @@ Peluang diferensiasi yang disarankan bukan sekadar mengklaim “terbaik” atau 
 
 Setiap halaman layanan idealnya memiliki: siapa yang membutuhkan layanan, masalah yang diselesaikan, cakupan pekerjaan, data/dokumen awal, tahapan proses, keluaran yang diterima klien, faktor yang memengaruhi waktu/biaya, batas kewenangan konsultan, FAQ, dan CTA.
 
+### Bedakan struktur halaman dengan menu utama
+
+Daftar di atas adalah **arsitektur halaman yang direkomendasikan**, bukan berarti semua item wajib tampil sebagai menu utama. Menu utama sebaiknya ringkas dan mengutamakan kebutuhan pengunjung. Halaman yang penting untuk SEO atau mendukung konversi tetap dapat diakses melalui tautan internal, submenu, footer, atau CTA tanpa memenuhi navigasi utama.
+
+Rekomendasi menu utama untuk tahap awal:
+
+- **Beranda** — ringkasan layanan, keunggulan, gambaran proses kerja, dan CTA konsultasi.
+- **Layanan** — halaman utama layanan beserta halaman turunan SNI, TKDN, BMP, dan layanan terpadu.
+- **Artikel & Panduan** — pusat konten edukasi yang dapat dipilah berdasarkan jenis konten.
+- **Tentang Kami** — profil, kompetensi, cara kerja, serta batas ruang lingkup layanan.
+- **Kontak / Konsultasi** — kanal untuk menghubungi konsultan.
+
+**Proses Kerja** tidak harus menjadi menu utama tersendiri. Untuk tahap awal, tampilkan ringkasan alur di Beranda dan penjelasan lebih lengkap di Tentang Kami atau halaman layanan. Buat halaman khusus seperti `/proses-kerja/` jika uraian proses cukup mendalam dan memang membantu calon klien memahami tahapan, keluaran, tanggung jawab, serta faktor waktu/biaya.
+
+### Bedakan Artikel dengan Panduan
+
+Artikel dan Panduan dapat berada dalam satu pusat konten, tetapi dibedakan berdasarkan tujuan dan maksud pencarian pengunjung:
+
+| Aspek | Artikel | Panduan |
+|---|---|---|
+| Tujuan | Memberi wawasan, penjelasan, analisis, atau konteks | Membantu pembaca menyelesaikan tugas atau mengikuti proses |
+| Bentuk | Fleksibel, mengikuti topik | Terstruktur, berurutan, dan berorientasi tindakan |
+| Contoh | “Apa Itu TKDN dan Mengapa Penting bagi Perusahaan?”; “Perbedaan TKDN dan BMP” | “Persiapan Dokumen Awal untuk Konsultasi TKDN”; “Langkah Pemeriksaan Kesiapan Sertifikasi SNI” |
+| Kebutuhan pembaca | Ingin memahami suatu topik | Ingin mengetahui apa yang harus dilakukan dan dalam urutan apa |
+
+Contoh URL:
+
+- `/artikel/apa-itu-tkdn/`
+- `/artikel/perbedaan-tkdn-dan-bmp/`
+- `/panduan/persiapan-dokumen-tkdn/`
+- `/panduan/proses-sertifikasi-sni/`
+
+**Rekomendasi:** mulai dengan satu menu **Artikel & Panduan**, lalu bedakan jenis konten melalui kategori, label, atau filter dan struktur URL yang konsisten. Pisahkan menjadi dua menu utama hanya jika jumlah konten dan kebutuhan pengguna sudah cukup besar untuk membenarkannya. Panduan secara konseptual merupakan konten yang lebih spesifik dan praktis; jangan membuat artikel dan panduan terpisah jika keduanya hanya mengulang jawaban atas maksud pencarian yang sama. Satu halaman yang lengkap dan bermanfaat lebih baik daripada dua halaman yang saling bersaing.
+
 ## 7. Prioritas implementasi konten
 
 ### Tahap 1 — Halaman inti
