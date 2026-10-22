@@ -1,4 +1,3 @@
----
 id: "page-home"
 type: "page"
 slug: "home"
@@ -49,5 +48,8 @@ relatedServices: ["konsultan-sni", "konsultan-tkdn", "konsultan-bmp", "layanan-t
 relatedPages: ["tentang-kami", "kontak", "faq"]
 relatedArticles: ["perbedaan-konsultasi-pengujian-sertifikasi"]
 relatedGuides: ["persiapan-sni", "persiapan-dokumen-tkdn"]
+blocks:
+  - component: "note"
+    heading: "Jelajahi informasi lebih lanjut"
+    text: "Beranda memperkenalkan layanan, pendekatan kerja, dan jalur menuju informasi lebih rinci. Gunakan tautan layanan dan konten terkait untuk menemukan langkah yang relevan dengan kebutuhan perusahaan."
 ---
-Beranda memperkenalkan layanan, pendekatan kerja, dan jalur menuju informasi lebih rinci. Gunakan tautan layanan dan konten terkait untuk menemukan langkah yang relevan dengan kebutuhan perusahaan.
