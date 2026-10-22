@@ -24,12 +24,12 @@ if (!htmlFiles.length) failures.push('Tidak ada halaman HTML di dist/.');
 
 for (const page of htmlByRoute.values()) {
   const {html, relative} = page;
-  const titleTags = [...html.matchAll(/<title\\b[^>]*>([\\s\\S]*?)<\\/title>/gi)];
+  const titleTags = [...html.matchAll(/<title\b[^>]*>([\s\S]*?)<\/title>/gi)];
   if (titleTags.length !== 1) failures.push(`${relative}: harus memiliki tepat satu <title>, ditemukan ${titleTags.length}`);
   const title = decode(titleTags[0]?.[1]?.replace(/<[^>]*>/g, '') ?? '').trim();
   if (!title) failures.push(`${relative}: title kosong`);
 
-  const tags = [...html.matchAll(/<meta\\b[^>]*>/gi)].map(match => match[0]);
+  const tags = [...html.matchAll(/<meta\b[^>]*>/gi)].map(match => match[0]);
   const meta = (key, value) => tags.filter(tag => attr(tag, key)?.toLowerCase() === value.toLowerCase());
   const robots = meta('name', 'robots').map(tag => attr(tag, 'content') || '').join(' ').toLowerCase();
   const noindex = robots.includes('noindex');
@@ -38,12 +38,12 @@ for (const page of htmlByRoute.values()) {
   const description = decode(attr(descriptions[0] || '', 'content') || '').trim();
   if (!description) failures.push(`${relative}: meta description kosong`);
   if (description && !noindex) {
-    const key = description.replace(/\\s+/g, ' ').toLocaleLowerCase('id-ID');
+    const key = description.replace(/\s+/g, ' ').toLocaleLowerCase('id-ID');
     if (descriptionOwners.has(key)) failures.push(`${relative}: meta description duplikat dengan ${descriptionOwners.get(key)}`);
     else descriptionOwners.set(key, relative);
   }
 
-  const canonicals = [...html.matchAll(/<link\\b[^>]*>/gi)].map(m=>m[0]).filter(tag => (attr(tag,'rel')||'').toLowerCase().split(/\\s+/).includes('canonical'));
+  const canonicals = [...html.matchAll(/<link\b[^>]*>/gi)].map(m=>m[0]).filter(tag => (attr(tag,'rel')||'').toLowerCase().split(/\s+/).includes('canonical'));
   if (noindex && canonicals.length) failures.push(`${relative}: halaman noindex tidak boleh memiliki canonical`);
   if (!noindex && canonicals.length !== 1) failures.push(`${relative}: halaman indexable harus memiliki tepat satu canonical, ditemukan ${canonicals.length}`);
   const canonical = attr(canonicals[0] || '', 'href');
@@ -78,16 +78,16 @@ for (const page of htmlByRoute.values()) {
   if (description && ogDescription && description !== decode(ogDescription)) failures.push(`${relative}: og:description tidak konsisten dengan description`);
   if (description && twitterDescription && description !== decode(twitterDescription)) failures.push(`${relative}: twitter:description tidak konsisten dengan description`);
   if (ogImage && twitterImage && ogImage !== twitterImage) failures.push(`${relative}: twitter:image tidak sama dengan og:image`);
-  if (ogImage && !/\\.(png|jpe?g|webp|gif)(?:[?#].*)?$/i.test(ogImage)) failures.push(`${relative}: og:image harus berupa gambar raster: ${ogImage}`);
+  if (ogImage && !/\.(png|jpe?g|webp|gif)(?:[?#].*)?$/i.test(ogImage)) failures.push(`${relative}: og:image harus berupa gambar raster: ${ogImage}`);
   if (ogImage) await checkPublicAsset(ogImage, canonical, relative, 'og:image');
 
   const ids = new Set();
-  for (const match of html.matchAll(/\\bid=["']([^"']+)["']/gi)) {
+  for (const match of html.matchAll(/\bid=["']([^"']+)["']/gi)) {
     if (ids.has(match[1])) failures.push(`${relative}: ID HTML duplikat "${match[1]}"`);
     ids.add(match[1]);
   }
 
-  for (const match of html.matchAll(/<img\\b([^>]*)>/gi)) {
+  for (const match of html.matchAll(/<img\b([^>]*)>/gi)) {
     imageCount++;
     const attributes = match[1];
     const alt = attr(attributes, 'alt');
@@ -98,7 +98,7 @@ for (const page of htmlByRoute.values()) {
     else await checkPublicAsset(src, canonical, relative, 'img src');
   }
 
-  for (const block of html.matchAll(/<script\\b[^>]*type=["']application\\/ld\\+json["'][^>]*>([\\s\\S]*?)<\\/script>/gi)) {
+  for (const block of html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)) {
     try {
       const data = JSON.parse(block[1]);
       jsonLdChecked++;
@@ -109,9 +109,9 @@ for (const page of htmlByRoute.values()) {
 
 for (const page of htmlByRoute.values()) {
   const {html, relative, route} = page;
-  for (const match of html.matchAll(/\\bhref=["']([^"']+)["']/gi)) {
+  for (const match of html.matchAll(/\bhref=["']([^"']+)["']/gi)) {
     const href = decode(match[1].trim());
-    if (!href || /^(?:https?:|mailto:|tel:|sms:|javascript:|data:|\\/\\/)/i.test(href)) {
+    if (!href || /^(?:https?:|mailto:|tel:|sms:|javascript:|data:|\/\/)/i.test(href)) {
       if (/^(?:javascript|data):/i.test(href)) failures.push(`${relative}: skema URL berbahaya: ${href}`);
       continue;
     }
@@ -126,7 +126,7 @@ for (const page of htmlByRoute.values()) {
       continue;
     }
     if (fragment) {
-      const targetIds = new Set([...target.html.matchAll(/\\bid=["']([^"']+)["']/gi)].map(m=>m[1]));
+      const targetIds = new Set([...target.html.matchAll(/\bid=["']([^"']+)["']/gi)].map(m=>m[1]));
       let decodedFragment = fragment;
       try { decodedFragment = decodeURIComponent(fragment); } catch {}
       if (!targetIds.has(decodedFragment)) failures.push(`${relative}: fragment #${decodedFragment} tidak ditemukan di ${target.relative}`);
@@ -140,13 +140,13 @@ if (!await isFile(robotsPath)) failures.push('robots.txt tidak ditemukan pada ou
 if (!await isFile(sitemapPath)) failures.push('sitemap.xml tidak ditemukan pada output build');
 if (await isFile(robotsPath)) {
   const robots = await readFile(robotsPath,'utf8');
-  const directives = [...robots.matchAll(/^Sitemap:\\s*(\\S+)\\s*$/gim)];
+  const directives = [...robots.matchAll(/^Sitemap:\s*(\S+)\s*$/gim)];
   if (directives.length !== 1) failures.push(`robots.txt harus memuat tepat satu deklarasi Sitemap, ditemukan ${directives.length}`);
   for (const [,url] of directives) if (!absoluteHttp(url)) failures.push(`URL Sitemap pada robots.txt tidak valid: ${url}`);
 }
 if (await isFile(sitemapPath)) {
   const sitemap = await readFile(sitemapPath,'utf8');
-  const locations = [...sitemap.matchAll(/<loc>([\\s\\S]*?)<\\/loc>/gi)].map(m=>decodeXml(m[1].trim()));
+  const locations = [...sitemap.matchAll(/<loc>([\s\S]*?)<\/loc>/gi)].map(m=>decodeXml(m[1].trim()));
   if (!sitemap.includes('<urlset') || !sitemap.includes('</urlset>')) failures.push('sitemap.xml tidak memiliki struktur urlset yang valid');
   if (!locations.length) failures.push('sitemap.xml tidak memiliki URL');
   const seen = new Set();
@@ -183,12 +183,12 @@ function normalizeRoute(value) {
   let pathname = value || '/';
   try { pathname = decodeURIComponent(pathname); } catch {}
   if (pathname.endsWith('/')) return pathname;
-  if (/\\.[a-z0-9]{2,8}$/i.test(pathname)) return pathname;
+  if (/\.[a-z0-9]{2,8}$/i.test(pathname)) return pathname;
   return pathname + '/';
 }
 function attr(tag,name) {
   if (!tag) return null;
-  const pattern = /([^\\s=]+)\\s*=\\s*(?:"([^"]*)"|'([^']*)'|([^\\s>]+))/g;
+  const pattern = /([^\s=]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/g;
   for (const match of tag.matchAll(pattern)) {
     if (match[1].toLowerCase() === name.toLowerCase()) return match[2] ?? match[3] ?? match[4] ?? '';
   }
