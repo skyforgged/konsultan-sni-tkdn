@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import {getCollection,getEntry} from 'astro:content';
-const home = await getEntry('pages','home');
+const home = await getEntry('pages','home.md');
 if (!home) throw new Error('Missing frontmatter source: src/content/pages/home.md');
 const pageData = home.data;
 const serviceEntries = (await getCollection('services',({data})=>!data.draft && data.status==='active')).sort((a,b)=>(a.data.order??999)-(b.data.order??999));
