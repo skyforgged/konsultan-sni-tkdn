@@ -1,0 +1,9 @@
+---
+/** Accessible action control styled for the TKDN forest/lime design. */
+const { href, variant = 'primary', size = 'md', disabled = false, type = 'button', target, rel } = Astro.props;
+const classes = `tkdn-button tkdn-button--${variant} tkdn-button--${size}`;
+---
+{href ? <a href={href} class={classes} target={target} rel={rel}><slot /></a> : <button type={type} disabled={disabled} class={classes}><slot /></button>}
+<style>
+.tkdn-button{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:1px solid var(--forest);border-radius:999px;font:700 .9rem/1.3 'DM Sans',sans-serif;text-decoration:none;cursor:pointer;transition:transform .2s,background .2s}.tkdn-button:hover{transform:translateY(-2px)}.tkdn-button:focus-visible{outline:3px solid #c18b45;outline-offset:3px}.tkdn-button:disabled{opacity:.55;cursor:not-allowed;transform:none}.tkdn-button--primary{background:var(--forest);color:white}.tkdn-button--secondary{background:#e8ede7;color:var(--ink);border-color:var(--line)}.tkdn-button--ghost{background:transparent;color:var(--forest);border-color:transparent}.tkdn-button--outline{background:transparent;color:var(--forest)}.tkdn-button--sm{padding:.5rem .85rem;font-size:.78rem}.tkdn-button--md{padding:.75rem 1.15rem}.tkdn-button--lg{padding:1rem 1.4rem;font-size:1rem}
+</style>

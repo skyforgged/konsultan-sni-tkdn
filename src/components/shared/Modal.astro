@@ -1,0 +1,31 @@
+---
+const { id, open = false, title, size = 'md' } = Astro.props;
+const sizeClass = ['sm','md','lg','xl'].includes(size) ? size : 'md';
+---
+<dialog id={id} data-tkdn-modal data-open={open ? 'true' : 'false'} aria-label={title ?? 'Dialog'} class={`tkdn-modal tkdn-modal--${sizeClass}}>
+  <section class="tkdn-modal__panel">
+    <header class="tkdn-modal__header">{title && <h2>{title}</h2>}<form method="dialog"><button type="submit" aria-label="Tutup dialog">×</button></form></header>
+    <div class="tkdn-modal__body"><slot /></div>
+  </section>
+</dialog>
+<script>
+  const bindTkdnModals = () => {
+    document.querySelectorAll<HTMLDialogElement>('[data-tkdn-modal]').forEach((dialog) => {
+      if (dialog.dataset.bound === 'true') return;
+      dialog.dataset.bound = 'true';
+      if (dialog.dataset.open === 'true' && !dialog.open) dialog.showModal();
+      dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+    });
+    document.addEventListener('click', (event) => {
+      if (!(event.target instanceof Element)) return;
+      const trigger = event.target.closest<HTMLElement>('[data-modal-open]');
+      const id = trigger?.dataset.modalOpen;
+      const dialog = id ? document.getElementById(id) : null;
+      if (dialog instanceof HTMLDialogElement && dialog.matches('[data-tkdn-modal]') && !dialog.open) dialog.showModal();
+    });
+  };
+  bindTkdnModals();
+</script>
+<style>
+.tkdn-modal{margin:auto;width:min(calc(100% - 2rem),42rem);max-height:85vh;padding:0;border:0;border-radius:1.25rem;background:transparent;color:var(--ink)}.tkdn-modal::backdrop{background:rgb(10 35 27 / .65);backdrop-filter:blur(3px)}.tkdn-modal--sm{max-width:24rem}.tkdn-modal--md{max-width:32rem}.tkdn-modal--lg{max-width:42rem}.tkdn-modal--xl{max-width:52rem}.tkdn-modal__panel{max-height:85vh;overflow:auto;border:1px solid var(--line);border-radius:1.25rem;background:white;box-shadow:var(--shadow)}.tkdn-modal__header{display:flex;justify-content:space-between;align-items:start;gap:1rem;padding:1.25rem 1.4rem;border-bottom:1px solid var(--line)}.tkdn-modal__header h2{margin:0;font-size:1.3rem}.tkdn-modal__header button{border:0;border-radius:50%;width:2rem;height:2rem;background:#edf1e7;color:var(--forest);font-size:1.4rem;cursor:pointer}.tkdn-modal__body{padding:1.4rem}
+</style>

@@ -10,8 +10,10 @@ const requiredFiles = [
   'ChecklistCard.astro','ComparisonTable.astro','DocumentList.astro','ImagePanel.astro','FeatureCardGrid.astro',
   'StatsGrid.astro','SourceLinks.astro','ContactPanel.astro','PageHeaderBlock.astro','HomeHeroBlock.astro',
   'ServiceListBlock.astro','HomeProcessBlock.astro','ArticleListBlock.astro','HomeCtaBlock.astro','NotFoundBlock.astro',
-  'SiteHeader.astro','SiteFooter.astro','ArticlePreviousArticles.astro'
+  'SiteHeader.astro','SiteFooter.astro','ArticlePreviousArticles.astro','ArticleCard.astro','ArticleRelatedArticles.astro',
+  'Badge.astro','Button.astro','Dropdown.astro','Modal.astro','PageUpdatedArticles.astro','RelatedArticles.astro','TestimonialGrid.astro'
 ];
+const standaloneComponents = ['ArticleCard','ArticleRelatedArticles','Badge','Button','Dropdown','Modal','PageUpdatedArticles','RelatedArticles','TestimonialGrid'];
 const failures = [];
 const registry = await readFile(registryPath, 'utf8');
 const catalog = await readFile(catalogPath, 'utf8');
@@ -20,6 +22,10 @@ const examples = new Set([...catalog.matchAll(/component:\s*'([^']+)'/g)].map(ma
 for (const filename of requiredFiles) {
   try { await readFile('src/components/shared/' + filename, 'utf8'); }
   catch { failures.push('Komponen bersama wajib tidak ditemukan: src/components/shared/' + filename); }
+}
+for (const name of standaloneComponents) {
+  if (!catalog.includes(`import ${name} from '../components/shared/${name}.astro'`)) failures.push('Katalog tidak mengimpor komponen reusable ' + name + '.');
+  if (!catalog.includes('<' + name + ' ' ) && !catalog.includes('<' + name + '>')) failures.push('Komponen reusable ' + name + ' belum dirender pada katalog.');
 }
 try { await readFile('src/components/PageBlocks.astro', 'utf8'); } catch { failures.push('Komponen halaman wajib tidak ditemukan: src/components/PageBlocks.astro'); }
 const layout = await readFile('src/layouts/BaseLayout.astro', 'utf8');
@@ -30,21 +36,17 @@ for (const key of keys) if (!examples.has(key)) failures.push('Komponen registry
 for (const key of examples) if (!keys.includes(key)) failures.push('Katalog memakai komponen "' + key + '" yang tidak terdaftar pada registry.');
 for (const route of routes) {
   const source = await readFile(route, 'utf8');
-  if (source.includes('render(entry)') || source.includes('await render(entry)') || source.includes('<Content')) {
-    failures.push(route + ': renderer Markdown langsung masih dipakai; gunakan BlockRenderer.');
-  }
+  if (source.includes('render(entry)') || source.includes('await render(entry)') || source.includes('<Content')) failures.push(route + ': renderer Markdown langsung masih dipakai; gunakan BlockRenderer.');
   if (!source.includes('BlockRenderer.astro')) failures.push(route + ': tidak menggunakan BlockRenderer.');
 }
 for (const route of pageRoutes) {
   const source = await readFile(route, 'utf8');
-  if (source.includes('render(entry)') || source.includes('await render(entry)') || source.includes('<Content') || source.includes('{page.body}')) {
-    failures.push(route + ': renderer Markdown langsung masih dipakai; pindahkan isi ke frontmatter blocks dan gunakan PageBlocks.');
-  }
+  if (source.includes('render(entry)') || source.includes('await render(entry)') || source.includes('<Content') || source.includes('{page.body}')) failures.push(route + ': renderer Markdown langsung masih dipakai; pindahkan isi ke frontmatter blocks dan gunakan PageBlocks.');
   if (!source.includes('PageBlocks.astro')) failures.push(route + ': tidak menggunakan PageBlocks untuk konten page frontmatter.');
 }
 if (failures.length) {
-  console.error('Component coverage check failed: ' + failures.length + ' issue(s).\n' + failures.join('\n'));
+  console.error('Component coverage check failed: ' + failures.length + ' issue(s).\\n' + failures.join('\\n'));
   process.exitCode = 1;
 } else {
-  console.log('Component coverage check passed: ' + keys.length + ' registered blocks are demonstrated in the catalog; all required shared component files exist; article, guide, and service routes use BlockRenderer instead of Astro Markdown Content.');
+  console.log('Component coverage check passed: ' + keys.length + ' registered content blocks plus ' + standaloneComponents.length + ' shared UI components are demonstrated; all required shared component files exist; content routes use reusable renderers.');
 }

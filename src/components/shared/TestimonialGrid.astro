@@ -1,0 +1,15 @@
+---
+/** Use real, permissioned testimonials only; the catalog explicitly labels its data as simulation. */
+const { id = 'testimoni', title = 'Pengalaman klien', items = [], illustrative = false } = Astro.props;
+---
+<section id={id} class="tkdn-testimonials" aria-labelledby={`${id}-title`}>
+  <div class="container">
+    <p class="section-kicker">{illustrative ? 'CONTOH KOMPONEN' : 'PENGALAMAN KLIEN'}</p>
+    <h2 id={`${id}-title`}>{title}</h2>
+    {illustrative && <p class="tkdn-testimonials__notice">Konten berikut adalah simulasi tampilan, bukan testimoni klien nyata.</p>}
+    <div class="tkdn-testimonials__grid">
+      {items.map(item => <figure><blockquote>“{item.quote}”</blockquote><figcaption><strong>{item.name}</strong><span>{item.industry}</span></figcaption></figure>)}
+    </div>
+  </div>
+</section>
+<style>.tkdn-testimonials{padding:3rem 0;background:#edf1e7}.tkdn-testimonials h2{max-width:48rem}.tkdn-testimonials__notice{color:var(--muted);font-size:.85rem}.tkdn-testimonials__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:1rem;margin-top:1.5rem}.tkdn-testimonials figure{margin:0;padding:1.4rem;border:1px solid var(--line);border-radius:1rem;background:white}.tkdn-testimonials blockquote{margin:0 0 1rem;color:var(--muted);font-style:italic}.tkdn-testimonials figcaption{display:grid;gap:.2rem}.tkdn-testimonials figcaption strong{color:var(--forest)}.tkdn-testimonials figcaption span{color:var(--muted);font-size:.8rem}</style>

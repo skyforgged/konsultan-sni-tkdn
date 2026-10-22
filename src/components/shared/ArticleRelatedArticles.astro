@@ -1,0 +1,10 @@
+---
+import ArticleCard from './ArticleCard.astro';
+const { articles = [], relatedIds = [], heading = 'Artikel terkait' } = Astro.props;
+const selected = relatedIds.map((id) => articles.find((article) => String(article.data?.id ?? article.id ?? article.data?.slug) === String(id))).filter(Boolean);
+---
+{selected.length > 0 && <section class="tkdn-related" aria-label={heading}>
+  <h2 class="tkdn-block__title">{heading}</h2>
+  <div class="tkdn-related__grid">{selected.map((article) => <ArticleCard article={article} />)}</div>
+</section>}
+<style>.tkdn-related{margin:2rem 0}.tkdn-related__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:1rem}</style>

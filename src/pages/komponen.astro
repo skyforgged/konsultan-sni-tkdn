@@ -1,6 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlockRenderer from '../components/blocks/BlockRenderer.astro';
+import ArticleCard from '../components/shared/ArticleCard.astro';
+import ArticleRelatedArticles from '../components/shared/ArticleRelatedArticles.astro';
+import Badge from '../components/shared/Badge.astro';
+import Button from '../components/shared/Button.astro';
+import Dropdown from '../components/shared/Dropdown.astro';
+import Modal from '../components/shared/Modal.astro';
+import PageUpdatedArticles from '../components/shared/PageUpdatedArticles.astro';
+import RelatedArticles from '../components/shared/RelatedArticles.astro';
+import TestimonialGrid from '../components/shared/TestimonialGrid.astro';
 const examples = [
   {component:'card',heading:'Kartu informasi',text:'Ringkasan informasi penting disajikan dalam kartu yang konsisten.'},
   {component:'faq',heading:'Pertanyaan umum',items:[{question:'Apa fungsi komponen FAQ?',answer:'Menampilkan pertanyaan dan jawaban yang relevan.'}]},
@@ -29,8 +38,26 @@ const examples = [
   {component:'home-cta',heading:'Mulai dengan konsultasi',text:'Tentukan langkah berikutnya berdasarkan kondisi produk dan perusahaan.',ctaHref:'/kontak/',ctaLabel:'Konsultasi'},
   {component:'not-found',heading:'Konten tidak ditemukan',text:'Kembali ke halaman utama atau jelajahi layanan kami.',ctaHref:'/',ctaLabel:'Kembali ke beranda'}
 ];
+const sampleArticles = [
+  {id:'demo-1',slug:'perbedaan-konsultasi-pengujian-sertifikasi',data:{id:'demo-1',slug:'perbedaan-konsultasi-pengujian-sertifikasi',title:'Perbedaan konsultasi, pengujian, dan sertifikasi',description:'Contoh ringkasan artikel untuk memeriksa kartu artikel reusable.',category:'SNI',pubDate:new Date('2026-10-22T00:00:01Z')}},
+  {id:'demo-2',slug:'perbedaan-konsultasi-pengujian-sertifikasi',data:{id:'demo-2',slug:'perbedaan-konsultasi-pengujian-sertifikasi',title:'Persiapan awal sertifikasi SNI',description:'Contoh artikel terkait untuk menguji pemilihan artikel berdasarkan ID.',category:'Panduan',pubDate:new Date('2026-10-22T00:00:03Z')}}
+];
 ---
 <BaseLayout title="Katalog Komponen" description="Katalog internal untuk verifikasi semua komponen konten reusable Konsultan SNI–TKDN." noindex={true}>
-  <section class="content-hero"><div class="container"><p class="section-kicker">INTERNAL QUALITY CHECK</p><h1>Katalog Komponen Reusable</h1><p class="lead">Halaman verifikasi: seluruh komponen dari arsitektur konsultan-slf dirender dengan gaya visual Konsultan SNI–TKDN.</p><p><strong>{examples.length} komponen konten</strong> diuji melalui renderer yang sama dengan artikel dan panduan.</p></div></section>
+  <section class="content-hero"><div class="container"><p class="section-kicker">INTERNAL QUALITY CHECK</p><h1>Katalog Komponen Reusable</h1><p class="lead">Seluruh komponen konsultan-slf dipertahankan dengan nama file yang sama dan gaya visual forest/lime Konsultan SNI–TKDN.</p><p><strong>{examples.length + 9} jenis komponen</strong> diuji di halaman ini. Data testimoni hanya simulasi.</p></div></section>
   <section class="section"><div class="container component-catalog">{examples.map(block=><BlockRenderer block={block}/>)}</div></section>
+  <section class="section section-white"><div class="container">
+    <p class="section-kicker">SHARED UI COMPONENTS</p><h2>Komponen antarmuka reusable</h2>
+    <div class="component-catalog__row"><Badge variant="primary">SNI</Badge><Badge variant="success" size="sm">Dokumen siap ditinjau</Badge><Badge variant="warning">Perlu verifikasi</Badge><Badge variant="info">Informasi</Badge></div>
+    <div class="component-catalog__row"><Button href="/kontak/">Hubungi konsultan</Button><Button href="/layanan/" variant="outline">Lihat layanan</Button><Button variant="secondary" size="sm">Aksi sekunder</Button></div>
+    <div class="component-catalog__row"><Dropdown label="Navigasi tambahan"><a href="/artikel/">Artikel</a><a href="/panduan/">Panduan</a><a href="/faq/">FAQ</a></Dropdown><button class="button button-outline" type="button" data-modal-open="tkdn-component-demo-modal">Buka modal contoh</button></div>
+    <Modal id="tkdn-component-demo-modal" title="Modal komponen reusable" size="md"><p>Modal native dialog untuk menampilkan informasi tambahan tanpa meninggalkan halaman.</p><p class="small-note">Tekan tombol tutup atau klik area gelap untuk menutup dialog.</p></Modal>
+    <div class="component-catalog__row"><ArticleCard article={sampleArticles[0]} /><ArticleRelatedArticles articles={sampleArticles} relatedIds={['demo-2']} heading="Artikel yang dipilih berdasarkan ID" /></div>
+    <RelatedArticles heading="Rujukan yang relevan" items={[{title:'Layanan konsultasi SNI',href:'/layanan/konsultan-sni/',description:'Informasi layanan pendampingan SNI.'},{title:'Pertanyaan umum',href:'/faq/',description:'Jawaban awal sebelum konsultasi.'}]} />
+  </div></section>
+  <PageUpdatedArticles heading="Artikel terbaru (data aktual)" description="Komponen ini mengambil artikel aktif dari koleksi konten, bukan data contoh." limit={3} />
+  <TestimonialGrid id="testimoni-demo" title="Contoh tampilan testimoni" illustrative={true} items={[{quote:'Alur kerja ditampilkan secara bertahap dan mudah dipahami.',name:'Contoh nama (simulasi)',industry:'Contoh perusahaan'}]} />
 </BaseLayout>
+<style>
+.component-catalog__row{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem;margin:1.2rem 0}.component-catalog__row>article,.component-catalog__row>section{flex:1 1 270px;min-width:0}
+</style>

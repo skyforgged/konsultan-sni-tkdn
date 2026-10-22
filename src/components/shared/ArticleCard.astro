@@ -1,0 +1,21 @@
+---
+/** ArticleCard: reusable article summary card; matches the TKDN content schema. */
+const { article, headingLevel = 3 } = Astro.props;
+const Heading = headingLevel === 2 ? 'h2' : 'h3';
+const data = article?.data ?? article ?? {};
+const slug = data.slug ?? article?.id?.replace(/\.md$/, '') ?? '';
+const href = `/artikel/${slug}/`;
+const date = data.pubDate instanceof Date ? data.pubDate : data.pubDate ? new Date(data.pubDate) : null;
+---
+<article class="tkdn-block tkdn-article-card">
+  {data.category && <p class="tkdn-block__eyebrow">{data.category}</p>}
+  <Heading class="tkdn-block__title"><a href={href}>{data.title ?? 'Artikel SNI–TKDN'}</a></Heading>
+  <p class="tkdn-article-card__description">{data.description ?? ''}</p>
+  <div class="tkdn-article-card__meta">
+    {date && !Number.isNaN(date.valueOf()) && <time datetime={date.toISOString()}>{date.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric',timeZone:'Asia/Jakarta'})}</time>}
+    <a href={href}>Baca artikel <span aria-hidden="true">→</span></a>
+  </div>
+</article>
+<style>
+.tkdn-article-card{display:flex;flex-direction:column;min-height:100%;margin:0;transition:transform .2s,border-color .2s}.tkdn-article-card:hover{transform:translateY(-3px);border-color:#9caf9d}.tkdn-article-card__description{color:var(--muted);font-size:.94rem;line-height:1.75;flex:1}.tkdn-article-card__meta{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding-top:1rem;border-top:1px solid var(--line);font-size:.78rem;color:var(--muted)}.tkdn-article-card__meta a{font-weight:800;color:var(--forest)}
+</style>

@@ -1,0 +1,15 @@
+---
+import { getCollection } from 'astro:content';
+import ArticleCard from './ArticleCard.astro';
+const { heading = 'Artikel terbaru', description = 'Wawasan dan panduan seputar persiapan SNI, TKDN, dan BMP.', limit = 3 } = Astro.props;
+const articles = (await getCollection('articles', ({ data }) => !data.draft && data.status === 'active'))
+  .sort((a, b) => (b.data.updatedDate ?? b.data.pubDate).valueOf() - (a.data.updatedDate ?? a.data.pubDate).valueOf())
+  .slice(0, limit);
+---
+<section class="tkdn-updated section">
+  <div class="container">
+    <div class="tkdn-updated__intro"><div><p class="section-kicker">PENGETAHUAN</p><h2>{heading}</h2><p>{description}</p></div><a class="button button-outline" href="/artikel/">Semua artikel →</a></div>
+    {articles.length ? <div class="tkdn-updated__grid">{articles.map(article => <ArticleCard article={article} />)}</div> : <p class="empty-state">Artikel baru akan ditampilkan di sini.</p>}
+  </div>
+</section>
+<style>.tkdn-updated__intro{display:flex;align-items:end;justify-content:space-between;gap:2rem;margin-bottom:2rem}.tkdn-updated__intro>div{max-width:44rem}.tkdn-updated__intro p:not(.section-kicker){color:var(--muted)}.tkdn-updated__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:1rem}@media(max-width:650px){.tkdn-updated__intro{align-items:start;flex-direction:column}}</style>
