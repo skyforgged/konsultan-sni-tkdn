@@ -15,9 +15,7 @@ const base = z.object({
   slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/).optional(),
   title: z.string().min(3),
   description: z.string().min(30).max(180),
-  pubDate: z.coerce.date().optional(),
-  // Backward compatibility for existing entries; new entries should use pubDate.
-  publishDate: z.coerce.date().optional(),
+  pubDate: z.coerce.date(),
   updatedDate: z.coerce.date().optional(),
   draft: z.boolean().default(false),
   status: z.enum(['active', 'inactive', 'archived']).default('active'),
@@ -39,6 +37,7 @@ const services = defineCollection({
     intro: z.string(),
     audience: z.array(z.string()).min(1),
     deliverables: z.array(z.string()).min(1),
+    order: z.number().optional(),
     process: z.array(z.object({ title: z.string(), description: z.string() })).min(3),
     faqs: z.array(z.object({ question: z.string(), answer: z.string() })).default([]),
   }),
