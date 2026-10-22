@@ -105,21 +105,21 @@ if (errors.length) {
 }
 
 function scalar(frontmatter, key) {
-  const match = frontmatter.match(new RegExp('^' + key + ':\\\\s*(.*?)\\\\s*$', 'm'));
-  if (!match) return undefined;
-  return unquote(match[1].trim());
+  const line = frontmatter.split(/\\r?\\n/).find(item => item.startsWith(key + ':'));
+  if (!line) return undefined;
+  return unquote(line.slice(key.length + 1).trim());
 }
 function arrayField(frontmatter, key) {
-  const match = frontmatter.match(new RegExp('^' + key + ':\\\\s*(.*)$', 'm'));
-  if (!match) return [];
-  const value = match[1].trim();
+  const lines = frontmatter.split(/\\r?\\n/);
+  const index = lines.findIndex(line => line.startsWith(key + ':'));
+  if (index < 0) return [];
+  const value = lines[index].slice(key.length + 1).trim();
   if (value.startsWith('[')) return [...value.matchAll(/["']([^"']+)["']/g)].map(item => item[1]);
   const result = [];
-  const lines = frontmatter.slice(match.index + match[0].length).split(/\\r?\\n/);
-  for (const line of lines) {
+  for (const line of lines.slice(index + 1)) {
     if (/^\\S/.test(line)) break;
-    const item = line.match(/^\\s+-\\s*["']?([^"'\\s].*?)["']?\\s*$/);
-    if (item) result.push(item[1]);
+    const item = line.match(/^\\s+-\\s*["']?(.+?)["']?\\s*$/);
+    if (item) result.push(unquote(item[1].trim()));
   }
   return result;
 }
