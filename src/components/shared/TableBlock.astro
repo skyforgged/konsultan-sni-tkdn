@@ -1,4 +1,16 @@
 ---
-import BlockShell from './BlockShell.astro';
+const props = Astro.props;
+const heading = props.heading ?? props.title;
+const rows = props.rows ?? [];
+const headers = props.headers ?? (props.content?.[0]?.heading ? props.content[0].heading.split(' · ') : []);
+const cells = (row: any) => Array.isArray(row) ? row : [row.title ?? row.name ?? '', ...(row.text ? String(row.text).split(' · ') : [])];
 ---
-<BlockShell kind="table" {...Astro.props} />
+<section class="tkdn-block tkdn-block--table" id={props.id}>
+  {heading && <h2 class="tkdn-block__title">{heading}</h2>}
+  {props.description && <p class="tkdn-block__intro">{props.description}</p>}
+  <div class="tkdn-table-wrap"><table class="tkdn-table">
+    {headers.length > 0 && <thead><tr>{headers.map((header: string) => <th scope="col">{header}</th>)}</tr></thead>}
+    <tbody>{rows.map((row: any) => <tr>{cells(row).map((cell: string) => <td>{cell}</td>)}</tr>)}</tbody>
+  </table></div>
+  {props.note && <p class="tkdn-block__intro">{props.note}</p>}
+</section>
