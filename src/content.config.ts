@@ -14,8 +14,14 @@ const base = z.object({
   type: z.enum(['page', 'service', 'article', 'guide', 'faq']).optional(),
   title: z.string().min(3),
   description: z.string().min(30).max(180),
-  pubDate: z.coerce.date(),
-  updatedDate: z.coerce.date(),
+  pubDate: z.string()
+    .regex(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/, 'pubDate harus ISO 8601 UTC lengkap sampai detik, berakhiran Z')
+    .refine((value) => !Number.isNaN(Date.parse(value)), 'pubDate harus berupa tanggal yang valid')
+    .transform((value) => new Date(value)),
+  updatedDate: z.string()
+    .regex(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/, 'updatedDate harus ISO 8601 UTC lengkap sampai detik, berakhiran Z')
+    .refine((value) => !Number.isNaN(Date.parse(value)), 'updatedDate harus berupa tanggal yang valid')
+    .transform((value) => new Date(value)),
   draft: z.boolean().default(false),
   status: z.enum(['active', 'inactive', 'archived']).default('active'),
   navLabel: z.string().optional(),
