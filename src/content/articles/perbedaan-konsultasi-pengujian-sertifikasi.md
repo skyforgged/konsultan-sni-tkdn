@@ -13,6 +13,8 @@ relatedServices: ["konsultan-sni"]
 relatedPages: ["faq", "kontak"]
 relatedArticles: []
 relatedGuides: ["persiapan-sni"]
+draft: false
+status: active
 ---
 ## Mengapa ketiganya perlu dibedakan?
 Dalam persiapan sertifikasi produk, konsultasi, pengujian, dan sertifikasi memiliki tujuan serta kewenangan yang berbeda.
