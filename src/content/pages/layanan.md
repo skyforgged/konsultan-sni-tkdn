@@ -3,8 +3,8 @@ type: "page"
 slug: "layanan"
 title: "Layanan Konsultan SNI, TKDN, dan BMP"
 description: "Jelajahi layanan konsultasi dan pendampingan persiapan SNI, TKDN, dan BMP sesuai kebutuhan serta ketentuan yang berlaku."
-pubDate: "2026-10-22T00:00:00Z"
-updatedDate: "2026-10-22T00:00:00Z"
+pubDate: "2026-10-22T00:00:08Z"
+updatedDate: "2026-10-22T12:00:08Z"
 draft: false
 status: active
 pageKind: "listing"
