@@ -1,4 +1,6 @@
 ---
+id: 2
+ulid: "01K8SN00000000000000000002"
 type: "page"
 slug: "artikel"
 title: "Artikel SNI, TKDN, dan BMP"
