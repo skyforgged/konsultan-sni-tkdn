@@ -9,7 +9,7 @@ intro: "Ketika perusahaan menghadapi beberapa kebutuhan sekaligus, langkah perta
 tags: ["SNI","TKDN","BMP","konsultasi terpadu"]
 type: "service"
 slug: "layanan-terpadu"
-updatedDate: "2026-10-22T12:00:15Z"
+updatedDate: "2026-10-23T12:00:15Z"
 socialImage: "/images/og-default.svg"
 relatedServices: ["konsultan-sni", "konsultan-tkdn", "konsultan-bmp"]
 relatedPages: ["faq", "kontak"]
