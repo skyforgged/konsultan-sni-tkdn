@@ -1,7 +1,7 @@
 ---
 title: "Panduan Awal Persiapan Sertifikasi SNI"
 description: "Langkah awal menginventarisasi informasi produk, spesifikasi, dan dokumen sebelum meninjau kesiapan sertifikasi SNI."
-publishDate: 2026-10-22
+pubDate: 2026-10-22
 category: "SNI"
 tags: ["SNI", "sertifikasi", "persiapan"]
 author: "Tim Editorial"
@@ -21,6 +21,14 @@ howTo:
       text: "Tandai dokumen yang belum tersedia dan hal yang perlu dikonfirmasi."
     - title: "Diskusikan langkah berikutnya"
       text: "Tinjau kesiapan awal sebelum memutuskan kebutuhan pengujian atau sertifikasi."
+type: "guide"
+slug: "persiapan-sni"
+updatedDate: 2026-10-22
+socialImage: "/images/og-default.svg"
+relatedServices: ["konsultan-sni"]
+relatedPages: ["faq", "kontak"]
+relatedArticles: ["perbedaan-konsultasi-pengujian-sertifikasi"]
+relatedGuides: []
 ---
 ## Informasi awal
 Persiapan dapat dimulai dari informasi produk, spesifikasi, proses produksi, dan dokumen perusahaan yang telah dimiliki.
