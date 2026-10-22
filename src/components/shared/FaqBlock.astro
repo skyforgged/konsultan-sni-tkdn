@@ -1,4 +1,11 @@
 ---
-import BlockShell from './BlockShell.astro';
+const { heading = 'Pertanyaan umum', title, items = [], faqs = [] } = Astro.props;
+const entries = items.length ? items : faqs;
 ---
-<BlockShell kind="faq" {...Astro.props} />
+<section class="tkdn-block tkdn-block--faq">
+  <h2 class="tkdn-block__title">{title ?? heading}</h2>
+  <div class="tkdn-faq-list">{entries.map((item: any) => <details class="tkdn-faq-item">
+    <summary>{item.question ?? item.title}</summary>
+    <div class="tkdn-faq-item__answer"><p>{item.answer ?? item.text ?? item.description}</p></div>
+  </details>)}</div>
+</section>
