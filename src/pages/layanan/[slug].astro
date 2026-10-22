@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content';
 import BlockRenderer from '../../components/blocks/BlockRenderer.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SeoJsonLd from '../../components/SeoJsonLd.astro';
-import RelatedLinks from '../../components/RelatedLinks.astro';
 import { siteConfig } from '../../config/site';
 
 export async function getStaticPaths() {
@@ -29,13 +28,16 @@ const schema = {
   ...(pageUrl ? { url: pageUrl } : {}),
   provider: { '@type': 'Organization', name: siteConfig.name },
 };
-const processProps = processBlock?.props ?? processBlock;
-const howToSchema = processProps?.items?.length >= 2 ? {
+const processProps = (processBlock?.props ?? processBlock) as
+  | { items?: Array<{ title?: string; description?: string }>; heading?: string }
+  | undefined;
+const processSteps = processProps?.items ?? [];
+const howToSchema = processSteps.length >= 2 ? {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
-  name: processProps.heading ?? `Tahapan ${entry.data.title}`,
+  name: processProps?.heading ?? `Tahapan ${entry.data.title}`,
   description: entry.data.description,
-  step: processProps.items.map((item, index) => ({
+  step: processSteps.map((item, index) => ({
     '@type': 'HowToStep',
     position: index + 1,
     name: item.title,
@@ -66,13 +68,6 @@ const howToSchema = processProps?.items?.length >= 2 ? {
       <article class="prose component-article-content">
         {contentBlocks.map((block) => <BlockRenderer block={block} />)}
       </article>
-      <RelatedLinks
-        services={entry.data.relatedServices}
-        pages={entry.data.relatedPages}
-        articles={entry.data.relatedArticles}
-        guides={entry.data.relatedGuides}
-        currentSlug={Astro.url.pathname}
-      />
     </div>
   </section>
 </BaseLayout>
