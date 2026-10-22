@@ -31,6 +31,7 @@ const base = z.object({
   image: z.string().optional(),
   imageAlt: z.string().optional(),
   socialImage: z.string().min(1),
+  blocks: z.array(z.object({ component: z.string().min(1), props: z.record(z.any()).optional() }).passthrough()).default([]),
   ...relationshipFields,
 });
 
