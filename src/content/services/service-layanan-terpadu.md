@@ -1,4 +1,3 @@
----
 id: "service-layanan-terpadu"
 title: "Layanan Terpadu SNI, TKDN, dan BMP"
 description: "Pemetaan kebutuhan lintas layanan SNI, TKDN, dan BMP dengan rencana persiapan terstruktur dan ruang lingkup yang disepakati."
@@ -40,12 +39,7 @@ relatedGuides: ["persiapan-dokumen-tkdn", "persiapan-sni"]
 order: 40
 draft: false
 status: active
+blocks:
+  - {"component":"section","heading":"Kapan pendekatan terpadu membantu?","content":[{"text":"Pendekatan terpadu berguna ketika beberapa kebutuhan berbagi data atau melibatkan tim internal yang sama. Pemetaan awal membantu mencegah pekerjaan berulang dan membuat dependensi terlihat tanpa mengasumsikan semua persyaratan identik."}]}
+  - {"component":"checklist-card","heading":"Prinsip pelaksanaan","items":[{"title":"Satu daftar kebutuhan dan dokumen awal.","number":"01"},{"title":"Pemisahan persyaratan untuk tiap layanan.","number":"02"},{"title":"Prioritas yang disepakati berdasarkan kondisi aktual.","number":"03"},{"title":"Catatan asumsi, risiko, dan keputusan klien.","number":"04"}]}
 ---
-## Kapan pendekatan terpadu membantu?
-Pendekatan terpadu berguna ketika beberapa kebutuhan berbagi data atau melibatkan tim internal yang sama. Pemetaan awal membantu mencegah pekerjaan berulang dan membuat dependensi terlihat tanpa mengasumsikan semua persyaratan identik.
-
-### Prinsip pelaksanaan
-- Satu daftar kebutuhan dan dokumen awal.
-- Pemisahan persyaratan untuk tiap layanan.
-- Prioritas yang disepakati berdasarkan kondisi aktual.
-- Catatan asumsi, risiko, dan keputusan klien.
