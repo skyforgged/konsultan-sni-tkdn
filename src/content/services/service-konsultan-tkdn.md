@@ -4,6 +4,7 @@ ulid: "01K8SN0000000000000000000A"
 title: "Konsultan TKDN"
 description: "Pendampingan pemetaan komponen dalam negeri, penataan data biaya dan bukti pendukung, serta pemeriksaan kesiapan awal pengajuan TKDN."
 pubDate: "2026-10-22T00:00:14Z"
+eyebrow: "TINGKAT KOMPONEN DALAM NEGERI"
 tags: ["TKDN","komponen dalam negeri","dokumen"]
 type: "service"
 slug: "konsultan-tkdn"

@@ -4,6 +4,7 @@ ulid: "01K8SN0000000000000000000C"
 title: "Layanan Terpadu SNI, TKDN, dan BMP"
 description: "Pemetaan kebutuhan lintas layanan SNI, TKDN, dan BMP dengan rencana persiapan terstruktur dan ruang lingkup yang disepakati."
 pubDate: "2026-10-22T00:00:15Z"
+eyebrow: "PENDEKATAN TERINTEGRASI"
 tags: ["SNI","TKDN","BMP","konsultasi terpadu"]
 type: "service"
 slug: "layanan-terpadu"
