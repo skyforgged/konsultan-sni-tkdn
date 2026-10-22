@@ -139,8 +139,10 @@ if (process.env.SITE_URL) {
   const expectedOrigin = new URL(process.env.SITE_URL).origin;
   const robotsPath = path.join(root, 'robots.txt');
   const sitemapIndexPath = path.join(root, 'sitemap-index.xml');
+  const sitemapPath = path.join(root, 'sitemap.xml');
   if (!await isFile(robotsPath)) failures.push('robots.txt tidak ditemukan pada output build');
   if (!await isFile(sitemapIndexPath)) failures.push('sitemap-index.xml tidak ditemukan pada output build');
+  if (!await isFile(sitemapPath)) failures.push('sitemap.xml tidak ditemukan pada output build');
 
   if (await isFile(robotsPath)) {
     const robots = await readFile(robotsPath, 'utf8');
@@ -150,7 +152,7 @@ if (process.env.SITE_URL) {
       if (!absoluteHttp(url)) failures.push(`URL Sitemap pada robots.txt tidak valid: ${url}`);
       else {
         const parsed = new URL(url);
-        if (parsed.origin !== expectedOrigin || parsed.pathname !== '/sitemap-index.xml') failures.push(`robots.txt harus menunjuk ke sitemap-index.xml pada origin ${expectedOrigin}: ${url}`);
+        if (parsed.origin !== expectedOrigin || parsed.pathname !== '/sitemap.xml') failures.push(`robots.txt harus menunjuk ke sitemap.xml pada origin ${expectedOrigin}: ${url}`);
       }
     }
   }
