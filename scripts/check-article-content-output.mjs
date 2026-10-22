@@ -50,6 +50,16 @@ for (const collection of collections) {
       const value = cleanInline(unquote(match[1]));
       if (value.length >= 12) markers.add(value);
     }
+    const blockSection = frontmatter.match(/^blocks:\\s*\\r?\\n([\\s\\S]*)$/m)?.[1] ?? '';
+    for (const line of blockSection.split(/\\r?\\n/)) {
+      const inlineBlock = line.match(/^\\s*-\\s+(\\{.*\\})\\s*$/);
+      if (!inlineBlock) continue;
+      try {
+        collectTextMarkers(JSON.parse(inlineBlock[1]), markers);
+      } catch {
+        errors.push(label + ': block JSON di frontmatter tidak valid: ' + inlineBlock[1].slice(0, 100));
+      }
+    }
     for (const line of body.split(/\r?\n/)) {
       if (/^!\\[[^\\]]*\\]\\([^)]+\\)$/.test(line.trim())) continue; // Image alt text is checked by the image-alt gate.
       const value = cleanInline(line.replace(/^#{1,6}\s+/, '').replace(/^>\s?/, '').replace(/^[-*+]\s+/, '').replace(/^\d+[.)]\s+/, ''));
@@ -70,6 +80,17 @@ if (errors.length) {
   console.log('Article content output check passed: ' + checked + ' published article/guide pages render content through reusable components' + (skipped ? ' (' + skipped + ' drafts/inactive entries skipped)' : '') + '.');
 }
 
+function collectTextMarkers(value, markers) {
+  if (Array.isArray(value)) { for (const item of value) collectTextMarkers(item, markers); return; }
+  if (!value || typeof value !== 'object') return;
+  for (const [key, child] of Object.entries(value)) {
+    if (typeof child === 'string' && ['heading','title','text','question','answer','quote','description','definition','caption'].includes(key) && child.trim().length >= 12) {
+      markers.add(cleanInline(child));
+    } else if (child && typeof child === 'object') {
+      collectTextMarkers(child, markers);
+    }
+  }
+}
 function cleanInline(value) {
   return value.replace(/!\[([^\]]*)\]\([^)]*\)/g, '$1').replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1')
     .replace(/\*\*(.*?)\*\*/g, '$1').replace(/__(.*?)__/g, '$1').replace(/\*(.*?)\*/g, '$1')
