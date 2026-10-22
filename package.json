@@ -11,7 +11,8 @@
     "check:output": "node scripts/check-output.mjs",
     "generate:favicon": "node scripts/genfavicon.mjs",
     "check:content": "node scripts/check-content-integrity.mjs",
-    "check:content-output": "node scripts/check-content-output.mjs"
+    "check:content-output": "node scripts/check-content-output.mjs",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "png-to-ico": "^2.1.8",
-    "sharp": "^0.34.4"
+    "sharp": "^0.34.4",
+    "@playwright/test": "^1.56.1"
   }
 }
