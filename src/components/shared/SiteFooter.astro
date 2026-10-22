@@ -1,0 +1,11 @@
+---
+import {siteConfig} from '../../config/site';
+const { ariaLabel = 'Navigasi footer' } = Astro.props;
+---
+<footer class="tkdn-site-footer">
+  <div class="container tkdn-site-footer__inner">
+    <div><a class="tkdn-site-brand" href="/"><span class="tkdn-site-brand__mark" aria-hidden="true">SNI</span><span>Konsultan SNI–TKDN</span></a><p>Pendampingan sertifikasi SNI, TKDN, dan BMP bagi pelaku usaha di Indonesia.</p></div>
+    <nav aria-label={ariaLabel}><a href="/layanan/">Layanan</a><a href="/artikel/">Artikel</a><a href="/panduan/">Panduan</a><a href="/kontak/">Kontak</a></nav>
+    <small>© {new Date().getFullYear()} Konsultan SNI–TKDN. Informasi disusun untuk membantu persiapan dan pemahaman proses.</small>
+  </div>
+</footer>
