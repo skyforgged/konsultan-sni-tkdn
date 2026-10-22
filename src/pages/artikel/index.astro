@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedLinks from '../../components/RelatedLinks.astro';
 const page=await getEntry('pages','artikel');
 if(!page) throw new Error('Missing frontmatter source: pages/artikel.md');
-const entries=(await getCollection('articles',({data})=>!data.draft&&data.status!=='inactive')).sort((a,b)=>b.data.pubDate.valueOf()-a.data.pubDate.valueOf());
+const entries=(await getCollection('articles',({data})=>!data.draft&&data.status==='active')).sort((a,b)=>b.data.pubDate.valueOf()-a.data.pubDate.valueOf());
 ---
 <BaseLayout title={page.data.title} description={page.data.description} image={page.data.socialImage} canonical={page.data.canonical}>
 <section class="content-hero"><div class="container"><p class="breadcrumbs"><a href="/">Beranda</a> / Artikel</p><p class="section-kicker">PUSAT PENGETAHUAN</p><h1>{page.data.heroTitle}</h1><p class="lead">{page.data.heroIntro}</p><div class="hero-actions"><a class="button" href="/artikel/">Artikel</a><a class="button button-outline" href="/panduan/">Panduan praktis →</a></div></div></section>
