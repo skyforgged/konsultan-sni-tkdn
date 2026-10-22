@@ -1,10 +1,11 @@
 ---
 import {getCollection} from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageBlocks from '../components/PageBlocks.astro';
 const pages = await getCollection('pages', ({data}) => !data.draft);
 const page = pages.find(entry => entry.data.pageKind === 'not-found' || entry.slug === 'not-found');
 if (!page) throw new Error('Missing page content with pageKind: not-found or slug: not-found.');
 ---
 <BaseLayout title={page.data.title} description={page.data.description} image={page.data.socialImage} noindex={true}>
-<section class="section"><div class="container" style="max-width:700px"><p class="section-kicker">404 · HALAMAN TIDAK DITEMUKAN</p><h1>{page.data.title}</h1><p>{page.body}</p><a class="button" href="/">Kembali ke beranda →</a></div></section>
+<section class="section"><div class="container" style="max-width:700px"><p class="section-kicker">404 · HALAMAN TIDAK DITEMUKAN</p><h1>{page.data.title}</h1><PageBlocks blocks={page.data.blocks}/><a class="button" href="/">Kembali ke beranda →</a></div></section>
 </BaseLayout>
