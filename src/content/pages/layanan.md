@@ -1,0 +1,20 @@
+---
+type: "page"
+slug: "layanan"
+title: "Layanan Konsultan SNI, TKDN, dan BMP"
+description: "Jelajahi layanan konsultasi dan pendampingan persiapan SNI, TKDN, dan BMP sesuai kebutuhan serta ketentuan yang berlaku."
+pubDate: 2026-10-22
+updatedDate: 2026-10-22
+draft: false
+status: active
+pageKind: "listing"
+canonical: "/layanan/"
+socialImage: "/images/og-default.svg"
+heroTitle: "Dukungan yang tepat dimulai dari memahami kebutuhan."
+heroIntro: "Pilih layanan berdasarkan tantangan perusahaan. Kami membantu memetakan persyaratan, meninjau kesiapan data, dan menjelaskan langkah persiapan berikutnya."
+relatedServices: ["konsultan-sni", "konsultan-tkdn", "konsultan-bmp", "layanan-terpadu"]
+relatedPages: ["kontak", "faq"]
+relatedArticles: ["perbedaan-konsultasi-pengujian-sertifikasi"]
+relatedGuides: ["persiapan-sni", "persiapan-dokumen-tkdn"]
+---
+Jenis produk, ruang lingkup jasa, tujuan pengajuan, data yang tersedia, serta peraturan yang berlaku akan memengaruhi kebutuhan persiapan. Konsultasi awal digunakan untuk memetakan konteks sebelum ruang lingkup dan penawaran disepakati.
