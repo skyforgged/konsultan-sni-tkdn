@@ -1,3 +1,4 @@
+---
 id: "guide-persiapan-dokumen-tkdn"
 title: "Cara Menyiapkan Dokumen Awal untuk Konsultasi TKDN"
 description: "Panduan menginventarisasi data produk, komponen, biaya, dan bukti yang berguna sebelum konsultasi awal terkait TKDN."
