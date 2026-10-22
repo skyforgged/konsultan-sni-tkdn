@@ -2,7 +2,7 @@
 import {getCollection,getEntry} from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedLinks from '../../components/RelatedLinks.astro';
-const page=await getEntry('pages','panduan.md');
+const page=await getEntry('pages','panduan');
 if(!page) throw new Error('Missing frontmatter source: pages/panduan.md');
 const entries=(await getCollection('guides',({data})=>!data.draft&&data.status==='active')).sort((a,b)=>b.data.pubDate.valueOf()-a.data.pubDate.valueOf());
 ---
