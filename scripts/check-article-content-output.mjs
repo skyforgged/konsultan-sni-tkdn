@@ -51,6 +51,7 @@ for (const collection of collections) {
       if (value.length >= 12) markers.add(value);
     }
     for (const line of body.split(/\r?\n/)) {
+      if (/^!\\[[^\\]]*\\]\\([^)]+\\)$/.test(line.trim())) continue; // Image alt text is checked by the image-alt gate.
       const value = cleanInline(line.replace(/^#{1,6}\s+/, '').replace(/^>\s?/, '').replace(/^[-*+]\s+/, '').replace(/^\d+[.)]\s+/, ''));
       if (value.length >= 24 && !/^\|?\s*:?-{3,}/.test(value) && !/^\|.*\|$/.test(value)) markers.add(value);
     }
