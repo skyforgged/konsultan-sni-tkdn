@@ -1,5 +1,4 @@
 ---
-id: "article-perbedaan-konsultasi-pengujian-sertifikasi"
 title: "Perbedaan Konsultasi, Pengujian, dan Sertifikasi Produk"
 description: "Pahami perbedaan peran konsultan, laboratorium pengujian, dan lembaga sertifikasi agar ruang lingkup dan tanggung jawab lebih jelas."
 pubDate: "2026-10-22T00:00:01Z"

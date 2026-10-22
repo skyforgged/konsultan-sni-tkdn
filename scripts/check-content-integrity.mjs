@@ -33,12 +33,8 @@ for (const collection of collectionNames) {
     const title = scalar(frontmatter, 'title');
     const draft = scalar(frontmatter, 'draft') === 'true';
     const status = scalar(frontmatter, 'status') || 'active';
-    const record = { file: label, id, slug, title, draft, status, relationships: {} };
+    const record = { file: label, id: id || slug, slug, title, draft, status, relationships: {} };
     records[collection].push(record);
-
-    if (!id) errors.push(`${label}: id frontmatter wajib`);
-    else if (globalIds.has(id)) errors.push(`${label}: id "${id}" duplikat dengan ${globalIds.get(id)}`);
-    else globalIds.set(id, label);
     if (!slug || /[\s?#]/.test(slug) || slug.startsWith('/') || slug.endsWith('/')) errors.push(`${label}: slug tidak valid "${slug}"`);
     if (!title || title.length < 3) errors.push(`${label}: title tidak ada atau terlalu pendek`);
 

@@ -1,5 +1,4 @@
 ---
-id: "page-home"
 type: "page"
 slug: "home"
 title: "Konsultan SNI–TKDN | Pendampingan SNI, TKDN, dan BMP"

@@ -1,5 +1,9 @@
 ---
+<<<<<<< HEAD
 const { id, open: isOpen = false, title, size = 'md' } = Astro.props as { id: string; open?: boolean; title?: string; size?: 'sm' | 'md' | 'lg' | 'xl' };
+=======
+const { id, isOpen = false, title, size = 'md' } = Astro.props;
+>>>>>>> REPLACE
 const sizeClass = ['sm','md','lg','xl'].includes(size) ? size : 'md';
 ---
 <dialog id={id} data-tkdn-modal data-open={isOpen ? 'true' : 'false'} aria-label={title ?? 'Dialog'} class={`tkdn-modal tkdn-modal--${sizeClass}`}>

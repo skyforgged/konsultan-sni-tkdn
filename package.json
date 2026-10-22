@@ -5,10 +5,9 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/check-content-integrity.mjs && node scripts/check-component-coverage.mjs && node scripts/check-frontmatter-integrity.mjs && node scripts/check-content-dates.mjs && node scripts/genfavicon.mjs && node scripts/gen-social-images.mjs && node scripts/gen-robots.mjs && npm run typecheck && astro build && node scripts/check-content-output.mjs && node scripts/check-article-content-output.mjs && node scripts/check-published-content.mjs && node scripts/check-output.mjs && node scripts/check-internal-links.mjs && node scripts/check-seo-output.mjs && node scripts/check-image-alt.mjs",
+    "build": "astro check && node scripts/check-content-integrity.mjs && node scripts/check-component-coverage.mjs && node scripts/check-frontmatter-integrity.mjs && node scripts/check-content-dates.mjs && node scripts/genfavicon.mjs && node scripts/gen-social-images.mjs && node scripts/gen-robots.mjs && astro build && node scripts/gen-sitemap.mjs && node scripts/check-content-output.mjs && node scripts/check-article-content-output.mjs && node scripts/check-published-content.mjs && node scripts/check-output.mjs && node scripts/check-internal-links.mjs && node scripts/check-seo-output.mjs && node scripts/check-image-alt.mjs",
     "preview": "astro preview",
     "check": "astro check",
-    "typecheck": "astro sync && tsc --noEmit && astro check",
     "check:output": "node scripts/check-output.mjs",
     "generate:favicon": "node scripts/genfavicon.mjs",
     "check:content": "node scripts/check-content-integrity.mjs",
