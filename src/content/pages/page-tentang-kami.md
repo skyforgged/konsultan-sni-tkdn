@@ -1,4 +1,3 @@
----
 id: "page-tentang-kami"
 type: "page"
 slug: "tentang-kami"
@@ -18,20 +17,10 @@ relatedServices: ["konsultan-sni", "konsultan-tkdn", "konsultan-bmp", "layanan-t
 relatedPages: ["kontak", "faq"]
 relatedArticles: ["perbedaan-konsultasi-pengujian-sertifikasi"]
 relatedGuides: ["persiapan-sni", "persiapan-dokumen-tkdn"]
+blocks:
+  - component: "section"
+    heading: "Batas kewenangan dan kesiapan"
+    content:
+      - text: "Konsultasi membantu persiapan dan koordinasi; keputusan akhir, pengujian, verifikasi, dan penerbitan sertifikat tetap menjadi kewenangan lembaga atau pihak yang ditetapkan dalam skema dan peraturan terkait."
+      - text: "Identitas badan usaha, personel, pengalaman, dan mitra harus dilengkapi berdasarkan data faktual sebelum situs dipublikasikan sebagai situs komersial."
 ---
-## Berangkat dari kondisi nyata perusahaan
-
-Setiap produk dan perusahaan memiliki konteks berbeda. Pendampingan yang baik dimulai dari pemahaman produk, proses, dokumen yang tersedia, dan tujuan yang ingin dicapai.
-
-## Prinsip kerja
-
-- **Ruang lingkup transparan.** Keluaran, tanggung jawab, asumsi, dan hal di luar kendali konsultan dijelaskan sebelum pekerjaan dimulai.
-- **Berbasis bukti.** Pemeriksaan menggunakan data aktual dan dokumen yang dapat ditelusuri.
-- **Komunikasi terukur.** Kesenjangan dan tindak lanjut disampaikan dengan bahasa yang mudah dipahami.
-- **Integritas proses.** Tidak membuat klaim nilai, sertifikat, atau kelulusan yang tidak dapat dijamin.
-
-## Batas peran yang jelas
-
-Konsultan membantu persiapan dan pendampingan sesuai kontrak. Keputusan resmi, pengujian, verifikasi, dan penerbitan sertifikat tetap menjadi kewenangan lembaga atau pihak yang ditetapkan dalam skema dan peraturan terkait.
-
-Identitas badan usaha, personel, pengalaman, dan mitra harus dilengkapi berdasarkan data faktual sebelum situs dipublikasikan sebagai situs komersial.
