@@ -1,4 +1,6 @@
 ---
+id: 1
+ulid: "01K8SN00000000000000000001"
 type: "page"
 slug: "home"
 title: "Konsultan SNI–TKDN | Pendampingan SNI, TKDN, dan BMP"
