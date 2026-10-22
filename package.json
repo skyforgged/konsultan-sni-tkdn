@@ -1,1 +1,20 @@
-{"name":"konsultan-sni-tkdn","type":"module","version":"0.1.0","private":true,"scripts":{"dev":"astro dev","build":"astro check && astro build","preview":"astro preview","check":"astro check"},"dependencies":{"@astrojs/check":"^0.9.4","@astrojs/sitemap":"^3.6.0","astro":"^5.14.1","typescript":"^5.9.2","zod":"^3.25.76"}}
+{
+  "name": "konsultan-sni-tkdn",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build && node scripts/check-output.mjs",
+    "preview": "astro preview",
+    "check": "astro check",
+    "check:output": "node scripts/check-output.mjs"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/sitemap": "^3.6.0",
+    "astro": "^5.14.1",
+    "typescript": "^5.9.2",
+    "zod": "^3.25.76"
+  }
+}
