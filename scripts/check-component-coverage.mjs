@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises';
 const registryPath = 'src/components/blocks.ts';
 const catalogPath = 'src/pages/komponen.astro';
 const routes = ['src/pages/artikel/[slug].astro', 'src/pages/panduan/[slug].astro', 'src/pages/layanan/[slug].astro'];
+const pageRoutes = ['src/pages/index.astro','src/pages/faq.astro','src/pages/tentang-kami.astro','src/pages/404.astro','src/pages/artikel/index.astro','src/pages/panduan/index.astro','src/pages/layanan/index.astro','src/pages/kontak/index.astro'];
 const requiredFiles = [
   'ContentCard.astro','FaqBlock.astro','CtaBlock.astro','TableBlock.astro','NoteBlock.astro','StepsBlock.astro',
   'StatsBlock.astro','GlossaryBlock.astro','QuoteBlock.astro','ArticleSectionBlock.astro','ProcessTimeline.astro',
@@ -32,6 +33,13 @@ for (const route of routes) {
     failures.push(route + ': renderer Markdown langsung masih dipakai; gunakan BlockRenderer.');
   }
   if (!source.includes('BlockRenderer.astro')) failures.push(route + ': tidak menggunakan BlockRenderer.');
+}
+for (const route of pageRoutes) {
+  const source = await readFile(route, 'utf8');
+  if (/\\b(?:render\\(entry\\)|const\\s*\\{\\s*Content\\s*\\}\\s*=\\s*await\\s*render)/.test(source) || /<Content\\s*\\/?\\s*>/.test(source) || /\\{page\\.body\\}/.test(source)) {
+    failures.push(route + ': renderer Markdown langsung masih dipakai; pindahkan isi ke frontmatter blocks dan gunakan PageBlocks.');
+  }
+  if (!source.includes('PageBlocks.astro')) failures.push(route + ': tidak menggunakan PageBlocks untuk konten page frontmatter.');
 }
 if (failures.length) {
   console.error('Component coverage check failed: ' + failures.length + ' issue(s).\n' + failures.join('\n'));
