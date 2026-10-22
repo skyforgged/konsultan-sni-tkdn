@@ -232,8 +232,81 @@ Gunakan sumber primer untuk memastikan regulasi, bukan artikel promosi pihak ket
 
 Dokumen ini sebelumnya merujuk pada **Permenperin No. 35 Tahun 2025** sebagai salah satu regulasi yang perlu ditinjau. Jangan menganggap nomor atau substansi regulasi itu otomatis relevan untuk setiap layanan. Verifikasi judul, status berlaku, perubahan/pencabutan, pasal terkait, dan penerapannya di JDIH sebelum dipakai dalam materi publik.
 
-## 11. Kesimpulan
+## 11. Komponen HowTo dengan Schema.org HowTo
+
+### Tujuan
+
+Tambahkan komponen **HowTo** yang dapat dipakai ulang untuk menampilkan panduan langkah demi langkah pada halaman edukasi atau layanan yang memang menjelaskan cara melakukan suatu tugas. Komponen harus memiliki dua keluaran yang konsisten:
+
+1. **Konten visual untuk pengguna:** judul, pengantar singkat, daftar langkah berurutan, dan bila relevan bahan/peralatan atau perkiraan waktu.
+2. **Structured data JSON-LD:** objek `HowTo` dari Schema.org yang merepresentasikan langkah-langkah yang sama dengan konten yang terlihat.
+
+Jangan hanya menyisipkan JSON-LD tersembunyi tanpa panduan nyata yang dapat dibaca pengunjung. Isi structured data wajib sesuai dengan isi halaman, tidak boleh menambah klaim atau langkah yang tidak ditampilkan.
+
+### Rekomendasi implementasi komponen
+
+- Buat komponen reusable, misalnya `HowTo.astro` atau nama yang mengikuti pola komponen proyek.
+- Terima properti terstruktur seperti `title`, `description`, `steps`, dan opsional `totalTime`, `estimatedCost`, `supply`, atau `tool` hanya jika nilainya nyata dan dapat dipertanggungjawabkan.
+- Setiap langkah memiliki judul singkat dan instruksi yang jelas; gunakan urutan yang sama untuk tampilan visual dan JSON-LD.
+- Bangun JSON-LD dari data komponen yang sama, bukan menulis ulang daftar langkah secara terpisah. Ini mengurangi risiko konten visual dan schema tidak sinkron.
+- Render JSON-LD sebagai `<script type="application/ld+json">` dengan serialisasi JSON yang aman untuk framework yang digunakan. Hindari menyusun JSON dengan konkatenasi string yang rentan rusak oleh tanda kutip atau karakter khusus.
+- Pastikan komponen mendukung judul dan teks yang aksesibel, daftar HTML berurutan, tampilan responsif, serta gaya yang konsisten dengan desain situs.
+- Gunakan komponen pada panduan yang benar-benar berbentuk prosedur, misalnya “Cara Menyiapkan Dokumen Awal untuk Konsultasi TKDN” atau “Langkah Pemeriksaan Kesiapan Sertifikasi SNI”.
+- Jangan memaksa tipe `HowTo` pada halaman promosi, FAQ, atau halaman layanan yang tidak memuat instruksi prosedural yang memadai.
+- Validasi structured data saat implementasi, periksa hasil build, dan pastikan tidak ada duplikasi schema yang bertentangan dari layout atau komponen lain.
+
+### Contoh isi panduan
+
+**Judul:** Cara Menyiapkan Dokumen Awal untuk Konsultasi TKDN
+
+1. **Identifikasi produk atau ruang lingkup jasa.** Catat nama produk/jasa, model atau varian, serta proses yang dilakukan perusahaan.
+2. **Kumpulkan data perusahaan dan produksi.** Siapkan identitas badan usaha serta informasi fasilitas dan proses yang relevan.
+3. **Petakan komponen dan asalnya.** Untuk barang, kumpulkan daftar bahan/komponen dan bukti asal yang tersedia.
+4. **Siapkan data biaya dan tenaga kerja yang relevan.** Gunakan data aktual yang dapat ditelusuri; jangan membuat angka perkiraan seolah-olah merupakan bukti resmi.
+5. **Tandai data yang belum tersedia.** Buat daftar kekurangan untuk dibahas saat konsultasi.
+6. **Minta pemeriksaan awal.** Konsultan dapat meninjau kelengkapan awal dan menjelaskan langkah berikutnya sesuai metode dan ketentuan yang berlaku.
+
+Panduan ini menjelaskan persiapan konsultasi, bukan menjamin hasil atau nilai TKDN resmi. Sesuaikan langkah untuk jenis pengajuan dan aturan yang berlaku.
+
+### Catatan SEO untuk Schema HowTo
+
+Schema.org menyediakan tipe `HowTo` untuk mendeskripsikan panduan prosedural, tetapi implementasi schema **tidak menjamin** tampilan khusus di hasil pencarian. Google telah menghentikan tampilan How-to rich results; karena itu, prioritas komponen ini adalah membantu pengguna, menjaga struktur konten, dan memberi deskripsi semantik yang akurat—bukan menjanjikan peningkatan rich results. Jangan menambahkan schema hanya untuk mengejar fitur SERP yang sudah dihentikan.
+
+## 12. Bagian “Kenapa Memilih Kami” di halaman depan
+
+Tambahkan satu bagian khusus di beranda setelah pengenalan layanan utama dan sebelum CTA/kontak akhir. Bagian ini harus menjawab alasan konkret calon klien memilih layanan, dengan bahasa nonteknis dan klaim yang bisa dibuktikan.
+
+### Pesan yang direkomendasikan
+
+**Judul:** Kenapa Memilih Kami?
+
+**Pengantar:** Kami membantu perusahaan memahami persyaratan SNI, TKDN, dan BMP, menyiapkan dokumen yang diperlukan, serta mengetahui langkah berikutnya dengan lebih jelas. Pendampingan disesuaikan dengan kebutuhan dan ruang lingkup pekerjaan yang disepakati.
+
+Pilih 4–6 poin berikut sesuai kemampuan operasional yang benar-benar dapat dipenuhi:
+
+1. **Proses lebih terarah.** Klien mendapat gambaran tahapan, kebutuhan awal, dan langkah tindak lanjut sejak awal.
+2. **Pemeriksaan kesiapan sebelum melangkah.** Dokumen dan informasi yang tersedia ditinjau untuk mengidentifikasi kekurangan lebih dini.
+3. **Pendampingan sesuai kebutuhan.** Ruang lingkup disesuaikan dengan produk, jenis pengajuan, dan kondisi perusahaan—bukan paket seragam untuk semua klien.
+4. **Komunikasi yang jelas.** Persyaratan, kendala, kebutuhan data, dan status pekerjaan dijelaskan dengan bahasa yang mudah dipahami.
+5. **Fokus pada dokumen dan bukti.** Klien dibantu menata data pendukung agar konsisten dan mudah ditelusuri.
+6. **Transparansi ruang lingkup.** Pekerjaan, keluaran, biaya, serta hal yang bergantung pada lembaga pengujian, verifikasi, atau sertifikasi dijelaskan sebelum pekerjaan dimulai.
+
+### Prinsip desain dan kepercayaan
+
+- Gunakan kartu atau ikon sederhana dengan judul singkat dan uraian satu hingga dua kalimat.
+- Prioritaskan manfaat yang dipahami calon klien, bukan daftar istilah teknis.
+- Hubungkan klaim dengan proses nyata. Jangan mengklaim “pasti lolos”, “paling cepat”, “paling murah”, “100% berhasil”, atau pengalaman/kemitraan yang belum terbukti.
+- Jangan menampilkan angka jumlah klien, tingkat keberhasilan, logo mitra, sertifikasi perusahaan, atau testimoni tanpa bukti dan izin yang sesuai.
+- Akhiri bagian dengan CTA yang jelas, misalnya **“Diskusikan Kebutuhan Anda”** yang menuju ke formulir kontak atau kanal konsultasi.
+- Jaga agar bagian ini tidak mengulang seluruh isi kartu layanan; fokus pada cara kerja dan manfaat bagi klien.
+
+## 13. Kesimpulan
 
 Positioning yang disarankan adalah **mitra persiapan kepatuhan dan pendampingan proses** yang membantu klien memahami kebutuhan, menyiapkan dokumen, mengidentifikasi kekurangan, dan berkoordinasi dengan pihak berwenang. Pembeda utamanya adalah proses kerja yang jelas, keluaran yang terdefinisi, komunikasi transparan, serta klaim yang dapat diverifikasi.
+
+Prioritas tambahan untuk pengembangan situs:
+1. Bangun komponen HowTo reusable dengan konten visual dan JSON-LD dari sumber data yang sama.
+2. Terapkan HowTo hanya pada panduan prosedural yang benar-benar berguna bagi pengunjung.
+3. Tambahkan bagian “Kenapa Memilih Kami” di beranda dengan manfaat konkret dan klaim yang dapat dibuktikan.
 
 Sebelum riset ini dipakai sebagai dasar proposal atau publikasi, lakukan validasi ulang atas seluruh tautan pembanding dan regulasi. Tambahkan tanggal pemeriksaan, catatan halaman yang ditinjau, dan bukti spesifik untuk setiap klaim yang akan dipakai secara eksternal.
