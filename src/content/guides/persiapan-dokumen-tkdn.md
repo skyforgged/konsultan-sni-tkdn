@@ -29,6 +29,8 @@ relatedServices: ["konsultan-tkdn"]
 relatedPages: ["faq", "kontak"]
 relatedArticles: ["perbedaan-konsultasi-pengujian-sertifikasi"]
 relatedGuides: []
+draft: false
+status: active
 ---
 ## Mengapa persiapan awal membantu?
 Data yang terorganisasi memudahkan tim memahami bagian yang sudah tersedia, yang belum lengkap, dan pertanyaan yang perlu dijawab.
