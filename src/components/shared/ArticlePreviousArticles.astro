@@ -1,0 +1,15 @@
+---
+import {getCollection} from 'astro:content';
+const { currentSlug = '', limit = 3, title = 'Artikel lain yang mungkin berguna' } = Astro.props;
+const articles = (await getCollection('articles', ({data}) => !data.draft && data.status === 'active'))
+  .filter(article => article.slug !== currentSlug && article.id !== currentSlug)
+  .sort((a,b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, limit);
+---
+{articles.length > 0 && <section class="tkdn-block tkdn-block--article-list" aria-labelledby="article-previous-title">
+  <h2 class="tkdn-block__title" id="article-previous-title">{title}</h2>
+  <div class="tkdn-block__items">{articles.map(article => <article class="tkdn-block__item">
+    <h3><a href={`/artikel/${article.slug ?? article.id.replace(/\.md$/, '')}/`}>{article.data.title}</a></h3>
+    <p>{article.data.description}</p>
+  </article>)}</div>
+</section>}
