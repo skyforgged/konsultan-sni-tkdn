@@ -1,4 +1,7 @@
 ---
-import BlockShell from './BlockShell.astro';
+const { heading, title, quote, text, attribution, author, source } = Astro.props;
 ---
-<BlockShell kind="quote" {...Astro.props} />
+<section class="tkdn-block tkdn-block--quote">
+  {(title ?? heading) && <h2 class="tkdn-block__title">{title ?? heading}</h2>}
+  <blockquote><p>{quote ?? text}</p>{(attribution ?? author ?? source) && <cite>{attribution ?? author ?? source}</cite>}</blockquote>
+</section>
