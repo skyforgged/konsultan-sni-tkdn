@@ -5,6 +5,9 @@ export interface ContentBlock {
   content?: Array<{ text?: string; heading?: string; items?: string[] }>;
   items?: Array<string | { title?: string; text?: string; description?: string; question?: string; answer?: string }>;
   rows?: Array<string | { title?: string; text?: string }>;
+  quote?: string;
+  image?: string;
+  imageAlt?: string;
 }
 
 const cleanInline = (value: string) => value
