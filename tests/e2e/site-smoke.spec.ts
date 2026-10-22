@@ -17,7 +17,8 @@ test('halaman utama dan halaman inti merespons serta memiliki struktur dasar yan
     expect(response!.status(), route + ' status').toBe(200);
     await expect(page.locator('html')).toHaveAttribute('lang', 'id');
     await expect(page).toHaveTitle(/\S+/);
-    await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', /\S{20,}/);
+    const description = await page.locator('meta[name="description"]').getAttribute('content');
+    expect(description?.trim().length ?? 0, route + ' description length').toBeGreaterThanOrEqual(20);
     await expect(page.locator('h1')).toHaveCount(1);
     await expect(page.locator('h1')).toBeVisible();
     await expect(page.locator('a.skip-link')).toHaveAttribute('href', '#konten');
