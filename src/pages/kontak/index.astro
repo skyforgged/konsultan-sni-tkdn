@@ -1,7 +1,6 @@
 ---
 import {getEntry,render} from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import RelatedLinks from '../../components/RelatedLinks.astro';
 import {siteConfig} from '../../config/site';
 const entry=await getEntry('pages','kontak');
 if(!entry) throw new Error('Missing frontmatter source: pages/kontak.md');
