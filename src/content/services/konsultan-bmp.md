@@ -35,6 +35,7 @@ relatedServices: ["konsultan-tkdn", "layanan-terpadu"]
 relatedPages: ["faq", "kontak"]
 relatedArticles: []
 relatedGuides: []
+order: 30
 ---
 ## Mulai dari konteks yang tepat
 Sebelum menyusun materi atau melakukan simulasi, pastikan tujuan penggunaan BMP, ruang lingkup relevan, dan dasar ketentuan untuk kasus tersebut. Ini mencegah penggunaan asumsi atau komponen yang tidak sesuai.
