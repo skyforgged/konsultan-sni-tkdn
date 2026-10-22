@@ -12,3 +12,5 @@ Quality gates SLF yang dipertahankan bersama semua pemeriksaan TKDN:
 - `check-published-content.mjs`
 
 Tes Playwright juga memverifikasi halaman inti, navigasi, menu mobile, 404, katalog komponen, dan rendering artikel melalui blok komponen.
+
+CI memverifikasi seluruh blok dan seluruh konten diterbitkan dari frontmatter.
