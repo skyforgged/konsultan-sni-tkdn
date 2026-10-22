@@ -1,7 +1,7 @@
 ---
 import {getEntry} from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-const page=await getEntry('pages','404');
+const page=await getEntry('pages','not-found');
 if(!page) throw new Error('Missing frontmatter source: pages/not-found.md');
 ---
 <BaseLayout title={page.data.title} description={page.data.description} image={page.data.socialImage} noindex={true}>

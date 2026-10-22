@@ -3,8 +3,8 @@ type: "page"
 slug: "kontak"
 title: "Kontak dan Konsultasi"
 description: "Hubungi konsultan untuk mendiskusikan kebutuhan awal SNI, TKDN, dan BMP."
-pubDate: 2026-10-22
-updatedDate: 2026-10-22
+pubDate: "2026-10-22T00:00:00Z"
+updatedDate: "2026-10-22T00:00:00Z"
 draft: false
 status: active
 pageKind: "contact"

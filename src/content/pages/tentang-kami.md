@@ -3,8 +3,8 @@ type: "page"
 slug: "tentang-kami"
 title: "Tentang Kami"
 description: "Pendekatan konsultasi SNI, TKDN, dan BMP yang berfokus pada kejelasan ruang lingkup, persiapan berbasis bukti, dan komunikasi transparan."
-pubDate: 2026-10-22
-updatedDate: 2026-10-22
+pubDate: "2026-10-22T00:00:00Z"
+updatedDate: "2026-10-22T00:00:00Z"
 draft: false
 status: active
 pageKind: "standard"

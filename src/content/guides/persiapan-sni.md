@@ -1,7 +1,7 @@
 ---
 title: "Panduan Awal Persiapan Sertifikasi SNI"
 description: "Langkah awal menginventarisasi informasi produk, spesifikasi, dan dokumen sebelum meninjau kesiapan sertifikasi SNI."
-pubDate: 2026-10-22
+pubDate: "2026-10-22T00:00:00Z"
 category: "SNI"
 tags: ["SNI", "sertifikasi", "persiapan"]
 author: "Tim Editorial"
@@ -23,7 +23,7 @@ howTo:
       text: "Tinjau kesiapan awal sebelum memutuskan kebutuhan pengujian atau sertifikasi."
 type: "guide"
 slug: "persiapan-sni"
-updatedDate: 2026-10-22
+updatedDate: "2026-10-22T00:00:00Z"
 socialImage: "/images/og-default.svg"
 relatedServices: ["konsultan-sni"]
 relatedPages: ["faq", "kontak"]

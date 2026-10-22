@@ -3,8 +3,8 @@ type: "page"
 slug: "not-found"
 title: "Halaman tidak ditemukan"
 description: "Halaman yang Anda cari tidak tersedia."
-pubDate: 2026-10-22
-updatedDate: 2026-10-22
+pubDate: "2026-10-22T00:00:00Z"
+updatedDate: "2026-10-22T00:00:00Z"
 draft: false
 status: active
 pageKind: "not-found"

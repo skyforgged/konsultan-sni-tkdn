@@ -1,7 +1,7 @@
 ---
 title: "Layanan Terpadu SNI, TKDN, dan BMP"
 description: "Pemetaan kebutuhan lintas layanan SNI, TKDN, dan BMP dengan rencana persiapan terstruktur dan ruang lingkup yang disepakati."
-pubDate: 2026-10-22
+pubDate: "2026-10-22T00:00:00Z"
 eyebrow: "PENDEKATAN TERINTEGRASI"
 intro: "Ketika perusahaan menghadapi beberapa kebutuhan sekaligus, langkah pertama adalah memahami hubungan antar kebutuhan, data yang dapat digunakan bersama, dan prioritas yang masuk akal."
 audience:
@@ -30,7 +30,7 @@ faqs:
 tags: ["SNI","TKDN","BMP","konsultasi terpadu"]
 type: "service"
 slug: "layanan-terpadu"
-updatedDate: 2026-10-22
+updatedDate: "2026-10-22T00:00:00Z"
 socialImage: "/images/og-default.svg"
 relatedServices: ["konsultan-sni", "konsultan-tkdn", "konsultan-bmp"]
 relatedPages: ["faq", "kontak"]

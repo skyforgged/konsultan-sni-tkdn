@@ -3,8 +3,8 @@ type: "page"
 slug: "home"
 title: "Konsultan SNI–TKDN | Pendampingan SNI, TKDN, dan BMP"
 description: "Konsultasi dan pendampingan persiapan SNI, TKDN, dan BMP dengan ruang lingkup yang jelas, data yang tertata, dan proses yang transparan."
-pubDate: 2026-10-22
-updatedDate: 2026-10-22
+pubDate: "2026-10-22T00:00:00Z"
+updatedDate: "2026-10-22T00:00:00Z"
 draft: false
 status: active
 pageKind: "home"
