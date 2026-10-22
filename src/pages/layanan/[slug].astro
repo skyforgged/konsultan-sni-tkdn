@@ -4,6 +4,7 @@ import BlockRenderer from '../../components/blocks/BlockRenderer.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SeoJsonLd from '../../components/SeoJsonLd.astro';
 import RelatedLinks from '../../components/RelatedLinks.astro';
+import { siteConfig } from '../../config/site';
 
 export async function getStaticPaths() {
   const entries = await getCollection('services', ({ data }) => !data.draft && data.status === 'active');
@@ -22,7 +23,7 @@ const schema = {
   description: entry.data.description,
   serviceType: entry.data.title,
   ...(pageUrl ? { url: pageUrl } : {}),
-  provider: { '@type': 'Organization', name: 'Konsultan SNI–TKDN' },
+  provider: { '@type': 'Organization', name: siteConfig.name },
 };
 ---
 
@@ -35,7 +36,7 @@ const schema = {
   <Fragment slot="head"><SeoJsonLd data={schema} /></Fragment>
   <section class="content-hero">
     <div class="container">
-      <p class="breadcrumbs"><a href="/">Beranda</a> / <a href="/layanan/">Layanan</a> / {entry.data.title}</p>
+      <p class="breadcrumbs"><a href={siteConfig.navigation[0].href}>{siteConfig.navigation[0].label}</a> / <a href={siteConfig.navigation[1].href}>{siteConfig.navigation[1].label}</a> / {entry.data.title}</p>
       <p class="section-kicker">{entry.data.eyebrow}</p>
       <h1>{entry.data.title}</h1>
       <p class="lead">{entry.data.intro}</p>
