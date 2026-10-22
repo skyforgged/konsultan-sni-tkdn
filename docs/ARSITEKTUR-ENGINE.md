@@ -16,6 +16,57 @@ Analogi yang digunakan dalam dokumen ini:
 
 ## 2. Fondasi yang wajib dipertahankan
 
+### 2.0 Frontmatter sebagai kontrak untuk semua halaman
+
+**Keputusan wajib:** setiap URL publik yang dikelola situs harus mempunyai satu sumber konten terstruktur dengan frontmatter. Ini mencakup beranda, halaman informasi, halaman indeks/listing, layanan, artikel, panduan, dan FAQ. Halaman teknis 404 juga harus memiliki metadata yang terdefinisi, walaupun tidak perlu masuk sitemap.
+
+Jangan menganggap frontmatter hanya milik artikel Markdown. Metadata SEO, identitas, navigasi, aset sosial, status publikasi, dan hubungan antarkonten harus berasal dari data konten/config yang tervalidasi. Astro template bertugas merender data itu, bukan menjadi tempat kedua untuk menulis ulang judul, deskripsi, isi, CTA, dan tautan relasi.
+
+#### Kontrak metadata minimum
+
+| Field | Tujuan |
+|---|---|
+| `id` / `ulid` (opsional bila ID internal dibuat otomatis) | Identitas internal stabil; jangan dijadikan URL |
+| `type` | Jenis konten yang eksplisit: `page`, `service`, `article`, `guide`, atau `faq` |
+| `slug` | Slug URL yang eksplisit dan stabil |
+| `title` | Judul halaman dan title SEO |
+| `pubDate` | Tanggal publikasi pertama |
+| `updatedDate` | Tanggal perubahan substantif terakhir |
+| `description` | Ringkasan unik untuk SEO dan preview |
+| `socialImage` | Gambar sosial/OG khusus halaman, dengan fallback yang terkonfigurasi |
+| `draft` | Status draft agar konten yang belum siap tidak diterbitkan |
+| `navLabel` (opsional) | Label navigasi bila halaman memang ditampilkan di menu |
+| `canonical` (opsional) | Canonical override; default diturunkan dari URL produksi dan slug |
+| `image` dan `imageAlt` (opsional) | Gambar utama serta teks alternatif yang bermakna |
+| `relatedServices`, `relatedPages`, `relatedArticles`, `relatedGuides` | Relasi eksplisit ke slug konten lain yang benar-benar ada |
+
+Nama field perlu konsisten. Bila implementasi memilih nama Astro yang sudah dipakai seperti `publishDate`, dokumentasikan pemetaan satu kali dan jangan mencampur `pubDate` serta `publishDate` tanpa alasan. Nilai tanggal harus valid; tanggal publikasi tidak boleh otomatis diganti setiap kali file diedit.
+
+#### Relasi konten adalah bagian dari engine
+
+Artikel dan panduan harus dapat menghubungkan pembaca ke layanan yang relevan, panduan pendukung, artikel terkait, halaman kontak, dan halaman informasi. Jangan mengandalkan sidebar dengan tautan hard-coded yang sama di semua artikel.
+
+- Gunakan slug, bukan URL bebas, untuk relasi internal agar typo dan tautan putus dapat dideteksi saat build.
+- Validasi setiap relasi terhadap koleksi yang benar; konten target harus ada dan tidak berstatus draft.
+- Render tautan terkait sebagai bagian konten yang terlihat dan berguna, dengan anchor text yang menjelaskan tujuan.
+- Tampilkan layanan terkait di artikel/panduan dan konten edukasi terkait di halaman layanan.
+- Hindari tautan yang tidak relevan hanya demi SEO; relasi harus membantu alur keputusan pembaca.
+- Tautan CTA ke kontak dapat menjadi fallback umum, tetapi tidak menggantikan relasi kontekstual.
+- Relasi tidak boleh menciptakan siklus navigasi yang membingungkan atau menautkan halaman ke dirinya sendiri.
+
+#### Semua halaman publik memiliki sumber frontmatter
+
+- `pages`: beranda, tentang kami, kontak, FAQ, indeks layanan, indeks artikel, indeks panduan, serta halaman informasi lain.
+- `services`: halaman layanan detail.
+- `articles`: artikel edukasi.
+- `guides`: panduan berorientasi langkah.
+- `faq`: bila FAQ dipisahkan menjadi halaman atau entri koleksi.
+- `404`: metadata terdefinisi, tidak masuk sitemap dan memakai noindex.
+
+Template boleh berbeda sesuai tipe halaman, tetapi metadata, isi utama, navigasi, gambar, CTA, dan relasi harus berasal dari frontmatter atau konfigurasi yang tervalidasi. Hindari halaman penting yang isi dan metadatanya tersembunyi sepenuhnya di file `.astro`.
+
+
+
 ### P0 — Wajib menjadi prinsip desain sejak awal
 
 #### 2.1 Pemisahan theme, data, dan konfigurasi
