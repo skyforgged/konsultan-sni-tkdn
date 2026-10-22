@@ -1,4 +1,3 @@
----
 id: "guide-persiapan-sni"
 title: "Panduan Awal Persiapan Sertifikasi SNI"
 description: "Langkah awal menginventarisasi informasi produk, spesifikasi, dan dokumen sebelum meninjau kesiapan sertifikasi SNI."
@@ -32,9 +31,7 @@ relatedArticles: ["perbedaan-konsultasi-pengujian-sertifikasi"]
 relatedGuides: []
 draft: false
 status: active
+blocks:
+  - {"component":"section","heading":"Informasi awal","content":[{"text":"Persiapan dapat dimulai dari informasi produk, spesifikasi, proses produksi, dan dokumen perusahaan yang telah dimiliki."}]}
+  - {"component":"section","heading":"Hindari asumsi terlalu dini","content":[{"text":"Jangan menyimpulkan produk wajib atau tidak wajib SNI hanya dari nama kategori umum. Periksa ketentuan untuk produk spesifik."}]}
 ---
-## Informasi awal
-Persiapan dapat dimulai dari informasi produk, spesifikasi, proses produksi, dan dokumen perusahaan yang telah dimiliki.
-
-## Hindari asumsi terlalu dini
-Jangan menyimpulkan produk wajib atau tidak wajib SNI hanya dari nama kategori umum. Periksa ketentuan untuk produk spesifik.
