@@ -21,6 +21,7 @@ for (const filename of requiredFiles) {
   try { await readFile('src/components/shared/' + filename, 'utf8'); }
   catch { failures.push('Komponen bersama wajib tidak ditemukan: src/components/shared/' + filename); }
 }
+try { await readFile('src/components/PageBlocks.astro', 'utf8'); } catch { failures.push('Komponen halaman wajib tidak ditemukan: src/components/PageBlocks.astro'); }
 const layout = await readFile('src/layouts/BaseLayout.astro', 'utf8');
 if (!layout.includes('SiteHeader.astro') || !layout.includes('SiteFooter.astro')) failures.push('BaseLayout harus menggunakan SiteHeader dan SiteFooter reusable.');
 const articleRoute = await readFile('src/pages/artikel/[slug].astro', 'utf8');
