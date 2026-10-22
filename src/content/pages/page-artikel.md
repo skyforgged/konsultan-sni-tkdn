@@ -1,3 +1,4 @@
+---
 id: "page-artikel"
 type: "page"
 slug: "artikel"
