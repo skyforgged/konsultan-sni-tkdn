@@ -3,8 +3,8 @@ type: "page"
 slug: "panduan"
 title: "Panduan Praktis SNI, TKDN, dan BMP"
 description: "Panduan langkah demi langkah untuk menyiapkan informasi dan dokumen awal terkait SNI, TKDN, dan BMP."
-pubDate: "2026-10-22T00:00:00Z"
-updatedDate: "2026-10-22T00:00:00Z"
+pubDate: "2026-10-22T00:00:10Z"
+updatedDate: "2026-10-22T12:00:10Z"
 draft: false
 status: active
 pageKind: "listing"
