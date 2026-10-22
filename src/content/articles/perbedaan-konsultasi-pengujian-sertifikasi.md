@@ -1,10 +1,18 @@
 ---
 title: "Perbedaan Konsultasi, Pengujian, dan Sertifikasi Produk"
 description: "Pahami perbedaan peran konsultan, laboratorium pengujian, dan lembaga sertifikasi agar ruang lingkup dan tanggung jawab lebih jelas."
-publishDate: 2026-10-22
+pubDate: 2026-10-22
 category: "SNI"
 tags: ["SNI", "pengujian", "sertifikasi"]
 author: "Tim Editorial"
+type: "article"
+slug: "perbedaan-konsultasi-pengujian-sertifikasi"
+updatedDate: 2026-10-22
+socialImage: "/images/og-default.svg"
+relatedServices: ["konsultan-sni"]
+relatedPages: ["faq", "kontak"]
+relatedArticles: []
+relatedGuides: ["persiapan-sni"]
 ---
 ## Mengapa ketiganya perlu dibedakan?
 Dalam persiapan sertifikasi produk, konsultasi, pengujian, dan sertifikasi memiliki tujuan serta kewenangan yang berbeda.
