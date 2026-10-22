@@ -35,63 +35,12 @@ const base = z.object({
   ...relationshipFields,
 });
 
-
-const serviceBlock = z.discriminatedUnion('component', [
-  z.object({
-    component: z.literal('feature-card-grid'),
-    heading: z.string().min(1),
-    items: z.array(z.object({ title: z.string().min(1), text: z.string().optional() }).passthrough()).min(1),
-  }),
-  z.object({
-    component: z.literal('section'),
-    heading: z.string().min(1),
-    content: z.array(z.object({
-      heading: z.string().optional(),
-      text: z.string().optional(),
-      items: z.array(z.union([z.string(), z.object({ title: z.string().optional(), heading: z.string().optional(), text: z.string().optional(), description: z.string().optional() }).passthrough()])).optional(),
-    }).passthrough()).min(1),
-  }),
-  z.object({
-    component: z.literal('checklist-card'),
-    heading: z.string().min(1),
-    items: z.array(z.union([
-      z.string(),
-      z.object({ title: z.string().optional(), label: z.string().optional(), text: z.string().optional(), description: z.string().optional(), number: z.string().optional() }).passthrough(),
-    ])).min(1),
-  }),
-  z.object({
-    component: z.literal('process-timeline'),
-    heading: z.string().min(1),
-    steps: z.array(z.object({ title: z.string().min(1), description: z.string().min(1) }).passthrough()).min(3),
-  }),
-  z.object({
-    component: z.literal('faq'),
-    heading: z.string().min(1),
-    items: z.array(z.object({ question: z.string().min(1), answer: z.string().min(1) })).min(1),
-  }),
-  z.object({
-    component: z.literal('note'),
-    heading: z.string().min(1),
-    text: z.string().min(1),
-  }),
-  z.object({
-    component: z.literal('cta'),
-    heading: z.string().min(1),
-    text: z.string().min(1),
-    ctaHref: z.string().startsWith('/'),
-    ctaLabel: z.string().min(1),
-  }),
-]);
-
 const services = defineCollection({
   type: 'content',
   schema: base.extend({
     type: z.literal('service').default('service'),
-    eyebrow: z.string(),
-    intro: z.string(),
     order: z.number().optional(),
-    relatedTitle: z.string().min(1),
-    blocks: z.array(serviceBlock).min(1),
+    blocks: z.array(z.object({ component: z.string().min(1), props: z.record(z.any()).optional() }).passthrough()).min(1),
   }),
 });
 
