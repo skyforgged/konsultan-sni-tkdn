@@ -29,6 +29,8 @@ relatedServices: ["konsultan-sni"]
 relatedPages: ["faq", "kontak"]
 relatedArticles: ["perbedaan-konsultasi-pengujian-sertifikasi"]
 relatedGuides: []
+draft: false
+status: active
 ---
 ## Informasi awal
 Persiapan dapat dimulai dari informasi produk, spesifikasi, proses produksi, dan dokumen perusahaan yang telah dimiliki.
