@@ -2,7 +2,6 @@
 import {getCollection,getEntry} from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
-import RelatedLinks from '../../components/RelatedLinks.astro';
 import PageBlocks from '../../components/PageBlocks.astro';
 const page=await getEntry('pages','layanan');
 if(!page) throw new Error('Missing frontmatter source: pages/layanan.md');
@@ -10,6 +9,6 @@ const services = (await getCollection('services',({data})=>!data.draft && data.s
 ---
 <BaseLayout title={page.data.title} description={page.data.description} image={page.data.socialImage} canonical={page.data.canonical}>
 <section class="content-hero"><div class="container"><p class="breadcrumbs"><a href="/">Beranda</a> / Layanan</p><p class="section-kicker">KATALOG LAYANAN</p><h1>{page.data.heroTitle}</h1><p class="lead">{page.data.heroIntro}</p></div></section>
-<section class="section"><div class="container"><div class="service-grid">{services.map(s=><ServiceCard {...s}/>)}</div><div style="margin-top:35px"><RelatedLinks pages={page.data.relatedPages} articles={page.data.relatedArticles} guides={page.data.relatedGuides} title="Mulai dari informasi terkait"/></div></div></section>
+<section class="section"><div class="container"><div class="service-grid">{services.map(s=><ServiceCard {...s}/>)}</div></div></section>
 <PageBlocks blocks={page.data.blocks}/>
 </BaseLayout>
