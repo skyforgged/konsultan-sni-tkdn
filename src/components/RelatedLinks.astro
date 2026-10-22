@@ -10,10 +10,10 @@ interface Props {
 }
 const {services=[],pages=[],articles=[],guides=[],currentSlug='',title='Konten terkait'}=Astro.props;
 const [serviceEntries,pageEntries,articleEntries,guideEntries]=await Promise.all([
-  getCollection('services',({data})=>!data.draft && data.status!=='inactive'),
-  getCollection('pages',({data})=>!data.draft && data.status!=='inactive'),
-  getCollection('articles',({data})=>!data.draft && data.status!=='inactive'),
-  getCollection('guides',({data})=>!data.draft && data.status!=='inactive'),
+  getCollection('services',({data})=>!data.draft && data.status==='active'),
+  getCollection('pages',({data})=>!data.draft && data.status==='active'),
+  getCollection('articles',({data})=>!data.draft && data.status==='active'),
+  getCollection('guides',({data})=>!data.draft && data.status==='active'),
 ]);
 const groups=[
   {label:'Layanan terkait',items:services.map(slug=>{const e=serviceEntries.find(x=>x.data.slug===slug||x.id===slug);return e?{title:e.data.title,description:e.data.description,href:`/layanan/${e.data.slug??e.id}/`}:null;}).filter((item): item is NonNullable<typeof item> => item !== null)},
