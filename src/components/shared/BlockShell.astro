@@ -14,7 +14,7 @@ const itemText = (item: any) => typeof item === 'string' ? '' : item?.text ?? it
   {text && <p class="tkdn-block__intro">{text}</p>}
   {props.image && <figure class="tkdn-block__image"><img src={props.image.src ?? props.image} alt={props.image.alt ?? props.imageAlt ?? ''} loading="lazy"/>{props.image.caption && <figcaption>{props.image.caption}</figcaption>}</figure>}
   {content.length > 0 && <div class="tkdn-block__content">{content.map((part: any) => <div>{part.heading && <h3>{part.heading}</h3>}{part.text && <p>{part.text}</p>}{part.items && <ul>{part.items.map((item: any) => <li>{itemTitle(item)} {itemText(item)}</li>)}</ul>}</div>)}</div>}
-  {items.length > 0 && <div class="tkdn-block__items">{items.map((item: any, index: number) => <article class="tkdn-block__item">
+  {items.length > 0 && <div class="tkdn-block__items">{items.map((item: any) => <article class="tkdn-block__item">
     {item.icon && <span class="tkdn-block__icon" aria-hidden="true">{item.icon}</span>}
     {item.number && <span class="tkdn-block__number">{item.number}</span>}
     {itemTitle(item) && <h3>{itemTitle(item)}</h3>}
