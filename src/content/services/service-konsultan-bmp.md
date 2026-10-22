@@ -1,4 +1,3 @@
----
 id: "service-konsultan-bmp"
 title: "Konsultan BMP"
 description: "Konsultasi pemetaan kebutuhan dan penyiapan dokumen terkait Bobot Manfaat Perusahaan sesuai konteks dan ketentuan yang terverifikasi."
@@ -39,13 +38,7 @@ relatedGuides: []
 order: 30
 draft: false
 status: active
+blocks:
+  - {"component":"section","heading":"Mulai dari konteks yang tepat","content":[{"text":"Sebelum menyusun materi atau melakukan simulasi, pastikan tujuan penggunaan BMP, ruang lingkup relevan, dan dasar ketentuan untuk kasus tersebut. Ini mencegah penggunaan asumsi atau komponen yang tidak sesuai."}]}
+  - {"component":"checklist-card","heading":"Informasi awal","items":[{"title":"Tujuan dan konteks kebutuhan BMP.","number":"01"},{"title":"Data identitas dan profil perusahaan yang relevan.","number":"02"},{"title":"Dokumen yang telah tersedia.","number":"03"},{"title":"Referensi proses atau ketentuan yang menjadi dasar kebutuhan.","number":"04"},{"title":"Pertanyaan yang masih memerlukan klarifikasi.","number":"05"}]}
 ---
-## Mulai dari konteks yang tepat
-Sebelum menyusun materi atau melakukan simulasi, pastikan tujuan penggunaan BMP, ruang lingkup relevan, dan dasar ketentuan untuk kasus tersebut. Ini mencegah penggunaan asumsi atau komponen yang tidak sesuai.
-
-### Informasi awal
-- Tujuan dan konteks kebutuhan BMP.
-- Data identitas dan profil perusahaan yang relevan.
-- Dokumen yang telah tersedia.
-- Referensi proses atau ketentuan yang menjadi dasar kebutuhan.
-- Pertanyaan yang masih memerlukan klarifikasi.
