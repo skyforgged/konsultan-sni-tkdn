@@ -80,6 +80,12 @@ const pages = defineCollection({
     pageKind: z.enum(['home', 'standard', 'listing', 'contact', 'faq', 'not-found']).default('standard'),
     heroTitle: z.string().optional(),
     heroIntro: z.string().optional(),
+    servicesIntro: z.string().optional(),
+    benefits: z.array(z.object({ title: z.string(), text: z.string() })).default([]),
+    process: z.array(z.object({ title: z.string(), description: z.string() })).default([]),
+    ctaTitle: z.string().optional(),
+    ctaIntro: z.string().optional(),
+    faqs: z.array(z.object({ question: z.string(), answer: z.string() })).default([]),
   }),
 });
 
