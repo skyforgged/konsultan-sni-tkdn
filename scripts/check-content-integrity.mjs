@@ -18,7 +18,7 @@ for (const collection of collectionNames) {
   for (const file of await markdownFiles(path.join(root, collection))) {
     const label = relative(file);
     const source = await readFile(file, 'utf8');
-    const match = source.match(/^---\\s*\\r?\\n([\\s\\S]*?)\\r?\\n---(?:\\r?\\n|$)/);
+    const match = source.match(/^---\s*\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/);
     if (!match) {
       errors.push(`${label}: frontmatter YAML tidak ditemukan atau tidak ditutup`);
       continue;
@@ -38,7 +38,7 @@ for (const collection of collectionNames) {
     if (!id) errors.push(`${label}: id frontmatter wajib`);
     else if (globalIds.has(id)) errors.push(`${label}: id "${id}" duplikat dengan ${globalIds.get(id)}`);
     else globalIds.set(id, label);
-    if (!slug || /[\\s?#]/.test(slug) || slug.startsWith('/') || slug.endsWith('/')) errors.push(`${label}: slug tidak valid "${slug}"`);
+    if (!slug || /[\s?#]/.test(slug) || slug.startsWith('/') || slug.endsWith('/')) errors.push(`${label}: slug tidak valid "${slug}"`);
     if (!title || title.length < 3) errors.push(`${label}: title tidak ada atau terlalu pendek`);
 
     for (const field of ['pubDate', 'updatedDate']) {
@@ -47,7 +47,7 @@ for (const collection of collectionNames) {
         errors.push(`${label}: ${field} wajib diisi`);
         continue;
       }
-      if (!/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$/.test(value) || Number.isNaN(Date.parse(value))) {
+      if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(value) || Number.isNaN(Date.parse(value))) {
         errors.push(`${label}: ${field} harus timestamp UTC valid YYYY-MM-DDTHH:mm:ssZ, ditemukan "${value}"`);
       } else {
         const previous = timestamps.get(value);
@@ -64,11 +64,11 @@ for (const collection of collectionNames) {
     if (!image) errors.push(`${label}: socialImage wajib diisi`);
     if (draft) continue;
     const placeholderPatterns = [
-      [/lorem\\s+ipsum/i, 'Lorem ipsum'],
-      [/\\bTODO\\b/i, 'TODO'],
-      [/\\bFIXME\\b/i, 'FIXME'],
-      [/\\bexample\\.com\\b/i, 'example.com placeholder'],
-      [/\\bisi di sini\\b/i, 'placeholder isi di sini'],
+      [/lorem\s+ipsum/i, 'Lorem ipsum'],
+      [/\bTODO\b/i, 'TODO'],
+      [/\bFIXME\b/i, 'FIXME'],
+      [/\bexample\.com\b/i, 'example.com placeholder'],
+      [/\bisi di sini\b/i, 'placeholder isi di sini'],
     ];
     for (const [pattern, name] of placeholderPatterns) {
       if (pattern.test(source)) errors.push(`${label}: placeholder terdeteksi (${name})`);
@@ -105,20 +105,20 @@ if (errors.length) {
 }
 
 function scalar(frontmatter, key) {
-  const line = frontmatter.split(/\\r?\\n/).find(item => item.startsWith(key + ':'));
+  const line = frontmatter.split(/\r?\n/).find(item => item.startsWith(key + ':'));
   if (!line) return undefined;
   return unquote(line.slice(key.length + 1).trim());
 }
 function arrayField(frontmatter, key) {
-  const lines = frontmatter.split(/\\r?\\n/);
+  const lines = frontmatter.split(/\r?\n/);
   const index = lines.findIndex(line => line.startsWith(key + ':'));
   if (index < 0) return [];
   const value = lines[index].slice(key.length + 1).trim();
   if (value.startsWith('[')) return [...value.matchAll(/["']([^"']+)["']/g)].map(item => item[1]);
   const result = [];
   for (const line of lines.slice(index + 1)) {
-    if (/^\\S/.test(line)) break;
-    const item = line.match(/^\\s+-\\s*["']?(.+?)["']?\\s*$/);
+    if (/^\S/.test(line)) break;
+    const item = line.match(/^\s+-\s*["']?(.+?)["']?\s*$/);
     if (item) result.push(unquote(item[1].trim()));
   }
   return result;
