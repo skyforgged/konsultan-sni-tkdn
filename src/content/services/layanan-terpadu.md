@@ -1,7 +1,7 @@
 ---
 title: "Layanan Terpadu SNI, TKDN, dan BMP"
 description: "Pemetaan kebutuhan lintas layanan SNI, TKDN, dan BMP dengan rencana persiapan terstruktur dan ruang lingkup yang disepakati."
-publishDate: 2026-10-22
+pubDate: 2026-10-22
 eyebrow: "PENDEKATAN TERINTEGRASI"
 intro: "Ketika perusahaan menghadapi beberapa kebutuhan sekaligus, langkah pertama adalah memahami hubungan antar kebutuhan, data yang dapat digunakan bersama, dan prioritas yang masuk akal."
 audience:
@@ -28,6 +28,14 @@ faqs:
   - question: "Apakah layanan terpadu menjamin semua hasil resmi?"
     answer: "Tidak. Setiap proses mengikuti skema, data, dan pihak berwenang yang relevan."
 tags: ["SNI","TKDN","BMP","konsultasi terpadu"]
+type: "service"
+slug: "layanan-terpadu"
+updatedDate: 2026-10-22
+socialImage: "/images/og-default.svg"
+relatedServices: ["konsultan-sni", "konsultan-tkdn", "konsultan-bmp"]
+relatedPages: ["faq", "kontak"]
+relatedArticles: []
+relatedGuides: ["persiapan-dokumen-tkdn", "persiapan-sni"]
 ---
 ## Kapan pendekatan terpadu membantu?
 Pendekatan terpadu berguna ketika beberapa kebutuhan berbagi data atau melibatkan tim internal yang sama. Pemetaan awal membantu mencegah pekerjaan berulang dan membuat dependensi terlihat tanpa mengasumsikan semua persyaratan identik.
