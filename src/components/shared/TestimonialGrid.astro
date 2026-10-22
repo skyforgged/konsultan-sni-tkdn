@@ -1,6 +1,6 @@
 ---
 /** Use real, permissioned testimonials only; the catalog explicitly labels its data as simulation. */
-const { id = 'testimoni', title = 'Pengalaman klien', items = [], illustrative = false } = Astro.props;
+const { id = 'testimoni', title = 'Pengalaman klien', items = [], illustrative = false } = Astro.props as { id?: string; title?: string; items?: Array<{ quote: string; name: string; industry: string }>; illustrative?: boolean };
 ---
 <section id={id} class="tkdn-testimonials" aria-labelledby={`${id}-title`}>
   <div class="container">
