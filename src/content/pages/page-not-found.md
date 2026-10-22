@@ -1,4 +1,6 @@
 ---
+id: 6
+ulid: "01K8SN00000000000000000006"
 type: "page"
 slug: "not-found"
 title: "Halaman tidak ditemukan"
