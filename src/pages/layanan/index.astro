@@ -3,7 +3,7 @@ import {getCollection,getEntry} from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
 import RelatedLinks from '../../components/RelatedLinks.astro';
-const page=await getEntry('pages','layanan');
+const page=await getEntry('pages','layanan.md');
 if(!page) throw new Error('Missing frontmatter source: pages/layanan.md');
 const services=(await getCollection('services',({data})=>!data.draft&&data.status==='active')).sort((a,b)=>(a.data.order??999)-(b.data.order??999)).map((e,i)=>({title:e.data.title,description:e.data.description,href:`/layanan/${e.data.slug??e.id}/`,eyebrow:e.data.eyebrow,number:String(i+1).padStart(2,'0')}));
 ---
