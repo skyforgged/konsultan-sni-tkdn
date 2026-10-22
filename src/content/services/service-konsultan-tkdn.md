@@ -1,4 +1,3 @@
----
 id: "service-konsultan-tkdn"
 title: "Konsultan TKDN"
 description: "Pendampingan pemetaan komponen dalam negeri, penataan data biaya dan bukti pendukung, serta pemeriksaan kesiapan awal pengajuan TKDN."
@@ -40,16 +39,8 @@ relatedGuides: ["persiapan-dokumen-tkdn"]
 order: 20
 draft: false
 status: active
+blocks:
+  - {"component":"section","heading":"Apa yang dapat dibantu?","content":[{"text":"Pendampingan dapat mencakup pemetaan kebutuhan data, penataan bukti pendukung, pemeriksaan konsistensi, serta simulasi awal apabila metode relevan telah dipastikan dan data tersedia."}]}
+  - {"component":"checklist-card","heading":"Data awal yang berguna","items":[{"title":"Nama produk, model, varian, atau ruang lingkup jasa.","number":"01"},{"title":"Daftar komponen/bahan dan informasi asalnya jika relevan.","number":"02"},{"title":"Gambaran proses produksi atau pelaksanaan jasa.","number":"03"},{"title":"Data biaya, tenaga kerja, atau peralatan relevan.","number":"04"},{"title":"Dokumen pendukung yang tersedia dan daftar data yang belum lengkap.","number":"05"}]}
+  - {"component":"section","heading":"Catatan penting","content":[{"text":"Metode penghitungan dan bukti yang dibutuhkan dapat berbeda menurut jenis pengajuan dan peraturan berlaku. Nilai simulasi bukan keputusan resmi."}]}
 ---
-## Apa yang dapat dibantu?
-Pendampingan dapat mencakup pemetaan kebutuhan data, penataan bukti pendukung, pemeriksaan konsistensi, serta simulasi awal apabila metode relevan telah dipastikan dan data tersedia.
-
-### Data awal yang berguna
-- Nama produk, model, varian, atau ruang lingkup jasa.
-- Daftar komponen/bahan dan informasi asalnya jika relevan.
-- Gambaran proses produksi atau pelaksanaan jasa.
-- Data biaya, tenaga kerja, atau peralatan relevan.
-- Dokumen pendukung yang tersedia dan daftar data yang belum lengkap.
-
-### Catatan penting
-Metode penghitungan dan bukti yang dibutuhkan dapat berbeda menurut jenis pengajuan dan peraturan berlaku. Nilai simulasi bukan keputusan resmi.
