@@ -37,7 +37,7 @@ const base = z.object({
 
 const services = defineCollection({
   type: 'content',
-  schema: base.extend({
+  schema: base.omit({ relatedServices: true, relatedPages: true, relatedArticles: true, relatedGuides: true }).extend({
     type: z.literal('service').default('service'),
     eyebrow: z.string(),
     order: z.number().optional(),
