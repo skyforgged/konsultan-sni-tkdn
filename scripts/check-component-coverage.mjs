@@ -30,14 +30,14 @@ for (const key of keys) if (!examples.has(key)) failures.push('Komponen registry
 for (const key of examples) if (!keys.includes(key)) failures.push('Katalog memakai komponen "' + key + '" yang tidak terdaftar pada registry.');
 for (const route of routes) {
   const source = await readFile(route, 'utf8');
-  if (/\b(?:render\(entry\)|const\s*\{\s*Content\s*\}\s*=\s*await\s*render)/.test(source) || /<Content\s*\/?\s*>/.test(source)) {
+  if (source.includes('render(entry)') || source.includes('await render(entry)') || source.includes('<Content')) {
     failures.push(route + ': renderer Markdown langsung masih dipakai; gunakan BlockRenderer.');
   }
   if (!source.includes('BlockRenderer.astro')) failures.push(route + ': tidak menggunakan BlockRenderer.');
 }
 for (const route of pageRoutes) {
   const source = await readFile(route, 'utf8');
-  if (/\\b(?:render\\(entry\\)|const\\s*\\{\\s*Content\\s*\\}\\s*=\\s*await\\s*render)/.test(source) || /<Content\\s*\\/?\\s*>/.test(source) || /\\{page\\.body\\}/.test(source)) {
+  if (source.includes('render(entry)') || source.includes('await render(entry)') || source.includes('<Content') || source.includes('{page.body}')) {
     failures.push(route + ': renderer Markdown langsung masih dipakai; pindahkan isi ke frontmatter blocks dan gunakan PageBlocks.');
   }
   if (!source.includes('PageBlocks.astro')) failures.push(route + ': tidak menggunakan PageBlocks untuk konten page frontmatter.');
