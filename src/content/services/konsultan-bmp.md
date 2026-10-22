@@ -1,7 +1,7 @@
 ---
 title: "Konsultan BMP"
 description: "Konsultasi pemetaan kebutuhan dan penyiapan dokumen terkait Bobot Manfaat Perusahaan sesuai konteks dan ketentuan yang terverifikasi."
-publishDate: 2026-10-22
+pubDate: 2026-10-22
 eyebrow: "BOBOT MANFAAT PERUSAHAAN"
 intro: "Kebutuhan terkait BMP harus dipahami dalam konteks penerapan dan ketentuan yang relevan. Pendampingan dimulai dari klarifikasi tujuan, pemetaan dokumen, dan pemeriksaan data."
 audience:
@@ -27,6 +27,14 @@ faqs:
   - question: "Apakah pendampingan menjamin hasil BMP tertentu?"
     answer: "Tidak. Pendampingan berfokus pada persiapan data dan dokumen; hasil resmi mengikuti ketentuan berlaku."
 tags: ["BMP","dokumen perusahaan","kesiapan"]
+type: "service"
+slug: "konsultan-bmp"
+updatedDate: 2026-10-22
+socialImage: "/images/og-default.svg"
+relatedServices: ["konsultan-tkdn", "layanan-terpadu"]
+relatedPages: ["faq", "kontak"]
+relatedArticles: []
+relatedGuides: []
 ---
 ## Mulai dari konteks yang tepat
 Sebelum menyusun materi atau melakukan simulasi, pastikan tujuan penggunaan BMP, ruang lingkup relevan, dan dasar ketentuan untuk kasus tersebut. Ini mencegah penggunaan asumsi atau komponen yang tidak sesuai.
