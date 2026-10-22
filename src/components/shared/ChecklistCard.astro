@@ -1,4 +1,8 @@
 ---
-import BlockShell from './BlockShell.astro';
+const { heading = 'Daftar periksa', title, items = [], checklist = [] } = Astro.props;
+const entries = items.length ? items : checklist;
 ---
-<BlockShell kind="checklist-card" {...Astro.props} />
+<section class="tkdn-block tkdn-block--checklist-card">
+  <h2 class="tkdn-block__title">{title ?? heading}</h2>
+  <ul class="tkdn-checklist">{entries.map((item: any) => <li><span aria-hidden="true">✓</span><div><strong>{typeof item === 'string' ? item : item.title ?? item.label}</strong>{typeof item !== 'string' && (item.text || item.description) && <p>{item.text ?? item.description}</p>}</div></li>)}</ul>
+</section>
