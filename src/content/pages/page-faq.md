@@ -1,4 +1,3 @@
----
 id: "page-faq"
 type: "page"
 slug: "faq"
@@ -28,5 +27,7 @@ relatedServices: ["konsultan-sni", "konsultan-tkdn", "konsultan-bmp"]
 relatedPages: ["kontak", "tentang-kami"]
 relatedArticles: ["perbedaan-konsultasi-pengujian-sertifikasi"]
 relatedGuides: ["persiapan-sni", "persiapan-dokumen-tkdn"]
+blocks:
+  - component: "note"
+    text: "FAQ menjawab pertanyaan umum sebelum konsultasi. Untuk kebutuhan khusus, gunakan halaman layanan terkait atau hubungi tim konsultasi."
 ---
-FAQ menjawab pertanyaan umum sebelum konsultasi. Untuk kebutuhan khusus, gunakan halaman layanan terkait atau hubungi tim konsultasi.
