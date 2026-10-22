@@ -1,0 +1,43 @@
+---
+title: "Konsultan SNI"
+description: "Pendampingan identifikasi standar, pemeriksaan kesiapan produk, dan persiapan dokumen untuk proses sertifikasi SNI sesuai skema relevan."
+publishDate: 2026-10-22
+eyebrow: "STANDAR NASIONAL INDONESIA"
+intro: "Persiapan sertifikasi produk dimulai dengan memahami standar yang relevan, skema yang berlaku, dan kondisi bukti teknis perusahaan. Kami membantu memetakan kebutuhan serta langkah tindak lanjut."
+audience:
+  - "Produsen yang ingin memahami standar SNI yang relevan bagi produknya."
+  - "Perusahaan yang perlu meninjau kesiapan dokumen dan spesifikasi produk."
+  - "Tim yang membutuhkan bantuan menata bukti untuk pengujian atau sertifikasi."
+deliverables:
+  - "Pemetaan kebutuhan dan ruang lingkup awal."
+  - "Daftar kesenjangan dokumen atau data yang ditinjau."
+  - "Rencana tindak lanjut dan prioritas persiapan."
+  - "Pendampingan dokumen sesuai ruang lingkup yang disepakati."
+process:
+  - title: "Identifikasi produk dan standar"
+    description: "Pahami fungsi, karakteristik, varian, dan tujuan penggunaan produk untuk menelusuri persyaratan relevan."
+  - title: "Tinjauan kesiapan awal"
+    description: "Tinjau spesifikasi, dokumen perusahaan, dan bukti teknis yang tersedia."
+  - title: "Rencana pemenuhan"
+    description: "Susun daftar kekurangan, prioritas perbaikan, dan kebutuhan koordinasi atau pengujian bila relevan."
+  - title: "Pendampingan proses"
+    description: "Bantu menata dokumen dan menindaklanjuti kebutuhan sesuai kontrak serta skema berlaku."
+faqs:
+  - question: "Apakah semua produk wajib memiliki SNI?"
+    answer: "Tidak semua produk otomatis wajib. Kewajiban dan persyaratan perlu diperiksa berdasarkan produk dan peraturan yang berlaku."
+  - question: "Apakah konsultan dapat menjamin sertifikat terbit?"
+    answer: "Tidak. Konsultan membantu persiapan; keputusan sertifikasi ditetapkan pihak berwenang berdasarkan skema dan hasil proses."
+tags: ["SNI","sertifikasi produk","persiapan dokumen"]
+---
+## Apa yang dapat dibantu?
+Ruang lingkup dapat meliputi identifikasi standar, peninjauan awal dokumen produk dan perusahaan, pemetaan kesenjangan, persiapan dokumen pendukung, serta koordinasi kebutuhan pengujian atau asesmen bila termasuk dalam ruang lingkup pekerjaan.
+
+### Informasi awal yang berguna
+- Nama, jenis, fungsi, dan varian produk.
+- Spesifikasi atau lembar data teknis yang tersedia.
+- Informasi fasilitas atau proses produksi.
+- Dokumen mutu atau bukti pendukung yang dimiliki.
+- Tujuan sertifikasi dan target internal perusahaan.
+
+### Hal yang perlu diperhatikan
+Persyaratan SNI wajib atau sukarela, skema sertifikasi, kebutuhan pengujian, dan pihak berwenang harus diverifikasi untuk produk spesifik. Konsultasi awal tidak menggantikan keputusan lembaga sertifikasi atau hasil pengujian resmi.
