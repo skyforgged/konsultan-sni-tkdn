@@ -48,9 +48,9 @@ Contoh:
 
 ```yaml
 type: "article"
-slug: "persiapan-sni"
-title: "Persiapan Sertifikasi SNI"
-description: "Penjelasan persiapan awal sertifikasi produk dan dokumen pendukung."
+slug: "perbedaan-konsultasi-pengujian-sertifikasi"
+title: "Perbedaan Konsultasi, Pengujian, dan Sertifikasi Produk"
+description: "Pahami perbedaan peran konsultan, laboratorium pengujian, dan lembaga sertifikasi agar ruang lingkup dan tanggung jawab lebih jelas."
 pubDate: 2026-10-22
 updatedDate: 2026-10-22
 draft: false
