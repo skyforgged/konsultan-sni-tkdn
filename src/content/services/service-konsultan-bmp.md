@@ -10,10 +10,6 @@ type: "service"
 slug: "konsultan-bmp"
 updatedDate: "2026-10-23T12:00:12Z"
 socialImage: "/images/og-default.svg"
-relatedServices: ["konsultan-tkdn", "layanan-terpadu"]
-relatedPages: ["faq", "kontak"]
-relatedArticles: []
-relatedGuides: []
 order: 30
 draft: false
 status: active
