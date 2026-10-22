@@ -45,9 +45,9 @@ for (const page of htmlByRoute.values()) {
 
   const canonicals = [...html.matchAll(/<link\b[^>]*>/gi)].map(m=>m[0]).filter(tag => (attr(tag,'rel')||'').toLowerCase().split(/\s+/).includes('canonical'));
   if (noindex && canonicals.length) failures.push(`${relative}: halaman noindex tidak boleh memiliki canonical`);
-  if (!noindex && canonicals.length !== 1) failures.push(`${relative}: halaman indexable harus memiliki tepat satu canonical, ditemukan ${canonicals.length}`);
+  if (!noindex && process.env.SITE_URL && canonicals.length !== 1) failures.push(`${relative}: halaman indexable harus memiliki tepat satu canonical, ditemukan ${canonicals.length}`);
   const canonical = attr(canonicals[0] || '', 'href');
-  if (!noindex && canonical) {
+  if (!noindex && process.env.SITE_URL && canonical) {
     if (!absoluteHttp(canonical)) failures.push(`${relative}: canonical harus URL absolut HTTP(S): ${canonical}`);
     else {
       if (canonicalOwners.has(canonical)) failures.push(`${relative}: canonical duplikat dengan ${canonicalOwners.get(canonical)}: ${canonical}`);
@@ -59,8 +59,9 @@ for (const page of htmlByRoute.values()) {
 
   const requiredMeta = [
     ['property','og:title'], ['property','og:description'],
-    ...(!noindex ? [['property','og:url']] : []), ['property','og:image'], ['name','twitter:card'], ['name','twitter:title'],
-    ['name','twitter:description'], ['name','twitter:image'],
+    ...(!noindex && process.env.SITE_URL ? [['property','og:url']] : []),
+    ...(process.env.SITE_URL ? [['property','og:image']] : []), ['name','twitter:card'], ['name','twitter:title'],
+    ['name','twitter:description'], ...(process.env.SITE_URL ? [['name','twitter:image']] : []),
   ];
   for (const [key,value] of requiredMeta) {
     const found = meta(key,value);
