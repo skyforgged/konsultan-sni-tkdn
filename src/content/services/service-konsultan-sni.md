@@ -1,4 +1,3 @@
----
 id: "service-konsultan-sni"
 title: "Konsultan SNI"
 description: "Pendampingan identifikasi standar, pemeriksaan kesiapan produk, dan persiapan dokumen untuk proses sertifikasi SNI sesuai skema relevan."
@@ -40,16 +39,8 @@ relatedGuides: ["persiapan-sni"]
 order: 10
 draft: false
 status: active
+blocks:
+  - {"component":"section","heading":"Apa yang dapat dibantu?","content":[{"text":"Ruang lingkup dapat meliputi identifikasi standar, peninjauan awal dokumen produk dan perusahaan, pemetaan kesenjangan, persiapan dokumen pendukung, serta koordinasi kebutuhan pengujian atau asesmen bila termasuk dalam ruang lingkup pekerjaan."}]}
+  - {"component":"checklist-card","heading":"Informasi awal yang berguna","items":[{"title":"Nama, jenis, fungsi, dan varian produk.","number":"01"},{"title":"Spesifikasi atau lembar data teknis yang tersedia.","number":"02"},{"title":"Informasi fasilitas atau proses produksi.","number":"03"},{"title":"Dokumen mutu atau bukti pendukung yang dimiliki.","number":"04"},{"title":"Tujuan sertifikasi dan target internal perusahaan.","number":"05"}]}
+  - {"component":"section","heading":"Hal yang perlu diperhatikan","content":[{"text":"Persyaratan SNI wajib atau sukarela, skema sertifikasi, kebutuhan pengujian, dan pihak berwenang harus diverifikasi untuk produk spesifik. Konsultasi awal tidak menggantikan keputusan lembaga sertifikasi atau hasil pengujian resmi."}]}
 ---
-## Apa yang dapat dibantu?
-Ruang lingkup dapat meliputi identifikasi standar, peninjauan awal dokumen produk dan perusahaan, pemetaan kesenjangan, persiapan dokumen pendukung, serta koordinasi kebutuhan pengujian atau asesmen bila termasuk dalam ruang lingkup pekerjaan.
-
-### Informasi awal yang berguna
-- Nama, jenis, fungsi, dan varian produk.
-- Spesifikasi atau lembar data teknis yang tersedia.
-- Informasi fasilitas atau proses produksi.
-- Dokumen mutu atau bukti pendukung yang dimiliki.
-- Tujuan sertifikasi dan target internal perusahaan.
-
-### Hal yang perlu diperhatikan
-Persyaratan SNI wajib atau sukarela, skema sertifikasi, kebutuhan pengujian, dan pihak berwenang harus diverifikasi untuk produk spesifik. Konsultasi awal tidak menggantikan keputusan lembaga sertifikasi atau hasil pengujian resmi.
