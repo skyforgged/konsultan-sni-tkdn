@@ -1,3 +1,4 @@
+---
 id: "page-panduan"
 type: "page"
 slug: "panduan"
