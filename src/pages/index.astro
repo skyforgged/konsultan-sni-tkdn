@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ServiceCard from '../components/ServiceCard.astro';
-import {siteConfig} from '../config/site';
 import {getCollection,getEntry} from 'astro:content';
 const home = await getEntry('pages','home');
 if (!home) throw new Error('Missing frontmatter source: src/content/pages/home.md');
