@@ -1,4 +1,11 @@
 ---
-import BlockShell from './BlockShell.astro';
+const { heading = 'Alur proses', title, items = [], steps = [] } = Astro.props;
+const entries = items.length ? items : steps;
 ---
-<BlockShell kind="process-timeline" {...Astro.props} />
+<section class="tkdn-block tkdn-block--process-timeline">
+  <h2 class="tkdn-block__title">{title ?? heading}</h2>
+  <ol class="tkdn-timeline">{entries.map((item: any, index: number) => <li class="tkdn-timeline__item">
+    <span class="tkdn-timeline__marker">{index + 1}</span>
+    <div><h3>{typeof item === 'string' ? item : item.title ?? item.heading}</h3>{typeof item !== 'string' && <p>{item.text ?? item.description}</p>}</div>
+  </li>)}</ol>
+</section>
