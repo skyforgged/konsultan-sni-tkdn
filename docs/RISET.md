@@ -1,260 +1,239 @@
-Saya sarankan struktur layanan dibuat berdasarkan tiga pilar utama: SNI, TKDN, dan BMP. Setiap pilar memiliki layanan konsultasi, pemeriksaan kesiapan, pendampingan dokumen, dan pendampingan proses sesuai kebutuhan klien. Layanan yang beririsan dapat dijual sebagai paket gabungan.
+# Riset Layanan dan Positioning Konsultan SNI, TKDN, dan BMP
 
-# Rekomendasi struktur layanan konsultan SNI, TKDN, dan BMP
+> **Status dokumen:** riset awal untuk strategi layanan dan pengembangan situs.  
+> **Tujuan:** memetakan pola penawaran pasar, menyusun struktur layanan yang mudah dipahami calon klien, dan memberi dasar konten situs.  
+> **Catatan validasi:** halaman, layanan, dan ketentuan regulasi dapat berubah. Verifikasi kembali sumber, status lembaga, ruang lingkup akreditasi, serta aturan yang berlaku sebelum memakai informasi ini untuk keputusan bisnis atau publikasi eksternal.
 
-## 1. Layanan SNI
+## 1. Ringkasan eksekutif
 
-[⭐優質的台南精密量測儀器公司有哪些？挑選精密量測儀器的關鍵要素都在這！](https://images.openai.com/static-rsc-4/uQi1zP-uPw1PTqTrAZNrxQkiu6NX4zzU_NmQb3wC3AsZeCXlQ4-g4N402EpzngyZEutWhdRU_TvBAjl0eRhopKi79qQD6NZ0QYqpNw5qwW-py-6m5p1DberZZYHYm4fraOLg1LnZ1zZ-MNyT7YTQ4XHqlsMbXBB7poMqVQ8EFp4?purpose=inline)
+Situs konsultan SNI, TKDN, dan BMP sebaiknya tidak hanya menawarkan “pengurusan sertifikat”. Nilai yang lebih kuat adalah membantu perusahaan memahami persyaratan, mengukur kesiapan, merapikan bukti, dan menavigasi proses sertifikasi atau verifikasi dengan pihak berwenang.
 
-1.1. Konsultasi SNI
+Tiga pilar utama:
 
-- Identifikasi kewajiban SNI berdasarkan jenis produk.
-- Identifikasi standar SNI yang relevan.
-- Penjelasan jalur sertifikasi dan persyaratan.
-- Konsultasi SNI wajib dan SNI sukarela.
-- Estimasi tahapan, waktu, dan komponen biaya.
+1. **SNI:** identifikasi standar yang relevan, pemeriksaan kesiapan, persiapan dokumen dan produk, serta pendampingan proses sertifikasi.
+2. **TKDN:** pemetaan komponen dalam negeri, pengumpulan bukti dan data biaya, simulasi awal, persiapan pengajuan, serta pendampingan verifikasi.
+3. **BMP:** konsultasi kelayakan, pemetaan dokumen, pemeriksaan data, dan simulasi sesuai ketentuan yang relevan dengan kebutuhan klien.
 
-[China supplier due diligence checklist | Sinospect](https://images.openai.com/static-rsc-4/6adiJlAOXcFGl18sbMEaTWXkGYh7RFwok-_dIS2JwaSaqWw9-gufDrEpbNpcEDg5CbubaW14JCdkrR9o4cnG7GLVxrKXA4GdeiJDy0Xi10Dmbo0u-BDxuWMzlw43EdvHOHcQWlU7_jjXLOzGUQRX_2b-QiRNTfHYyVUaUYaH_9M?purpose=inline)
+Situs perlu membedakan secara eksplisit antara **konsultasi/pendampingan** dan **kewenangan menerbitkan sertifikat atau menetapkan hasil resmi**. Jangan menjanjikan sertifikat, nilai TKDN/BMP tertentu, kelulusan, atau waktu proses yang tidak dapat dikendalikan konsultan.
 
-1.2. Pemeriksaan Kesiapan Sertifikasi SNI
+## 2. Tujuan dan metode riset
 
-- Pemeriksaan legalitas perusahaan dan identitas produk.
-- Pemeriksaan dokumen teknis produk.
-- Analisis kesenjangan terhadap persyaratan standar.
-- Pemeriksaan kesiapan fasilitas dan proses produksi.
-- Penyusunan daftar kekurangan dan rencana tindak lanjut.
+Riset ini merupakan pemetaan awal berbasis situs publik yang relevan dengan konsultasi industri, sertifikasi produk, TKDN, layanan pengujian, dan lembaga teknis. Situs-situs di bawah dipakai sebagai bahan pembanding untuk mengamati kategori layanan dan cara pasar menjelaskan proses.
 
-[Avian Innovation Center - Avian Brands](https://images.openai.com/static-rsc-4/l7PU1gO7ZBC_VR9b2snrOJr2ZqNBIacAFPCFRdVPWPiWyufr_CXvKxzSg6TmeptjJ_00jEbdCVEVV1tGJAU9BD4fDvTRq8bc3WU-C5MiG4eeCXhKxIKlErYIvBw3XQZDgdeZNlXF59QPrXivKRDiMTpbxVM-eQhaQXdY9id1Wpk?purpose=inline)
+Riset ini **bukan** audit legal, penilaian kualitas layanan, pemeriksaan status akreditasi, atau pernyataan bahwa semua situs di daftar adalah pesaing langsung. Beberapa merupakan penyedia konsultasi komersial; lainnya adalah lembaga teknis, pengujian, sertifikasi, atau referensi resmi yang berada pada peran berbeda.
 
-1.3. Pendampingan Sertifikasi SNI
+## 3. Peta situs pembanding dan referensi
 
-- Persiapan dokumen permohonan.
-- Koordinasi dengan Lembaga Sertifikasi Produk (LSPro).
-- Koordinasi kebutuhan pengujian dengan laboratorium.
-- Persiapan audit atau asesmen pabrik jika dipersyaratkan.
-- Pendampingan perbaikan temuan dan kekurangan dokumen.
-- Pemantauan proses sampai tahap akhir sesuai ruang lingkup kontrak.
+| No. | Situs / organisasi | Tautan | Relevansi untuk riset |
+|---:|---|---|---|
+| 1 | PT RTA | https://rta.co.id/ | Pembanding penawaran jasa konsultasi/sertifikasi dan penyajian layanan industri. |
+| 2 | Sembada Arta Energi | https://sembadaartaenergi.com/ | Pembanding penyajian layanan konsultasi teknis dan industri. |
+| 3 | Konsultan TKDN | https://konsultantkdn.com/ | Referensi kategori layanan dan bahasa pemasaran yang berfokus pada TKDN. |
+| 4 | PT Mitra Konsultan Industri | https://mitrakonsultanindustri.com/ | Pembanding layanan konsultasi industri dan pendampingan perusahaan. |
+| 5 | Konsultan Perizinan | https://konsultanperizinan.co.id/ | Referensi penyederhanaan layanan regulasi untuk calon klien nonteknis. |
+| 6 | PT Cipta Konsultan Manajemen | https://ciptakonsultan.com/ | Pembanding penyajian jasa konsultasi dan pendampingan manajemen. |
+| 7 | Mitra Jasa Legalitas | https://mitrajasalegalitas.com/ | Referensi struktur penawaran jasa legalitas dan proses administratif. |
+| 8 | PT Biro Klasifikasi Indonesia (BKI) | https://www.bki.co.id/ | Referensi institusi teknis dan layanan yang memiliki ruang lingkup formal. |
+| 9 | Balai Besar Standardisasi dan Pelayanan Jasa Industri (BBSPJIKKP) | https://bbspjikp.kemenperin.go.id/ | Referensi layanan teknis/pengujian pada lingkungan Kementerian Perindustrian; cek nama dan domain aktif sebelum mengutip. |
+| 10 | Balai Besar Standardisasi dan Pelayanan Jasa Industri Kerajinan dan Batik (BBSPJIKB) | https://bbkb.kemenperin.go.id/ | Referensi balai teknis, pengujian, dan layanan industri. |
+| 11 | Balai Besar Standardisasi dan Pelayanan Jasa Industri Bahan dan Barang Teknik (B4T) | https://b4t.kemenperin.go.id/ | Referensi layanan pengujian dan teknis bahan/barang teknik. |
+| 12 | Balai Besar Standardisasi dan Pelayanan Jasa Industri Logam dan Mesin (BBSPJILM) | https://bbspjilm.kemenperin.go.id/ | Referensi layanan teknis industri logam dan mesin. |
+| 13 | TÜV Rheinland Indonesia | https://www.tuv.com/indonesia/id/ | Referensi penyedia layanan pengujian, inspeksi, dan sertifikasi internasional. |
+| 14 | Kementerian Perindustrian RI | https://kemenperin.go.id/ | Sumber primer untuk kebijakan industri dan informasi program TKDN. |
+| 15 | JDIH Kementerian Perindustrian | https://jdih.kemenperin.go.id/ | Rujukan primer untuk memeriksa peraturan yang berlaku. |
 
-[Sentinel](https://images.openai.com/static-rsc-4/W287xPq5UovueZf7vBnghLywKeD_0QVHjUGrvrrJ99F-R9TAKtJgpQpQJTQ4VkKoThKzBDYp0YGm4xYrNmqxNk9g8IfrCaELPwnTTOb24KvaQcuw4PsUrbGCtEn108NAHq7eZV-CYYJNgXVI8FkiKFXSCGJYWhUQASe3f2YMYow?purpose=inline)
+**Peringatan tautan:** URL di atas merupakan titik awal riset, bukan jaminan bahwa setiap halaman masih aktif atau bahwa nama/ruang lingkup layanan tidak berubah. Periksa ulang tautan dan isi halaman sebelum menjadikannya sumber kutipan publik. Jangan menyimpulkan bahwa organisasi teknis atau sertifikasi adalah pesaing langsung konsultan.
 
-1.4. Persiapan Teknis dan Dokumen Produk
+## 4. Pola layanan yang layak dibandingkan
 
-- Penyusunan atau penataan spesifikasi produk.
-- Pemeriksaan dokumen proses produksi.
-- Penataan instruksi kerja dan catatan pengendalian mutu.
-- Persiapan sampel untuk pengujian.
-- Penyiapan dokumen pendukung untuk audit sertifikasi.
+Saat meninjau situs pembanding, evaluasi halaman berdasarkan pertanyaan berikut:
 
-[Vertex Certification — Trust. Verify. Excellence.](https://images.openai.com/static-rsc-4/jARgoUDF-865hDt3rnmXvJisOza-oxIPfRhl_i4jJ1xsSQkmiPhHKHeNSQBZji2DKgXiaxtg8ONoWn338KnNuQUYq99DqTB4q0Fhr7LmPM0OiwHrhY5jytT3baBK3UhwnPtdgVFY_O4v6VFUyOjyWcM30NRiMbq1vbAxVKuM5tA?purpose=inline)
+- Apakah layanan dijelaskan berdasarkan kebutuhan klien atau hanya menggunakan istilah teknis?
+- Apakah ada uraian proses, dokumen yang dibutuhkan, dan keluaran layanan?
+- Apakah pembagian antara konsultasi, pengujian, sertifikasi, dan verifikasi sudah jelas?
+- Apakah situs menjelaskan batas tanggung jawab dan hal yang bergantung pada pihak lain?
+- Apakah pengunjung diberi langkah berikutnya yang jelas, seperti konsultasi awal atau pemeriksaan dokumen?
+- Apakah ada bukti kredibilitas yang bisa diverifikasi, bukan hanya klaim umum?
+- Apakah konten edukasi menjawab pertanyaan nyata calon klien?
 
-1.5. Pendampingan Pemeliharaan Sertifikasi SNI
+Peluang diferensiasi yang disarankan bukan sekadar mengklaim “terbaik” atau “tercepat”, melainkan menawarkan proses yang transparan: daftar kebutuhan dokumen, pemeriksaan kesenjangan, rencana tindak lanjut, pembaruan status, dan penjelasan biaya serta batas ruang lingkup sejak awal.
 
-- Pemeriksaan masa berlaku sertifikat.
-- Persiapan surveilans atau evaluasi berkala.
-- Penanganan perubahan produk, proses, atau fasilitas.
-- Pendampingan tindak lanjut temuan.
-- Persiapan sertifikasi ulang sesuai skema yang berlaku.
+## 5. Rekomendasi katalog layanan
 
-## 2. Layanan TKDN
+### 5.1 SNI
 
-[Supply Chain Manager](https://images.openai.com/static-rsc-4/1Nz0jjZIraVUW4KH7mMT2g8NduPdh3VLM5U1HxR7f5ClwlHvbKGXbLtc-FlupkHAuk_IhGVKBKaPj0bgnXShYlg-Be9oy3EJdmM4yEO-pa9IgqkzAZ44tC-x74cbV7M--0zHjS9ZddAXsoUXOGx6E9L4b4uEg5_Pgjrygg0jEag?purpose=inline)
+**Konsultasi dan identifikasi SNI**
+- Identifikasi standar yang relevan berdasarkan jenis, fungsi, dan karakteristik produk.
+- Pemeriksaan awal apakah SNI wajib atau sukarela berdasarkan ketentuan yang berlaku.
+- Penjelasan opsi proses dan persyaratan awal.
 
-2.1. Konsultasi TKDN
+**Pemeriksaan kesiapan sertifikasi**
+- Pemeriksaan identitas perusahaan dan produk.
+- Tinjauan dokumen teknis dan spesifikasi.
+- Analisis kesenjangan terhadap persyaratan yang relevan.
+- Daftar kekurangan dan rencana perbaikan.
 
-- Identifikasi jenis pengajuan TKDN: barang, jasa, atau gabungan.
-- Penjelasan persyaratan dan tahapan sertifikasi.
-- Identifikasi komponen dalam negeri yang dapat diperhitungkan.
-- Penjelasan data dan bukti pendukung yang diperlukan.
-- Konsultasi strategi peningkatan nilai TKDN.
+**Persiapan dokumen dan produk**
+- Penataan spesifikasi, instruksi kerja, catatan mutu, dan dokumen pendukung.
+- Koordinasi persiapan sampel serta pengujian jika diperlukan.
+- Persiapan bukti untuk proses audit atau asesmen sesuai skema.
 
-[Research and Development Budget: How To - 8020 Consulting Posts](https://images.openai.com/static-rsc-4/95jRn53UmLtCeLSTZ6-jllWJpu4D1ky7oDu5_I1000CRINAA0VG0Q0tCBAu_JDMHVrEapT-oMIj-wYwpyoKXDpDWFhZIRmam3VRmoFt4eqwpyrozn2u4gulBrJgJCV2iL1MSLgM4R-mjSuGHNKIMA2Uj_t-MT6N1VnfNTGW76Mw?purpose=inline)
+**Pendampingan proses sertifikasi**
+- Bantuan administratif dan teknis dalam menyiapkan permohonan.
+- Koordinasi dengan lembaga sertifikasi produk (LSPro) dan laboratorium sesuai kebutuhan.
+- Bantuan menindaklanjuti kekurangan dokumen atau temuan.
 
-2.2. Perhitungan dan Simulasi TKDN
+**Pemeliharaan sertifikasi**
+- Inventarisasi masa berlaku dan kebutuhan tindak lanjut.
+- Persiapan surveilans, perubahan produk, atau sertifikasi ulang jika berlaku.
 
-- Perhitungan awal TKDN barang.
-- Pemetaan bahan baku dan komponen lokal maupun impor.
-- Analisis struktur biaya produksi.
-- Pemeriksaan komponen tenaga kerja dan biaya terkait sesuai metode yang berlaku.
-- Simulasi nilai TKDN berdasarkan data klien.
-- Identifikasi sumber data yang masih kurang atau belum dapat dibuktikan.
+### 5.2 TKDN
 
-Simulasi merupakan estimasi awal; hasil resmi mengikuti metode, bukti, dan proses verifikasi yang berlaku.
+**Konsultasi TKDN**
+- Identifikasi jenis pengajuan dan ruang lingkup barang/jasa.
+- Penjelasan persyaratan dan data yang dibutuhkan.
+- Pemetaan awal komponen lokal, impor, tenaga kerja, serta struktur biaya yang relevan.
 
-[Inside the BACB Newsletter: What Every Behavior Analyst Must Know This April 2026 - ABA Jobs](https://images.openai.com/static-rsc-4/Li05NDeKk4Oek2vuG1a-mdB2noZKvFy336ChDBZXedZwIEIhw8_idwowZ7kgE4sVSPKDxAyZPUIP3ulMUPzAW8Nyi2vdNj5ug60RJBQxQkQrCfPFoSxTDBVxSS1rhUtb-ha1WzaqSTWuB8ObIk8d4POUQZmyuKZZld8BXaTNiH4?purpose=inline)
+**Simulasi awal TKDN**
+- Analisis data dan bukti yang disediakan perusahaan.
+- Pemetaan kekurangan data.
+- Simulasi indikatif berdasarkan metode yang berlaku dan asumsi yang dinyatakan secara tertulis.
 
-2.3. Pendampingan Sertifikasi TKDN Barang
+**Persiapan pengajuan TKDN barang**
+- Penataan daftar komponen, asal bahan, data produksi, dan struktur biaya.
+- Pemeriksaan konsistensi bukti pendukung.
+- Pendampingan perbaikan data sesuai kebutuhan proses.
 
-- Pemeriksaan data perusahaan dan produk.
-- Penyusunan daftar komponen dan struktur biaya.
-- Pengumpulan bukti asal bahan dan komponen.
-- Penataan data produksi dan tenaga kerja.
-- Persiapan dokumen permohonan dan pendampingan verifikasi.
-- Pendampingan tindak lanjut atas kekurangan data atau temuan.
-
-[Quantity Surveyors & Cost Consultants UK | AUB Construction Costing Ltd](https://images.openai.com/static-rsc-4/dx6SIJziqGyCutuZd0SdyJXGtf7TPFDkR4I8A127FIkCW_oaf6u4HRfxwEIumdT0Py4kOjWdu5gxwNqzWixjMqG6ZOxFOHS0H_RQOvSrIDnTnvcgnRwu_kdKiVA48og8gqFfkGcXsVS89qcZf-QTr643q1cpJVOLj9m-3Hd1bt0?purpose=inline)
-
-2.4. Pendampingan TKDN Jasa dan Gabungan
-
+**TKDN jasa dan gabungan**
 - Identifikasi ruang lingkup jasa.
 - Pemetaan tenaga kerja, peralatan, dan komponen biaya yang relevan.
-- Pemeriksaan bukti pendukung sesuai metode perhitungan.
-- Penyiapan data untuk pengajuan TKDN jasa.
-- Pendampingan TKDN gabungan barang dan jasa apabila sesuai ketentuan.
+- Penyiapan bukti sesuai metode penghitungan yang berlaku.
+
+**Peningkatan TKDN**
+- Pemetaan komponen impor yang mungkin diganti.
+- Identifikasi calon pemasok lokal.
+- Simulasi dampak perubahan struktur biaya.
+- Rekomendasi perbaikan bukti dan rencana peningkatan.
+
+**Pengelolaan data dan pembaruan**
+- Inventarisasi produk dan sertifikat.
+- Pemantauan masa berlaku serta perubahan data.
+- Persiapan tindak lanjut atau pengajuan ulang sesuai ketentuan.
+
+### 5.3 BMP
+
+**Konsultasi dan pemeriksaan kesiapan BMP**
+- Memahami kebutuhan klien dan konteks penerapan BMP.
+- Memetakan dokumen yang relevan.
+- Mengidentifikasi kesenjangan dan langkah perbaikan.
+
+**Simulasi dan dokumentasi BMP**
+- Mengumpulkan data dan bukti pendukung.
+- Melakukan simulasi berdasarkan ketentuan yang terverifikasi untuk kasus terkait.
+- Memeriksa konsistensi data serta mendokumentasikan asumsi.
+
+**Pendampingan administratif**
+- Penataan dokumen.
+- Persiapan tanggapan atas permintaan klarifikasi.
+- Pemantauan status proses dalam batas kontrak layanan.
+
+**Catatan:** jangan memublikasikan rumus, komponen, atau klaim hasil BMP tanpa memastikan peraturan dan konteks penerapannya. Jelaskan pula apakah layanan BMP yang ditawarkan berdiri sendiri atau terkait dengan perhitungan TKDN/pengadaan tertentu.
+
+### 5.4 Layanan terpadu
+
+- Konsultasi awal SNI, TKDN, dan BMP.
+- Audit kesiapan dokumen dan produk.
+- Rencana pemenuhan persyaratan bertahap.
+- Pendampingan perbaikan dokumen.
+- Evaluasi kesiapan mengikuti proses pengadaan.
+- Pemantauan sertifikat, masa berlaku, dan tindak lanjut.
+
+## 6. Struktur situs yang direkomendasikan
+
+1. **Beranda**
+   - Masalah yang dibantu, layanan utama, alur kerja, bukti kredibilitas, dan CTA konsultasi.
+2. **Layanan**
+   - Konsultan SNI
+   - Konsultan TKDN
+   - Konsultan BMP
+   - Layanan terpadu
+3. **Proses Kerja**
+   - Konsultasi awal → pemeriksaan kebutuhan → penawaran dan ruang lingkup → persiapan dokumen → pendampingan → penutupan dan tindak lanjut.
+4. **Panduan**
+   - Artikel edukasi, daftar dokumen, glosarium, dan penjelasan proses.
+5. **Tentang Kami**
+   - Identitas badan usaha, kompetensi, ruang lingkup pekerjaan, dan mitra yang dapat diverifikasi.
+6. **FAQ**
+   - Biaya, estimasi waktu, dokumen awal, perbedaan konsultasi dan sertifikasi, serta hal yang menentukan hasil.
+7. **Kontak / Konsultasi**
+   - Formulir ringkas dengan jenis produk/layanan, lokasi perusahaan, dan kebutuhan awal.
+
+Setiap halaman layanan idealnya memiliki: siapa yang membutuhkan layanan, masalah yang diselesaikan, cakupan pekerjaan, data/dokumen awal, tahapan proses, keluaran yang diterima klien, faktor yang memengaruhi waktu/biaya, batas kewenangan konsultan, FAQ, dan CTA.
+
+## 7. Prioritas implementasi konten
+
+### Tahap 1 — Halaman inti
+- Beranda.
+- Konsultan SNI.
+- Konsultan TKDN.
+- Konsultan BMP.
+- Layanan terpadu.
+- Tentang dan kontak.
+
+### Tahap 2 — Halaman layanan spesifik
+- Pemeriksaan kesiapan SNI.
+- Pendampingan sertifikasi SNI.
+- Simulasi TKDN.
+- TKDN barang.
+- TKDN jasa/gabungan.
+- Pemeriksaan kesiapan BMP.
+
+### Tahap 3 — Konten edukasi
+- Cara menentukan kebutuhan SNI produk.
+- Perbedaan konsultasi, pengujian, dan sertifikasi.
+- Data yang diperlukan untuk simulasi TKDN.
+- Kesalahan umum dalam dokumentasi TKDN.
+- Persiapan dokumen sebelum menghubungi konsultan.
+- FAQ biaya dan waktu proses dengan faktor penentu yang transparan.
+
+Bangun halaman spesifik hanya jika kontennya dapat memberi jawaban yang berbeda dan berguna. Hindari membuat banyak halaman yang hanya mengganti nama layanan/kata kunci dengan isi hampir sama.
+
+## 8. SEO dan pengalaman pengguna
+
+- Gunakan satu maksud pencarian utama per halaman; jangan memaksakan semua kata kunci SNI/TKDN/BMP ke setiap halaman.
+- Buat judul dan deskripsi yang spesifik, natural, serta sesuai isi.
+- Hubungkan halaman layanan dengan panduan yang menjelaskan pertanyaan terkait.
+- Gunakan tautan internal yang deskriptif dan pastikan tidak ada tautan rusak.
+- Sertakan identitas perusahaan dan informasi kontak yang konsisten.
+- Tampilkan studi kasus hanya jika faktual, mendapat izin, dan dapat dibuktikan; anonimisasi data rahasia klien.
+- Hindari klaim “pasti lolos”, “sertifikat dijamin”, nilai TKDN tertentu, atau jangka waktu pasti tanpa dasar.
+- Optimalkan halaman untuk pembaca ponsel, aksesibilitas, kecepatan, dan formulir konsultasi yang singkat.
+- Gunakan data terstruktur hanya jika sesuai dengan konten nyata dan panduan mesin pencari yang berlaku.
 
-[Supplier Identification Services in India | IMARC Engineering](https://images.openai.com/static-rsc-4/FLhsMDplJ7u3felqkr7VWFBFOrSyb7150XTd9gtpyP7DUXcCj0VVWkC3EavmVDnbjG5w5pj85FBLpEE_MLxzPt4jXiJZqhClXU-AY0mALXrTJZon80dY-VJ0O0GNPhY1AKMZ18AyQxTq5V9TiT7kE3SJKRozX8GK3JB_GM_2UB0?purpose=inline)
+## 9. Kredibilitas dan batas klaim
 
-2.5. Optimasi dan Peningkatan TKDN
+Situs harus menyatakan secara terang bahwa konsultan membantu persiapan dan pendampingan. Keputusan resmi, pengujian, verifikasi, atau penerbitan sertifikat dilakukan oleh pihak yang memiliki kewenangan sesuai skema dan peraturan yang berlaku.
 
-- Analisis komponen impor yang berpotensi digantikan produk lokal.
-- Pemetaan pemasok dalam negeri.
-- Simulasi dampak perubahan struktur biaya terhadap TKDN.
-- Rekomendasi penguatan bukti komponen lokal.
-- Penyusunan rencana peningkatan nilai TKDN.
+Sebelum menerbitkan klaim, periksa:
+- Status dan ruang lingkup LSPro/laboratorium atau pihak teknis yang disebut.
+- Apakah mitra memberi izin untuk dicantumkan.
+- Dasar regulasi yang masih berlaku dan tanggal pemeriksaannya.
+- Bukti untuk testimoni, logo klien, studi kasus, dan angka keberhasilan.
+- Perbedaan antara estimasi internal dan hasil resmi.
 
-Layanan ini berfokus pada rekomendasi dan simulasi, bukan jaminan pencapaian persentase tertentu.
+## 10. Referensi regulasi dan validasi lanjutan
 
-[How Supplement Ingredient Suppliers Earn Your Trust: 7 Documentation Checks Before You Sign](https://images.openai.com/static-rsc-4/1hN3eZcOOTs0Swq_TONsQeJsXNh9lwVRmtcHkWc4jpwt4DmkImxkWa_C793E8CiHNJKDmtGEfUgHkgT5h9JCkU3KB7ph1BfFwZORMUaoNYEZRbYadqhy21RtT0NNAdV77DdtE6pXwrU5rdtS7_Os1mTZYN29MsRWVHiueEuxqWI?purpose=inline)
+Gunakan sumber primer untuk memastikan regulasi, bukan artikel promosi pihak ketiga.
 
-2.6. Pengelolaan dan Pembaruan Data TKDN
+- JDIH Kementerian Perindustrian: https://jdih.kemenperin.go.id/
+- Kementerian Perindustrian: https://kemenperin.go.id/
+- Badan Standardisasi Nasional: https://www.bsn.go.id/
+- Sistem informasi atau layanan resmi TKDN Kementerian Perindustrian: akses melalui situs resmi Kemenperin dan verifikasi alamat aktif sebelum dicantumkan.
 
-- Inventarisasi sertifikat dan produk yang sudah disertifikasi.
-- Pemantauan masa berlaku dan kebutuhan pembaruan.
-- Penyiapan data jika terjadi perubahan produk atau struktur biaya.
-- Pendampingan pengajuan ulang atau perubahan data sesuai ketentuan.
+Dokumen ini sebelumnya merujuk pada **Permenperin No. 35 Tahun 2025** sebagai salah satu regulasi yang perlu ditinjau. Jangan menganggap nomor atau substansi regulasi itu otomatis relevan untuk setiap layanan. Verifikasi judul, status berlaku, perubahan/pencabutan, pasal terkait, dan penerapannya di JDIH sebelum dipakai dalam materi publik.
 
-## 3. Layanan BMP
+## 11. Kesimpulan
 
-BMP (Bobot Manfaat Perusahaan) berkaitan dengan manfaat perusahaan dalam konteks penghitungan TKDN dan preferensi produk dalam negeri. Penawaran jasa BMP sebaiknya difokuskan pada pemeriksaan kelayakan, penghitungan, dokumentasi, dan pendampingan sesuai ketentuan yang berlaku.
+Positioning yang disarankan adalah **mitra persiapan kepatuhan dan pendampingan proses** yang membantu klien memahami kebutuhan, menyiapkan dokumen, mengidentifikasi kekurangan, dan berkoordinasi dengan pihak berwenang. Pembeda utamanya adalah proses kerja yang jelas, keluaran yang terdefinisi, komunikasi transparan, serta klaim yang dapat diverifikasi.
 
-[Prawo do odliczenia VAT z faktur i korekt - przewodnik](https://images.openai.com/static-rsc-4/isOGJNMo5zeP_-xutB6ozkjxHrhYpHKlurHEBUkE-CAzcKkLIvbQ8Yy1-vPDGEeWKwFOF6oZYEWash724bNE8ZUYGm4APyHAzSFQ1DAYVGSirM4aT2z-ucMRMFL_dyLfnX_KSzniavRCqLs8OUFgjkKOvglxK56BGGmJur75Kmg?purpose=inline)
-
-3.1. Konsultasi BMP
-
-- Penjelasan konsep dan fungsi BMP.
-- Identifikasi jenis perusahaan dan skema yang relevan.
-- Pemetaan persyaratan dan dokumen pendukung.
-- Konsultasi hubungan TKDN dan BMP dalam konteks pengadaan.
-
-[HR Compliance Checklist for Small Businesses: 2025 Step-by-Step Guide](https://images.openai.com/static-rsc-4/iPlzB4DvTr2LTcmhlvAmLYppOHra-Cy00hdJpX1Xk3RtK8vB66b9SP_agx_QtdGgKs1daxk-T3q-Md6SjtYq2fpvubXavF2MizYISj1HCGKbVUhylfjB-FLxS2vpWMy44EFCI1G19eKWADH_PlOz6aeA0imBJU9jrUSZ2hGDUAw?purpose=inline)
-
-3.2. Pemeriksaan Kesiapan BMP
-
-- Pemeriksaan kelengkapan dokumen perusahaan.
-- Pemeriksaan bukti pendukung untuk unsur yang relevan.
-- Identifikasi kesenjangan terhadap persyaratan.
-- Penyusunan daftar dokumen yang harus dilengkapi.
-- Rekomendasi langkah perbaikan sebelum pengajuan.
-
-[Financial Statement Recasting: Strategies to Maximize Business Value for Clients - Online CLE Course | Lawline](https://images.openai.com/static-rsc-4/0yjDtYwAplh60kTtAgbZ1bhB_YoftWiW80UZQExOBPJnYlR46Klh_rzgy4GwjjJ3wJV21PP6FRUE8fU71YJEusRsFLQbqHGQfeqLUv15FrGgFpUkiQingkqjXyiviyPep7tfWipzBTePxBydRYCzr1ECQgqokj1-EAZIo2HYKIw?purpose=inline)
-
-3.3. Penghitungan dan Simulasi BMP
-
-- Pengumpulan data yang relevan.
-- Simulasi penghitungan berdasarkan metode yang berlaku.
-- Pemeriksaan konsistensi data dan bukti pendukung.
-- Identifikasi unsur yang perlu diperkuat.
-- Penjelasan hasil simulasi dan tindak lanjut.
-
-Rumus dan komponen penghitungan perlu dikonfirmasi berdasarkan ketentuan BMP yang berlaku untuk kasus klien.
-
-[Bid Writing: A Complete Guide for Training Providers](https://images.openai.com/static-rsc-4/VK5XgUCIDzNdDvYPH3tggjCJCF0YSw0BDYYPLa9cHQnO5rV2uHGE0ItBzY-WcLWvU4Kx-88osqA31UnaKkhSCqTbM8y-zDkY1DYDiZmNwtMY8y6IGyYM2cGaMfIUb_ppMiZOhayKUgDa-yp11aC9cmAccH3_rTtQ-jLbalscfew?purpose=inline)
-
-3.4. Pendampingan Dokumen dan Pengajuan BMP
-
-- Penataan dokumen pendukung.
-- Pemeriksaan konsistensi data.
-- Persiapan dokumen pengajuan.
-- Pendampingan klarifikasi dan perbaikan dokumen.
-- Pemantauan status pengajuan sesuai lingkup layanan.
-
-## 4. Layanan gabungan SNI, TKDN, dan BMP
-
-Layanan gabungan penting karena satu perusahaan dapat membutuhkan lebih dari satu bentuk kepatuhan sekaligus.
-
-| Nama layanan                        | Sub-layanan                                                           |
-| ----------------------------------- | --------------------------------------------------------------------- |
-| Konsultasi Kepatuhan Produk         | Identifikasi kebutuhan SNI, TKDN, dan BMP                             |
-| Audit Kesiapan Sertifikasi          | Pemeriksaan dokumen, produk, produksi, dan data perusahaan            |
-| Pendampingan Sertifikasi Terpadu    | Koordinasi persiapan SNI dan TKDN serta BMP yang relevan              |
-| Evaluasi Kesiapan Pengadaan         | Pemeriksaan persyaratan produk untuk kebutuhan pengadaan pemerintah   |
-| Pendampingan Perbaikan Dokumen      | Penanganan kekurangan dokumen dari proses sertifikasi atau verifikasi |
-| Konsultasi Peningkatan TKDN         | Analisis komponen lokal dan simulasi dampak terhadap nilai TKDN       |
-| Monitoring Sertifikat dan Kepatuhan | Pemantauan status sertifikat, masa berlaku, dan tindak lanjut         |
-
-## 5. Struktur menu situs yang saya rekomendasikan
-
-Berikut susunan yang dapat langsung dijadikan dasar sitemap halaman layanan.
-
-Layanan Konsultan SNI, TKDN & BMP
-
-Konsultan SNI
-
-\- Konsultasi SNI
-
-\- Pemeriksaan Kesiapan Sertifikasi SNI
-
-\- Pendampingan Sertifikasi SNI
-
-\- Persiapan Teknis dan Dokumen Produk
-
-\- Pemeliharaan dan Pembaruan Sertifikasi SNI
-
-Konsultan TKDN
-
-\- Konsultasi TKDN
-
-\- Perhitungan dan Simulasi TKDN
-
-\- Sertifikasi TKDN Barang
-
-\- Sertifikasi TKDN Jasa
-
-\- TKDN Gabungan Barang dan Jasa
-
-\- Optimasi dan Peningkatan TKDN
-
-\- Pembaruan Data dan Sertifikat TKDN
-
-Konsultan BMP
-
-\- Konsultasi BMP
-
-\- Pemeriksaan Kesiapan BMP
-
-\- Penghitungan dan Simulasi BMP
-
-\- Pendampingan Dokumen dan Pengajuan BMP
-
-Layanan Terpadu
-
-\- Konsultasi SNI, TKDN, dan BMP
-
-\- Audit Kesiapan Sertifikasi
-
-\- Pendampingan Sertifikasi Terpadu
-
-\- Evaluasi Kesiapan Pengadaan
-
-## 6. Prioritas peluncuran
-
-Saya tidak menyarankan membuat semua halaman sekaligus. Mulai dari layanan yang paling mudah dipahami calon klien dan memiliki kebutuhan yang jelas.
-
-Tahap 1
-
-Halaman layanan utama
-
-Konsultan SNI, Konsultan TKDN, Konsultan BMP, Pendampingan Sertifikasi SNI, dan Jasa Pengurusan Sertifikat TKDN.
-
-Tahap 2
-
-Halaman layanan spesifik
-
-Perhitungan TKDN, TKDN barang, TKDN jasa, pemeriksaan kesiapan SNI, penghitungan BMP, dan pendampingan dokumen.
-
-Tahap 3
-
-Halaman solusi dan edukasi
-
-SNI wajib atau sukarela, alur sertifikasi, dokumen TKDN, cara menghitung TKDN, hubungan TKDN dan BMP, serta studi kasus yang dapat diverifikasi.
-
-Rekomendasi akhir: jadikan tiga pilar SNI, TKDN, dan BMP sebagai struktur utama, sementara layanan gabungan menjadi pintu masuk bagi klien yang belum mengetahui kebutuhan spesifiknya. Sebelum publikasi, verifikasi kembali ruang lingkup resmi setiap layanan, metode penghitungan TKDN/BMP, dan pihak yang berwenang menerbitkan sertifikat agar konten pemasaran tidak menjanjikan hal di luar kewenangan konsultan.
+Sebelum riset ini dipakai sebagai dasar proposal atau publikasi, lakukan validasi ulang atas seluruh tautan pembanding dan regulasi. Tambahkan tanggal pemeriksaan, catatan halaman yang ditinjau, dan bukti spesifik untuk setiap klaim yang akan dipakai secara eksternal.
