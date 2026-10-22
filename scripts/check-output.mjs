@@ -134,30 +134,56 @@ for (const page of htmlByRoute.values()) {
   }
 }
 
-const robotsPath = path.join(root,'robots.txt');
-const sitemapPath = path.join(root,'sitemap.xml');
-if (!await isFile(robotsPath)) failures.push('robots.txt tidak ditemukan pada output build');
-if (!await isFile(sitemapPath)) failures.push('sitemap.xml tidak ditemukan pada output build');
-if (await isFile(robotsPath)) {
-  const robots = await readFile(robotsPath,'utf8');
-  const directives = [...robots.matchAll(/^Sitemap:\s*(\S+)\s*$/gim)];
-  if (directives.length !== 1) failures.push(`robots.txt harus memuat tepat satu deklarasi Sitemap, ditemukan ${directives.length}`);
-  for (const [,url] of directives) if (!absoluteHttp(url)) failures.push(`URL Sitemap pada robots.txt tidak valid: ${url}`);
-}
-if (await isFile(sitemapPath)) {
-  const sitemap = await readFile(sitemapPath,'utf8');
-  const locations = [...sitemap.matchAll(/<loc>([\s\S]*?)<\/loc>/gi)].map(m=>decodeXml(m[1].trim()));
-  if (!sitemap.includes('<urlset') || !sitemap.includes('</urlset>')) failures.push('sitemap.xml tidak memiliki struktur urlset yang valid');
-  if (!locations.length) failures.push('sitemap.xml tidak memiliki URL');
-  const seen = new Set();
-  for (const url of locations) {
-    if (!absoluteHttp(url)) { failures.push(`URL sitemap tidak absolut/valid: ${url}`); continue; }
-    if (seen.has(url)) failures.push(`URL duplikat di sitemap.xml: ${url}`);
-    seen.add(url);
-    if (canonicalOwners.size && !canonicalOwners.has(url)) failures.push(`URL sitemap tidak cocok dengan canonical halaman indexable: ${url}`);
+if (process.env.SITE_URL) {
+  const expectedOrigin = new URL(process.env.SITE_URL).origin;
+  const robotsPath = path.join(root, 'robots.txt');
+  const sitemapIndexPath = path.join(root, 'sitemap-index.xml');
+  if (!await isFile(robotsPath)) failures.push('robots.txt tidak ditemukan pada output build');
+  if (!await isFile(sitemapIndexPath)) failures.push('sitemap-index.xml tidak ditemukan pada output build');
+
+  if (await isFile(robotsPath)) {
+    const robots = await readFile(robotsPath, 'utf8');
+    const directives = [...robots.matchAll(/^Sitemap:\\s*(\\S+)\\s*$/gim)];
+    if (directives.length !== 1) failures.push(`robots.txt harus memuat tepat satu deklarasi Sitemap, ditemukan ${directives.length}`);
+    for (const [, url] of directives) {
+      if (!absoluteHttp(url)) failures.push(`URL Sitemap pada robots.txt tidak valid: ${url}`);
+      else {
+        const parsed = new URL(url);
+        if (parsed.origin !== expectedOrigin || parsed.pathname !== '/sitemap-index.xml') failures.push(`robots.txt harus menunjuk ke sitemap-index.xml pada origin ${expectedOrigin}: ${url}`);
+      }
+    }
+  }
+
+  if (await isFile(sitemapIndexPath)) {
+    const index = await readFile(sitemapIndexPath, 'utf8');
+    if (!index.includes('<sitemapindex') || !index.includes('</sitemapindex>')) failures.push('sitemap-index.xml tidak memiliki struktur sitemapindex yang valid');
+    const sitemapFiles = [...index.matchAll(/<loc>([\\s\\S]*?)<\\/loc>/gi)].map(match => decodeXml(match[1].trim()));
+    if (!sitemapFiles.length) failures.push('sitemap-index.xml tidak menunjuk ke sitemap mana pun');
+    const indexedUrls = new Set();
+    for (const sitemapUrl of sitemapFiles) {
+      if (!absoluteHttp(sitemapUrl)) { failures.push(`URL sitemap anak tidak valid: ${sitemapUrl}`); continue; }
+      const parsed = new URL(sitemapUrl);
+      if (parsed.origin !== expectedOrigin) failures.push(`Origin sitemap anak berbeda: ${sitemapUrl}`);
+      const sitemapPath = path.resolve(root, '.' + decodeURIComponent(parsed.pathname));
+      if (!sitemapPath.startsWith(root + path.sep) || !await isFile(sitemapPath)) {
+        failures.push(`File sitemap anak tidak ditemukan: ${sitemapUrl}`);
+        continue;
+      }
+      const sitemap = await readFile(sitemapPath, 'utf8');
+      if (!sitemap.includes('<urlset') || !sitemap.includes('</urlset>')) { failures.push(`Struktur urlset tidak valid: ${sitemapUrl}`); continue; }
+      for (const [, rawUrl] of sitemap.matchAll(/<loc>([\\s\\S]*?)<\\/loc>/gi)) {
+        const url = decodeXml(rawUrl.trim());
+        if (!absoluteHttp(url)) { failures.push(`URL halaman di sitemap tidak valid: ${url}`); continue; }
+        if (indexedUrls.has(url)) failures.push(`URL duplikat di sitemap: ${url}`);
+        indexedUrls.add(url);
+        if (!canonicalOwners.has(url)) failures.push(`URL sitemap tidak cocok dengan canonical halaman indexable: ${url}`);
+      }
+    }
+    for (const url of canonicalOwners.keys()) {
+      if (!indexedUrls.has(url)) failures.push(`Halaman indexable tidak terdaftar di sitemap: ${url}`);
+    }
   }
 }
-
 if (failures.length) {
   console.error(`SEO/output check gagal: ${failures.length} masalah pada ${htmlFiles.length} halaman HTML.`);
   for (const failure of failures) console.error(' - ' + failure);
