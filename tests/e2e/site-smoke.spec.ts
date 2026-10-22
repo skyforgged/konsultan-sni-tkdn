@@ -56,10 +56,17 @@ test('katalog komponen merender seluruh komponen reusable dan menggunakan layout
   const response = await page.goto('/komponen/');
   expect(response?.status()).toBe(200);
   await expect(page.getByRole('heading', { level: 1, name: /Katalog Komponen Reusable/i })).toBeVisible();
-  await expect(page.locator('.tkdn-block')).toHaveCount(26);
+  await expect(page.locator('.component-catalog .tkdn-block')).toHaveCount(26);
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
   await expect(page.locator('.tkdn-site-header')).toBeVisible();
   await expect(page.locator('.tkdn-site-footer')).toBeVisible();
+  const dropdown = page.locator('.tkdn-dropdown');
+  await dropdown.locator('summary').click();
+  await expect(dropdown.getByRole('link', { name: 'Artikel' })).toBeVisible();
+  await page.getByRole('button', { name: 'Buka modal contoh' }).click();
+  await expect(page.getByRole('dialog', { name: 'Modal komponen reusable' })).toBeVisible();
+  await page.getByRole('button', { name: 'Tutup dialog' }).click();
+  await expect(page.getByRole('dialog')).not.toBeVisible();
 });
 
 test('halaman artikel menggunakan blok komponen, bukan renderer Markdown langsung', async ({ page }) => {
