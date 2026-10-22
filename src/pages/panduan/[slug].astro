@@ -18,7 +18,7 @@ const renderedBlocks=blocks.length?blocks:[{component:'section',heading:'Ringkas
       <p class="article-meta">Diterbitkan {new Date(entry.data.pubDate).toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'})} · {entry.data.author}</p>
     </div></header>
     <section class="section"><div class="container content-layout">
-      <div class="prose component-article-content">{entry.data.howTo&&<HowTo {...entry.data.howTo}/ >}{renderedBlocks.map(block=><BlockRenderer block={block}/>)}
+      <div class="prose component-article-content">{entry.data.howTo&&<HowTo {...entry.data.howTo} />}{renderedBlocks.map(block=><BlockRenderer block={block}/>)}
         <aside class="tkdn-block tkdn-block--note"><h2 class="tkdn-block__title">Catatan penggunaan</h2><p>Gunakan panduan ini sebagai titik awal. Verifikasi persyaratan untuk produk atau pengajuan spesifik sebelum mengambil keputusan.</p><a class="button" href="/kontak/">Diskusikan langkah berikutnya ↗</a></aside>
       </div>
       <RelatedLinks services={entry.data.relatedServices} pages={entry.data.relatedPages} articles={entry.data.relatedArticles} guides={entry.data.relatedGuides} currentSlug={Astro.url.pathname} title="Langkah selanjutnya"/>
