@@ -1,7 +1,7 @@
 ---
 title: "Konsultan TKDN"
 description: "Pendampingan pemetaan komponen dalam negeri, penataan data biaya dan bukti pendukung, serta pemeriksaan kesiapan awal pengajuan TKDN."
-pubDate: "2026-10-22T00:00:13Z"
+pubDate: "2026-10-22T00:00:14Z"
 eyebrow: "TINGKAT KOMPONEN DALAM NEGERI"
 intro: "Persiapan TKDN memerlukan data yang konsisten dan bukti yang dapat ditelusuri. Kami membantu memetakan komponen, mengidentifikasi data yang belum tersedia, dan menyiapkan dokumentasi untuk proses sesuai metode berlaku."
 audience:
@@ -30,7 +30,7 @@ faqs:
 tags: ["TKDN","komponen dalam negeri","dokumen"]
 type: "service"
 slug: "konsultan-tkdn"
-updatedDate: "2026-10-22T12:00:13Z"
+updatedDate: "2026-10-22T12:00:14Z"
 socialImage: "/images/og-default.svg"
 relatedServices: ["konsultan-sni", "layanan-terpadu"]
 relatedPages: ["faq", "kontak"]
