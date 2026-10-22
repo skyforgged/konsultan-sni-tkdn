@@ -9,7 +9,7 @@ intro: "Persiapan sertifikasi produk dimulai dengan memahami standar yang releva
 tags: ["SNI","sertifikasi produk","persiapan dokumen"]
 type: "service"
 slug: "konsultan-sni"
-updatedDate: "2026-10-22T12:00:13Z"
+updatedDate: "2026-10-23T12:00:13Z"
 socialImage: "/images/og-default.svg"
 relatedServices: ["konsultan-tkdn", "konsultan-bmp"]
 relatedPages: ["faq", "tentang-kami"]
