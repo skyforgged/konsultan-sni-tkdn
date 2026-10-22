@@ -1,0 +1,12 @@
+---
+import {siteConfig} from '../../config/site';
+const { variant = 'default', ariaLabel = 'Navigasi utama' } = Astro.props;
+const links = [{href:'/layanan/',label:'Layanan'},{href:'/artikel/',label:'Artikel'},{href:'/panduan/',label:'Panduan'},{href:'/tentang-kami/',label:'Tentang Kami'}];
+---
+<header class={`tkdn-site-header tkdn-site-header--${variant}`}>
+  <div class="container tkdn-site-header__inner">
+    <a class="tkdn-site-brand" href="/" aria-label="Beranda Konsultan SNI dan TKDN"><span class="tkdn-site-brand__mark" aria-hidden="true">SNI</span><span>Konsultan SNI–TKDN</span></a>
+    <nav aria-label={ariaLabel}><ul>{links.map(link=><li><a href={link.href}>{link.label}</a></li>)}</ul></nav>
+    <a class="button tkdn-site-header__cta" href="/kontak/">Konsultasi</a>
+  </div>
+</header>
