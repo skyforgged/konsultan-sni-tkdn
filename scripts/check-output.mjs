@@ -58,8 +58,8 @@ for (const page of htmlByRoute.values()) {
   if (canonical && ogUrl && canonical !== ogUrl) failures.push(`${relative}: og:url tidak sama dengan canonical`);
 
   const requiredMeta = [
-    ['property','og:title'], ['property','og:description'], ['property','og:url'],
-    ['property','og:image'], ['name','twitter:card'], ['name','twitter:title'],
+    ['property','og:title'], ['property','og:description'],
+    ...(!noindex ? [['property','og:url']] : []), ['property','og:image'], ['name','twitter:card'], ['name','twitter:title'],
     ['name','twitter:description'], ['name','twitter:image'],
   ];
   for (const [key,value] of requiredMeta) {
@@ -188,8 +188,11 @@ function normalizeRoute(value) {
 }
 function attr(tag,name) {
   if (!tag) return null;
-  const match = tag.match(new RegExp('(?:^|\\\\s)' + name + '\\\\s*=\\\\s*(?:"([^"]*)"|\\'([^\\']*)\\'|([^\\\\s>]+))','i'));
-  return match ? (match[1] ?? match[2] ?? match[3] ?? '') : null;
+  const pattern = /([^\\s=]+)\\s*=\\s*(?:"([^"]*)"|'([^']*)'|([^\\s>]+))/g;
+  for (const match of tag.matchAll(pattern)) {
+    if (match[1].toLowerCase() === name.toLowerCase()) return match[2] ?? match[3] ?? match[4] ?? '';
+  }
+  return null;
 }
 function decode(value) {
   return value.replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#39;|&apos;/g,"'").replace(/&lt;/g,'<').replace(/&gt;/g,'>');
