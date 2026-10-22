@@ -10,16 +10,11 @@ type: "service"
 slug: "konsultan-tkdn"
 updatedDate: "2026-10-23T12:00:14Z"
 socialImage: "/images/og-default.svg"
-relatedServices: ["konsultan-sni", "layanan-terpadu"]
-relatedPages: ["faq", "kontak"]
-relatedArticles: []
-relatedGuides: ["persiapan-dokumen-tkdn"]
 order: 20
 draft: false
 status: active
 blocks:
   - {"component":"page-header","eyebrow":"TINGKAT KOMPONEN DALAM NEGERI","text":"Persiapan TKDN memerlukan data yang konsisten dan bukti yang dapat ditelusuri. Kami membantu memetakan komponen, mengidentifikasi data yang belum tersedia, dan menyiapkan dokumentasi untuk proses sesuai metode berlaku."}
-  - {"component":"cta","ctaHref":"/kontak/","ctaLabel":"Diskusikan kebutuhan ↗"}
   - {"component":"feature-card-grid","heading":"Siapa yang dapat terbantu?","items":[{"text":"Produsen yang perlu menata data komponen dan asal bahan."},{"text":"Perusahaan yang ingin memahami kesiapan dokumen TKDN barang."},{"text":"Penyedia jasa yang membutuhkan pemetaan data sesuai ruang lingkup penghitungan."}]}
   - {"component":"section","heading":"Apa yang dapat dibantu?","content":[{"text":"Pendampingan dapat mencakup pemetaan kebutuhan data, penataan bukti pendukung, pemeriksaan konsistensi, serta simulasi awal apabila metode relevan telah dipastikan dan data tersedia."}]}
   - {"component":"checklist-card","heading":"Data awal yang berguna","items":[{"title":"Nama produk, model, varian, atau ruang lingkup jasa.","number":"01"},{"title":"Daftar komponen/bahan dan informasi asalnya jika relevan.","number":"02"},{"title":"Gambaran proses produksi atau pelaksanaan jasa.","number":"03"},{"title":"Data biaya, tenaga kerja, atau peralatan relevan.","number":"04"},{"title":"Dokumen pendukung yang tersedia dan daftar data yang belum lengkap.","number":"05"}]}

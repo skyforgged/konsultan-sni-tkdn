@@ -10,16 +10,11 @@ type: "service"
 slug: "konsultan-bmp"
 updatedDate: "2026-10-23T12:00:12Z"
 socialImage: "/images/og-default.svg"
-relatedServices: ["konsultan-tkdn", "layanan-terpadu"]
-relatedPages: ["faq", "kontak"]
-relatedArticles: []
-relatedGuides: []
 order: 30
 draft: false
 status: active
 blocks:
   - {"component":"page-header","eyebrow":"BOBOT MANFAAT PERUSAHAAN","text":"Kebutuhan terkait BMP harus dipahami dalam konteks penerapan dan ketentuan yang relevan. Pendampingan dimulai dari klarifikasi tujuan, pemetaan dokumen, dan pemeriksaan data."}
-  - {"component":"cta","ctaHref":"/kontak/","ctaLabel":"Diskusikan kebutuhan ↗"}
   - {"component":"feature-card-grid","heading":"Siapa yang dapat terbantu?","items":[{"text":"Perusahaan yang perlu memahami kebutuhan dokumen terkait BMP."},{"text":"Tim pengadaan atau administrasi yang ingin meninjau kesiapan data."},{"text":"Perusahaan yang membutuhkan pemetaan awal sebelum proses resmi."}]}
   - {"component":"section","heading":"Mulai dari konteks yang tepat","content":[{"text":"Sebelum menyusun materi atau melakukan simulasi, pastikan tujuan penggunaan BMP, ruang lingkup relevan, dan dasar ketentuan untuk kasus tersebut. Ini mencegah penggunaan asumsi atau komponen yang tidak sesuai."}]}
   - {"component":"checklist-card","heading":"Informasi awal","items":[{"title":"Tujuan dan konteks kebutuhan BMP.","number":"01"},{"title":"Data identitas dan profil perusahaan yang relevan.","number":"02"},{"title":"Dokumen yang telah tersedia.","number":"03"},{"title":"Referensi proses atau ketentuan yang menjadi dasar kebutuhan.","number":"04"},{"title":"Pertanyaan yang masih memerlukan klarifikasi.","number":"05"}]}

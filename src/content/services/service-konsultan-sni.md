@@ -10,16 +10,11 @@ type: "service"
 slug: "konsultan-sni"
 updatedDate: "2026-10-23T12:00:13Z"
 socialImage: "/images/og-default.svg"
-relatedServices: ["konsultan-tkdn", "konsultan-bmp"]
-relatedPages: ["faq", "tentang-kami"]
-relatedArticles: []
-relatedGuides: ["persiapan-sni"]
 order: 10
 draft: false
 status: active
 blocks:
   - {"component":"page-header","eyebrow":"STANDAR NASIONAL INDONESIA","text":"Persiapan sertifikasi produk dimulai dengan memahami standar yang relevan, skema yang berlaku, dan kondisi bukti teknis perusahaan. Kami membantu memetakan kebutuhan serta langkah tindak lanjut."}
-  - {"component":"cta","ctaHref":"/kontak/","ctaLabel":"Diskusikan kebutuhan ↗"}
   - {"component":"feature-card-grid","heading":"Siapa yang dapat terbantu?","items":[{"text":"Produsen yang ingin memahami standar SNI yang relevan bagi produknya."},{"text":"Perusahaan yang perlu meninjau kesiapan dokumen dan spesifikasi produk."},{"text":"Tim yang membutuhkan bantuan menata bukti untuk pengujian atau sertifikasi."}]}
   - {"component":"section","heading":"Apa yang dapat dibantu?","content":[{"text":"Ruang lingkup dapat meliputi identifikasi standar, peninjauan awal dokumen produk dan perusahaan, pemetaan kesenjangan, persiapan dokumen pendukung, serta koordinasi kebutuhan pengujian atau asesmen bila termasuk dalam ruang lingkup pekerjaan."}]}
   - {"component":"checklist-card","heading":"Informasi awal yang berguna","items":[{"title":"Nama, jenis, fungsi, dan varian produk.","number":"01"},{"title":"Spesifikasi atau lembar data teknis yang tersedia.","number":"02"},{"title":"Informasi fasilitas atau proses produksi.","number":"03"},{"title":"Dokumen mutu atau bukti pendukung yang dimiliki.","number":"04"},{"title":"Tujuan sertifikasi dan target internal perusahaan.","number":"05"}]}

@@ -10,16 +10,11 @@ type: "service"
 slug: "layanan-terpadu"
 updatedDate: "2026-10-23T12:00:15Z"
 socialImage: "/images/og-default.svg"
-relatedServices: ["konsultan-sni", "konsultan-tkdn", "konsultan-bmp"]
-relatedPages: ["faq", "kontak"]
-relatedArticles: []
-relatedGuides: ["persiapan-dokumen-tkdn", "persiapan-sni"]
 order: 40
 draft: false
 status: active
 blocks:
   - {"component":"page-header","eyebrow":"PENDEKATAN TERINTEGRASI","text":"Ketika perusahaan menghadapi beberapa kebutuhan sekaligus, langkah pertama adalah memahami hubungan antar kebutuhan, data yang dapat digunakan bersama, dan prioritas yang masuk akal."}
-  - {"component":"cta","ctaHref":"/kontak/","ctaLabel":"Diskusikan kebutuhan ↗"}
   - {"component":"feature-card-grid","heading":"Siapa yang dapat terbantu?","items":[{"text":"Perusahaan dengan kebutuhan persiapan pada lebih dari satu area."},{"text":"Tim yang perlu menyelaraskan data produk, dokumen, dan jadwal internal."},{"text":"Manajemen yang membutuhkan gambaran ruang lingkup dan prioritas kerja."}]}
   - {"component":"section","heading":"Kapan pendekatan terpadu membantu?","content":[{"text":"Pendekatan terpadu berguna ketika beberapa kebutuhan berbagi data atau melibatkan tim internal yang sama. Pemetaan awal membantu mencegah pekerjaan berulang dan membuat dependensi terlihat tanpa mengasumsikan semua persyaratan identik."}]}
   - {"component":"checklist-card","heading":"Prinsip pelaksanaan","items":[{"title":"Satu daftar kebutuhan dan dokumen awal.","number":"01"},{"title":"Pemisahan persyaratan untuk tiap layanan.","number":"02"},{"title":"Prioritas yang disepakati berdasarkan kondisi aktual.","number":"03"},{"title":"Catatan asumsi, risiko, dan keputusan klien.","number":"04"}]}
