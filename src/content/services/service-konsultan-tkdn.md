@@ -10,10 +10,6 @@ type: "service"
 slug: "konsultan-tkdn"
 updatedDate: "2026-10-23T12:00:14Z"
 socialImage: "/images/og-default.svg"
-relatedServices: ["konsultan-sni", "layanan-terpadu"]
-relatedPages: ["faq", "kontak"]
-relatedArticles: []
-relatedGuides: ["persiapan-dokumen-tkdn"]
 order: 20
 draft: false
 status: active
