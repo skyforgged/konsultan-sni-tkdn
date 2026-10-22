@@ -3,8 +3,8 @@ type: "page"
 slug: "artikel"
 title: "Artikel SNI, TKDN, dan BMP"
 description: "Artikel edukasi tentang SNI, TKDN, BMP, persiapan dokumen, dan proses pendampingan."
-pubDate: "2026-10-22T00:00:00Z"
-updatedDate: "2026-10-22T00:00:00Z"
+pubDate: "2026-10-22T00:00:04Z"
+updatedDate: "2026-10-22T12:00:04Z"
 draft: false
 status: active
 pageKind: "listing"
