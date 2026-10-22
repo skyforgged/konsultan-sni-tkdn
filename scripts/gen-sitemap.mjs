@@ -1,5 +1,6 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import './lib/env.mjs';
 
 const dist = path.resolve('dist');
 const indexPath = path.join(dist, 'sitemap-index.xml');

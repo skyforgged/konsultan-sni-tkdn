@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import './scripts/lib/env.mjs';
 const site = process.env.SITE_URL;
 export default defineConfig({
   site,

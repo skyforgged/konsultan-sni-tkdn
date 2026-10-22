@@ -1,4 +1,5 @@
 import { writeFile } from 'node:fs/promises';
+import './lib/env.mjs';
 
 const siteUrl = process.env.SITE_URL;
 if (!siteUrl) {

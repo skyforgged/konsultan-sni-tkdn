@@ -1,5 +1,6 @@
 import { readFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
+import './lib/env.mjs';
 
 const root = path.resolve('dist');
 const failures = [];
