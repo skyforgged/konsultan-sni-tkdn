@@ -9,7 +9,7 @@ intro: "Kebutuhan terkait BMP harus dipahami dalam konteks penerapan dan ketentu
 tags: ["BMP","dokumen perusahaan","kesiapan"]
 type: "service"
 slug: "konsultan-bmp"
-updatedDate: "2026-10-22T12:00:12Z"
+updatedDate: "2026-10-23T12:00:12Z"
 socialImage: "/images/og-default.svg"
 relatedServices: ["konsultan-tkdn", "layanan-terpadu"]
 relatedPages: ["faq", "kontak"]
