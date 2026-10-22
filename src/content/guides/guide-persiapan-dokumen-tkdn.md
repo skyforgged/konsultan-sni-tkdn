@@ -1,4 +1,6 @@
 ---
+id: 15
+ulid: "01K8SN0000000000000000000F"
 title: "Cara Menyiapkan Dokumen Awal untuk Konsultasi TKDN"
 description: "Panduan menginventarisasi data produk, komponen, biaya, dan bukti yang berguna sebelum konsultasi awal terkait TKDN."
 pubDate: "2026-10-22T00:00:02Z"
