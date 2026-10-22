@@ -1,3 +1,4 @@
+---
 id: "guide-persiapan-sni"
 title: "Panduan Awal Persiapan Sertifikasi SNI"
 description: "Langkah awal menginventarisasi informasi produk, spesifikasi, dan dokumen sebelum meninjau kesiapan sertifikasi SNI."
