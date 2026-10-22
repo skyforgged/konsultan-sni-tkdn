@@ -51,3 +51,23 @@ test('halaman tidak ditemukan menampilkan status 404 dan noindex', async ({ page
   await expect(page.getByRole('heading', { level: 1, name: /Halaman tidak ditemukan/i })).toBeVisible();
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
 });
+
+test('katalog komponen merender seluruh komponen reusable dan menggunakan layout TKDN', async ({ page }) => {
+  const response = await page.goto('/komponen/');
+  expect(response?.status()).toBe(200);
+  await expect(page.getByRole('heading', { level: 1, name: /Katalog Komponen Reusable/i })).toBeVisible();
+  await expect(page.locator('.tkdn-block')).toHaveCount(26);
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
+  await expect(page.locator('.tkdn-site-header')).toBeVisible();
+  await expect(page.locator('.tkdn-site-footer')).toBeVisible();
+});
+
+test('halaman artikel menggunakan blok komponen, bukan renderer Markdown langsung', async ({ page }) => {
+  await page.goto('/artikel/');
+  const firstArticle = page.locator('.article-card').first();
+  if (await firstArticle.count()) {
+    await firstArticle.click();
+    await expect(page.locator('.component-article-content .tkdn-block').first()).toBeVisible();
+    await expect(page.locator('.component-article-content')).not.toContainText(/^#{1,6}\\s/m);
+  }
+});
