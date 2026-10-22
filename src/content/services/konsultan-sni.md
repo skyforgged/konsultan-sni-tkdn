@@ -1,7 +1,7 @@
 ---
 title: "Konsultan SNI"
 description: "Pendampingan identifikasi standar, pemeriksaan kesiapan produk, dan persiapan dokumen untuk proses sertifikasi SNI sesuai skema relevan."
-pubDate: "2026-10-22T00:00:12Z"
+pubDate: "2026-10-22T00:00:13Z"
 eyebrow: "STANDAR NASIONAL INDONESIA"
 intro: "Persiapan sertifikasi produk dimulai dengan memahami standar yang relevan, skema yang berlaku, dan kondisi bukti teknis perusahaan. Kami membantu memetakan kebutuhan serta langkah tindak lanjut."
 audience:
@@ -30,7 +30,7 @@ faqs:
 tags: ["SNI","sertifikasi produk","persiapan dokumen"]
 type: "service"
 slug: "konsultan-sni"
-updatedDate: "2026-10-22T12:00:12Z"
+updatedDate: "2026-10-22T12:00:13Z"
 socialImage: "/images/og-default.svg"
 relatedServices: ["konsultan-tkdn", "konsultan-bmp"]
 relatedPages: ["faq", "tentang-kami"]
