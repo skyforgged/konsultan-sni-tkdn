@@ -1,4 +1,3 @@
----
 id: "article-perbedaan-konsultasi-pengujian-sertifikasi"
 title: "Perbedaan Konsultasi, Pengujian, dan Sertifikasi Produk"
 description: "Pahami perbedaan peran konsultan, laboratorium pengujian, dan lembaga sertifikasi agar ruang lingkup dan tanggung jawab lebih jelas."
@@ -16,24 +15,11 @@ relatedArticles: []
 relatedGuides: ["persiapan-sni"]
 draft: false
 status: active
+blocks:
+  - {"component":"section","heading":"Mengapa ketiganya perlu dibedakan?","content":[{"text":"Dalam persiapan sertifikasi produk, konsultasi, pengujian, dan sertifikasi memiliki tujuan serta kewenangan yang berbeda."}]}
+  - {"component":"section","heading":"Konsultasi dan pendampingan","content":[{"text":"Konsultan membantu memetakan persyaratan, meninjau kesiapan dokumen, mengidentifikasi kesenjangan, dan mendampingi persiapan sesuai ruang lingkup kontrak. Konsultan tidak otomatis berwenang melakukan pengujian atau menerbitkan sertifikat."}]}
+  - {"component":"section","heading":"Pengujian","content":[{"text":"Pengujian dilakukan oleh laboratorium dengan kemampuan dan ruang lingkup yang sesuai. Metode, sampel, dan parameter ditentukan berdasarkan standar serta skema relevan."}]}
+  - {"component":"section","heading":"Sertifikasi","content":[{"text":"Sertifikasi merupakan proses penilaian dan keputusan oleh lembaga sertifikasi yang berwenang. Hasil bergantung pada pemenuhan persyaratan dan proses resmi, bukan janji pihak pendamping."}]}
+  - {"component":"steps","heading":"Rencana yang realistis","items":[{"title":"Identifikasi produk dan tujuan sertifikasi.","number":"01"},{"title":"Verifikasi standar, skema, dan pihak relevan.","number":"02"},{"title":"Tinjau dokumen dan kesiapan teknis.","number":"03"},{"title":"Tentukan kebutuhan pengujian atau asesmen.","number":"04"},{"title":"Sepakati ruang lingkup, keluaran, dan tanggung jawab.","number":"05"}]}
+  - {"component":"section","content":[{"text":"Artikel ini bersifat edukatif. Verifikasi informasi untuk kasus spesifik melalui sumber resmi."}]}
 ---
-## Mengapa ketiganya perlu dibedakan?
-Dalam persiapan sertifikasi produk, konsultasi, pengujian, dan sertifikasi memiliki tujuan serta kewenangan yang berbeda.
-
-## Konsultasi dan pendampingan
-Konsultan membantu memetakan persyaratan, meninjau kesiapan dokumen, mengidentifikasi kesenjangan, dan mendampingi persiapan sesuai ruang lingkup kontrak. Konsultan tidak otomatis berwenang melakukan pengujian atau menerbitkan sertifikat.
-
-## Pengujian
-Pengujian dilakukan oleh laboratorium dengan kemampuan dan ruang lingkup yang sesuai. Metode, sampel, dan parameter ditentukan berdasarkan standar serta skema relevan.
-
-## Sertifikasi
-Sertifikasi merupakan proses penilaian dan keputusan oleh lembaga sertifikasi yang berwenang. Hasil bergantung pada pemenuhan persyaratan dan proses resmi, bukan janji pihak pendamping.
-
-## Rencana yang realistis
-1. Identifikasi produk dan tujuan sertifikasi.
-2. Verifikasi standar, skema, dan pihak relevan.
-3. Tinjau dokumen dan kesiapan teknis.
-4. Tentukan kebutuhan pengujian atau asesmen.
-5. Sepakati ruang lingkup, keluaran, dan tanggung jawab.
-
-Artikel ini bersifat edukatif. Verifikasi informasi untuk kasus spesifik melalui sumber resmi.
