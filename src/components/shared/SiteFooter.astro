@@ -2,7 +2,7 @@
 import {siteConfig} from '../../config/site';
 const { ariaLabel = 'Navigasi footer' } = Astro.props;
 ---
-<footer class="tkdn-site-footer site-footer">
+<footer class="tkdn-site-footer site-footer" aria-label={ariaLabel}>
   <div class="container footer-grid tkdn-site-footer__inner">
     <div><a class="tkdn-site-brand brand brand-light" href="/"><span class="tkdn-site-brand__mark brand-mark" aria-hidden="true">S<span>+</span></span><span class="brand-copy"><strong>Konsultan</strong><small>SNI · TKDN · BMP</small></span></a><p>Pendampingan persiapan dengan ruang lingkup kerja yang jelas, data yang tertata, dan proses yang transparan.</p></div>
     <div><h2>Layanan</h2><ul>{siteConfig.services.map(n=><li><a href={n.href}>{n.label}</a></li>)}</ul></div>
