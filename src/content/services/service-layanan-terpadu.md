@@ -4,8 +4,6 @@ ulid: "01K8SN0000000000000000000C"
 title: "Layanan Terpadu SNI, TKDN, dan BMP"
 description: "Pemetaan kebutuhan lintas layanan SNI, TKDN, dan BMP dengan rencana persiapan terstruktur dan ruang lingkup yang disepakati."
 pubDate: "2026-10-22T00:00:15Z"
-eyebrow: "PENDEKATAN TERINTEGRASI"
-intro: "Ketika perusahaan menghadapi beberapa kebutuhan sekaligus, langkah pertama adalah memahami hubungan antar kebutuhan, data yang dapat digunakan bersama, dan prioritas yang masuk akal."
 tags: ["SNI","TKDN","BMP","konsultasi terpadu"]
 type: "service"
 slug: "layanan-terpadu"
@@ -15,16 +13,17 @@ relatedServices: ["konsultan-sni", "konsultan-tkdn", "konsultan-bmp"]
 relatedPages: ["faq", "kontak"]
 relatedArticles: []
 relatedGuides: ["persiapan-dokumen-tkdn", "persiapan-sni"]
-relatedTitle: "Layanan dan konten terkait"
 order: 40
 draft: false
 status: active
 blocks:
-  - {"component":"feature-card-grid","heading":"Siapa yang dapat terbantu?","items":[{"title":"Perusahaan dengan kebutuhan persiapan pada lebih dari satu area."},{"title":"Tim yang perlu menyelaraskan data produk, dokumen, dan jadwal internal."},{"title":"Manajemen yang membutuhkan gambaran ruang lingkup dan prioritas kerja."}]}
+  - {"component":"page-header","eyebrow":"PENDEKATAN TERINTEGRASI","text":"Ketika perusahaan menghadapi beberapa kebutuhan sekaligus, langkah pertama adalah memahami hubungan antar kebutuhan, data yang dapat digunakan bersama, dan prioritas yang masuk akal."}
+  - {"component":"cta","ctaHref":"/kontak/","ctaLabel":"Diskusikan kebutuhan ↗"}
+  - {"component":"feature-card-grid","heading":"Siapa yang dapat terbantu?","items":[{"text":"Perusahaan dengan kebutuhan persiapan pada lebih dari satu area."},{"text":"Tim yang perlu menyelaraskan data produk, dokumen, dan jadwal internal."},{"text":"Manajemen yang membutuhkan gambaran ruang lingkup dan prioritas kerja."}]}
   - {"component":"section","heading":"Kapan pendekatan terpadu membantu?","content":[{"text":"Pendekatan terpadu berguna ketika beberapa kebutuhan berbagi data atau melibatkan tim internal yang sama. Pemetaan awal membantu mencegah pekerjaan berulang dan membuat dependensi terlihat tanpa mengasumsikan semua persyaratan identik."}]}
   - {"component":"checklist-card","heading":"Prinsip pelaksanaan","items":[{"title":"Satu daftar kebutuhan dan dokumen awal.","number":"01"},{"title":"Pemisahan persyaratan untuk tiap layanan.","number":"02"},{"title":"Prioritas yang disepakati berdasarkan kondisi aktual.","number":"03"},{"title":"Catatan asumsi, risiko, dan keputusan klien.","number":"04"}]}
   - {"component":"checklist-card","heading":"Contoh keluaran pekerjaan","items":["Peta kebutuhan dan dependensi antar pekerjaan.","Inventarisasi dokumen dan data yang tersedia.","Rencana kerja bertahap dengan prioritas dan tanggung jawab.","Ringkasan progres dan isu yang memerlukan keputusan klien."]}
-  - {"component":"process-timeline","heading":"Tahapan kerja","steps":[{"title":"Pemetaan tujuan","description":"Klarifikasi target, produk atau jasa yang terlibat, dan kebutuhan yang ingin dipenuhi."},{"title":"Inventarisasi kesiapan","description":"Tinjau data tersedia dan kelompokkan kebutuhan dokumen menurut ruang lingkup."},{"title":"Prioritas dan rencana kerja","description":"Susun urutan tindak lanjut dengan mempertimbangkan dependensi, kesiapan, dan risiko."},{"title":"Pendampingan terkoordinasi","description":"Pantau kemajuan, catat kekurangan, dan perbarui rencana berdasarkan temuan serta kesepakatan."}]}
+  - {"component":"process-timeline","heading":"Tahapan kerja","items":[{"title":"Pemetaan tujuan","description":"Klarifikasi target, produk atau jasa yang terlibat, dan kebutuhan yang ingin dipenuhi."},{"title":"Inventarisasi kesiapan","description":"Tinjau data tersedia dan kelompokkan kebutuhan dokumen menurut ruang lingkup."},{"title":"Prioritas dan rencana kerja","description":"Susun urutan tindak lanjut dengan mempertimbangkan dependensi, kesiapan, dan risiko."},{"title":"Pendampingan terkoordinasi","description":"Pantau kemajuan, catat kekurangan, dan perbarui rencana berdasarkan temuan serta kesepakatan."}]}
   - {"component":"faq","heading":"Pertanyaan tentang layanan ini","items":[{"question":"Apakah semua layanan harus diambil sekaligus?","answer":"Tidak. Ruang lingkup dapat difokuskan pada kebutuhan prioritas dan diperluas jika relevan."},{"question":"Apakah layanan terpadu menjamin semua hasil resmi?","answer":"Tidak. Setiap proses mengikuti skema, data, dan pihak berwenang yang relevan."}]}
   - {"component":"note","heading":"Catatan ruang lingkup","text":"Pekerjaan final ditentukan setelah kebutuhan dan data awal ditinjau. Konsultan membantu persiapan; hasil resmi mengikuti proses pihak berwenang."}
   - {"component":"cta","heading":"Siap membahas kebutuhan Anda?","text":"Diskusikan kebutuhan dan ruang lingkup pendampingan sebelum menentukan langkah berikutnya.","ctaHref":"/kontak/","ctaLabel":"Mulai konsultasi ↗"}
