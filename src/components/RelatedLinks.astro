@@ -16,10 +16,10 @@ const [serviceEntries,pageEntries,articleEntries,guideEntries]=await Promise.all
   getCollection('guides',({data})=>!data.draft && data.status!=='inactive'),
 ]);
 const groups=[
-  {label:'Layanan terkait',items:services.map(slug=>{const e=serviceEntries.find(x=>x.data.slug===slug||x.id===slug);return e?{title:e.data.title,description:e.data.description,href:`/layanan/${e.data.slug??e.id}/`}:null;}).filter(Boolean)},
-  {label:'Halaman terkait',items:pages.map(slug=>{const e=pageEntries.find(x=>x.data.slug===slug||x.id===slug);return e?{title:e.data.title,description:e.data.description,href:e.data.canonical??(slug==='home'?'/':`/${e.data.slug??e.id}/`)}:null;}).filter(Boolean)},
-  {label:'Artikel terkait',items:articles.map(slug=>{const e=articleEntries.find(x=>x.data.slug===slug||x.id===slug);return e?{title:e.data.title,description:e.data.description,href:`/artikel/${e.data.slug??e.id}/`}:null;}).filter(Boolean)},
-  {label:'Panduan terkait',items:guides.map(slug=>{const e=guideEntries.find(x=>x.data.slug===slug||x.id===slug);return e?{title:e.data.title,description:e.data.description,href:`/panduan/${e.data.slug??e.id}/`}:null;}).filter(Boolean)},
+  {label:'Layanan terkait',items:services.map(slug=>{const e=serviceEntries.find(x=>x.data.slug===slug||x.id===slug);return e?{title:e.data.title,description:e.data.description,href:`/layanan/${e.data.slug??e.id}/`}:null;}).filter((item): item is NonNullable<typeof item> => item !== null)},
+  {label:'Halaman terkait',items:pages.map(slug=>{const e=pageEntries.find(x=>x.data.slug===slug||x.id===slug);return e?{title:e.data.title,description:e.data.description,href:e.data.canonical??(slug==='home'?'/':`/${e.data.slug??e.id}/`)}:null;}).filter((item): item is NonNullable<typeof item> => item !== null)},
+  {label:'Artikel terkait',items:articles.map(slug=>{const e=articleEntries.find(x=>x.data.slug===slug||x.id===slug);return e?{title:e.data.title,description:e.data.description,href:`/artikel/${e.data.slug??e.id}/`}:null;}).filter((item): item is NonNullable<typeof item> => item !== null)},
+  {label:'Panduan terkait',items:guides.map(slug=>{const e=guideEntries.find(x=>x.data.slug===slug||x.id===slug);return e?{title:e.data.title,description:e.data.description,href:`/panduan/${e.data.slug??e.id}/`}:null;}).filter((item): item is NonNullable<typeof item> => item !== null)},
 ].map(g=>({...g,items:g.items.filter(i=>i.href!==currentSlug)})).filter(g=>g.items.length);
 ---
 {groups.length>0&&<aside class="article-aside related-content"><h2>{title}</h2>{groups.map(group=><div class="related-group"><h3>{group.label}</h3>{group.items.map(item=><a href={item.href}><strong>{item.title}</strong><small>{item.description}</small><span aria-hidden="true">→</span></a>)}</div>)}</aside>}
