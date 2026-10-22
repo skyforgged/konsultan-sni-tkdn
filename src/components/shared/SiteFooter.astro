@@ -2,10 +2,11 @@
 import {siteConfig} from '../../config/site';
 const { ariaLabel = 'Navigasi footer' } = Astro.props;
 ---
-<footer class="tkdn-site-footer">
-  <div class="container tkdn-site-footer__inner">
-    <div><a class="tkdn-site-brand" href="/"><span class="tkdn-site-brand__mark" aria-hidden="true">SNI</span><span>Konsultan SNI–TKDN</span></a><p>Pendampingan sertifikasi SNI, TKDN, dan BMP bagi pelaku usaha di Indonesia.</p></div>
-    <nav aria-label={ariaLabel}><a href="/layanan/">Layanan</a><a href="/artikel/">Artikel</a><a href="/panduan/">Panduan</a><a href="/kontak/">Kontak</a></nav>
-    <small>© {new Date().getFullYear()} Konsultan SNI–TKDN. Informasi disusun untuk membantu persiapan dan pemahaman proses.</small>
+<footer class="tkdn-site-footer site-footer">
+  <div class="container footer-grid tkdn-site-footer__inner">
+    <div><a class="tkdn-site-brand brand brand-light" href="/"><span class="tkdn-site-brand__mark brand-mark" aria-hidden="true">S<span>+</span></span><span class="brand-copy"><strong>Konsultan</strong><small>SNI · TKDN · BMP</small></span></a><p>Pendampingan persiapan dengan ruang lingkup kerja yang jelas, data yang tertata, dan proses yang transparan.</p></div>
+    <div><h2>Layanan</h2><ul>{siteConfig.services.map(n=><li><a href={n.href}>{n.label}</a></li>)}</ul></div>
+    <div><h2>Jelajahi</h2><ul><li><a href="/artikel/">Artikel</a></li><li><a href="/panduan/">Panduan</a></li><li><a href="/tentang-kami/">Tentang Kami</a></li><li><a href="/kontak/">Kontak</a></li><li><a href="/faq/">FAQ</a></li></ul></div>
   </div>
+  <div class="container footer-bottom"><p>© {new Date().getFullYear()} {siteConfig.name}. Informasi bersifat umum.</p><p>Konsultan membantu persiapan dan pendampingan; keputusan resmi berada pada pihak berwenang sesuai skema yang berlaku.</p></div>
 </footer>
