@@ -11,6 +11,19 @@
 - Jangan membuat artikel dan panduan terpisah yang hanya mengulang maksud pencarian yang sama.
 - Pastikan structured data sama dengan informasi yang terlihat oleh pengguna.
 
+## Frontmatter wajib dan relasi internal
+
+Semua halaman publik harus mempunyai sumber frontmatter terstruktur, bukan hanya artikel. Gunakan koleksi/tipe yang jelas untuk halaman statis (termasuk beranda dan halaman indeks), layanan, artikel, panduan, dan FAQ.
+
+Metadata minimum:
+- `type`, `slug`, `title`, `description`, `pubDate`, `updatedDate`, `draft`;
+- `socialImage` dan, jika relevan, `image` + `imageAlt`;
+- `navLabel` hanya jika halaman masuk navigasi;
+- `canonical` hanya sebagai override yang sudah diverifikasi;
+- relasi eksplisit seperti `relatedServices`, `relatedPages`, `relatedArticles`, dan `relatedGuides`.
+
+Nama slug pada relasi harus menunjuk ke entri yang ada dan terbit. Jangan menautkan draft, jangan mengarang URL, dan jangan menyimpan tautan internal sebagai string bebas jika dapat dinyatakan sebagai slug. Pemeriksaan build harus gagal jika relasi wajib menunjuk ke target yang tidak ada atau ke dirinya sendiri.
+
 ## Sebelum publikasi
 1. Periksa ketepatan isi dan sumber.
 2. Periksa judul, deskripsi, tanggal, slug, internal link, dan gambar/alt.
