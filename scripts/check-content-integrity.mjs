@@ -13,6 +13,7 @@ const errors = [];
 const records = Object.fromEntries(collectionNames.map(name => [name, []]));
 const timestamps = new Map();
 const globalIds = new Map();
+const globalUlids = new Map();
 
 for (const collection of collectionNames) {
   for (const file of await markdownFiles(path.join(root, collection))) {
@@ -28,15 +29,32 @@ for (const collection of collectionNames) {
     const blockCount = [...frontmatter.matchAll(/^\s*-\s*(?:component:\s*["']?[\w-]+|\{\s*"component"\s*:\s*"[^"]+")/gm)].length;
     if (!body && blockCount === 0) errors.push(`${label}: body konten kosong dan tidak ada component blocks`);
 
-    const id = scalar(frontmatter, 'id');
-    const slug = scalar(frontmatter, 'slug') || path.basename(file, '.md');
+    const idRaw = scalar(frontmatter, 'id');
+    const id = idRaw === undefined ? undefined : idRaw;
+    const ulid = scalar(frontmatter, 'ulid');
+    const slug = scalar(frontmatter, 'slug');
     const title = scalar(frontmatter, 'title');
     const draft = scalar(frontmatter, 'draft') === 'true';
     const status = scalar(frontmatter, 'status') || 'active';
-    const record = { file: label, id: id || slug, slug, title, draft, status, relationships: {} };
+    const record = { file: label, id, ulid, slug, title, draft, status, relationships: {} };
     records[collection].push(record);
-    if (!slug || /[\s?#]/.test(slug) || slug.startsWith('/') || slug.endsWith('/')) errors.push(`${label}: slug tidak valid "${slug}"`);
-    if (!title || title.length < 3) errors.push(`${label}: title tidak ada atau terlalu pendek`);
+
+    if (typeof id !== 'number' || !Number.isSafeInteger(id) || id <= 0) {
+      errors.push(`${label}: id wajib berupa integer positif tanpa tanda kutip, ditemukan "${idRaw ?? 'kosong'}"`);
+    } else {
+      const previous = globalIds.get(id);
+      if (previous) errors.push(`${label}: id ${id} duplikat dengan ${previous}`);
+      else globalIds.set(id, label);
+    }
+    if (typeof ulid !== 'string' || !/^[0-7][0-9A-HJKMNP-TV-Z]{25}$/.test(ulid)) {
+      errors.push(`${label}: ulid wajib berupa ULID valid 26 karakter`);
+    } else {
+      const previous = globalUlids.get(ulid);
+      if (previous) errors.push(`${label}: ulid ${ulid} duplikat dengan ${previous}`);
+      else globalUlids.set(ulid, label);
+    }
+    if (typeof slug !== 'string' || !slug || /[\s?#]/.test(slug) || slug.startsWith('/') || slug.endsWith('/')) errors.push(`${label}: slug tidak valid "${slug ?? ''}"`);
+    if (typeof title !== 'string' || title.length < 3) errors.push(`${label}: title tidak ada atau terlalu pendek`);
 
     for (const field of ['pubDate', 'updatedDate']) {
       const value = scalar(frontmatter, field);
@@ -44,7 +62,7 @@ for (const collection of collectionNames) {
         errors.push(`${label}: ${field} wajib diisi`);
         continue;
       }
-      if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(value) || Number.isNaN(Date.parse(value))) {
+      if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(value) || Number.isNaN(Date.parse(value))) {
         errors.push(`${label}: ${field} harus timestamp UTC valid YYYY-MM-DDTHH:mm:ssZ, ditemukan "${value}"`);
       } else {
         const previous = timestamps.get(value);
@@ -54,11 +72,10 @@ for (const collection of collectionNames) {
     }
     const pubDate = scalar(frontmatter, 'pubDate');
     const updatedDate = scalar(frontmatter, 'updatedDate');
-    if (pubDate && updatedDate && updatedDate < pubDate) errors.push(`${label}: updatedDate lebih awal dari pubDate`);
-    if (pubDate && updatedDate && updatedDate === pubDate) errors.push(`${label}: updatedDate tidak boleh sama dengan pubDate`);
+    if (typeof pubDate === 'string' && typeof updatedDate === 'string' && updatedDate < pubDate) errors.push(`${label}: updatedDate lebih awal dari pubDate`);
+    if (typeof pubDate === 'string' && typeof updatedDate === 'string' && updatedDate === pubDate) errors.push(`${label}: updatedDate tidak boleh sama dengan pubDate`);
 
-    const image = scalar(frontmatter, 'socialImage');
-    if (!image) errors.push(`${label}: socialImage wajib diisi`);
+    if (!scalar(frontmatter, 'socialImage')) errors.push(`${label}: socialImage wajib diisi`);
     if (draft) continue;
     const placeholderPatterns = [
       [/lorem\s+ipsum/i, 'Lorem ipsum'],
@@ -84,7 +101,7 @@ for (const collection of collectionNames) {
     if (record.draft) continue;
     for (const [field, targetCollection] of Object.entries(relationshipFields)) {
       for (const target of record.relationships[field] || []) {
-        const found = records[targetCollection].find(item => item.slug === target || item.id === target);
+        const found = records[targetCollection].find(item => typeof target === 'number' ? item.id === target : item.slug === target);
         if (!found) errors.push(`${record.file}: ${field} mengarah ke "${target}" yang tidak ditemukan di koleksi ${targetCollection}`);
         else if (found.draft || found.status !== 'active') errors.push(`${record.file}: ${field} mengarah ke konten nonaktif/draft "${target}"`);
       }
@@ -98,25 +115,35 @@ if (errors.length) {
   process.exitCode = 1;
 } else {
   const count = collectionNames.reduce((sum, name) => sum + records[name].length, 0);
-  console.log(`Content integrity check lulus: ${count} file; ID dan slug unik, timestamp valid, relasi ter-resolve.`);
+  console.log(`Content integrity check lulus: ${count} file; ID integer dan ULID unik, slug unik, timestamp valid, relasi ter-resolve.`);
 }
 
 function scalar(frontmatter, key) {
   const line = frontmatter.split(/\r?\n/).find(item => item.startsWith(key + ':'));
   if (!line) return undefined;
-  return unquote(line.slice(key.length + 1).trim());
+  const raw = line.slice(key.length + 1).trim();
+  if (/^["']/.test(raw)) return unquote(raw);
+  if (raw === 'true' || raw === 'false') return raw;
+  if (/^\d+$/.test(raw)) return Number(raw);
+  return raw;
 }
 function arrayField(frontmatter, key) {
   const lines = frontmatter.split(/\r?\n/);
   const index = lines.findIndex(line => line.startsWith(key + ':'));
   if (index < 0) return [];
   const value = lines[index].slice(key.length + 1).trim();
-  if (value.startsWith('[')) return [...value.matchAll(/["']([^"']+)["']/g)].map(item => item[1]);
+  if (value.startsWith('[')) {
+    return [...value.matchAll(/["']([^"']+)["']|(?:^|[,\s])([0-9]+)(?=\s*[,\]])/g)]
+      .map(item => item[1] !== undefined ? item[1] : Number(item[2]));
+  }
   const result = [];
   for (const line of lines.slice(index + 1)) {
     if (/^\S/.test(line)) break;
-    const item = line.match(/^\s+-\s*["']?(.+?)["']?\s*$/);
-    if (item) result.push(unquote(item[1].trim()));
+    const item = line.match(/^\s+-\s*(.*?)\s*$/);
+    if (item) {
+      const raw = item[1].trim();
+      result.push(/^["']/.test(raw) ? unquote(raw) : /^\d+$/.test(raw) ? Number(raw) : raw);
+    }
   }
   return result;
 }

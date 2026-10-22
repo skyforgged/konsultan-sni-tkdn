@@ -1,31 +1,34 @@
 ---
 import {getCollection} from 'astro:content';
+type ContentReference = string | number;
 interface Props {
-  services?: string[];
-  pages?: string[];
-  articles?: string[];
-  guides?: string[];
+  services?: ContentReference[];
+  pages?: ContentReference[];
+  articles?: ContentReference[];
+  guides?: ContentReference[];
   currentSlug?: string;
   title?: string;
 }
-const {services=[],pages=[],articles=[],guides=[],currentSlug='',title='Konten terkait'}=Astro.props;
+const {services=[],pages=[],articles=[],guides=[],currentSlug='',title='Konten terkait'}=Astro.props as Props;
 const [serviceEntries,pageEntries,articleEntries,guideEntries]=await Promise.all([
   getCollection('services',({data})=>!data.draft && data.status==='active'),
   getCollection('pages',({data})=>!data.draft && data.status==='active'),
   getCollection('articles',({data})=>!data.draft && data.status==='active'),
   getCollection('guides',({data})=>!data.draft && data.status==='active'),
 ]);
+const matchesReference = (entry: { slug?: string; id: string; data: { id: number } }, reference: ContentReference) =>
+  typeof reference === 'number' ? entry.data.id === reference : entry.slug === reference || entry.id === reference;
 const groups=[
-  {label:'Layanan terkait',items:services.map(slug=>{const e=serviceEntries.find(x=>x.slug===slug||x.id===slug);return e?{title:e.data.title,description:e.data.description,href:`/layanan/${e.slug??e.id}/`}:null;}).filter((item): item is NonNullable<typeof item> => item !== null)},
-  {label:'Halaman terkait',items:pages.map(slug=>{const e=pageEntries.find(x=>x.slug===slug||x.id===slug);return e?{title:e.data.title,description:e.data.description,href:e.data.canonical??(slug==='home'?'/':`/${e.slug??e.id}/`)}:null;}).filter((item): item is NonNullable<typeof item> => item !== null)},
-  {label:'Artikel terkait',items:articles.map(slug=>{const e=articleEntries.find(x=>x.slug===slug||x.id===slug);return e?{title:e.data.title,description:e.data.description,href:`/artikel/${e.slug??e.id}/`}:null;}).filter((item): item is NonNullable<typeof item> => item !== null)},
-  {label:'Panduan terkait',items:guides.map(slug=>{const e=guideEntries.find(x=>x.slug===slug||x.id===slug);return e?{title:e.data.title,description:e.data.description,href:`/panduan/${e.slug??e.id}/`}:null;}).filter((item): item is NonNullable<typeof item> => item !== null)},
+  {label:'Layanan terkait',items:services.map(ref=>{const e=serviceEntries.find(x=>matchesReference(x,ref));return e?{title:e.data.title,description:e.data.description,href:`/layanan/${e.slug??e.id}/`}:null;}).filter((item): item is NonNullable<typeof item> => item !== null)},
+  {label:'Halaman terkait',items:pages.map(ref=>{const e=pageEntries.find(x=>matchesReference(x,ref));return e?{title:e.data.title,description:e.data.description,href:e.data.canonical??(e.slug==='home'?'/':`/${e.slug??e.id}/`)}:null;}).filter((item): item is NonNullable<typeof item> => item !== null)},
+  {label:'Artikel terkait',items:articles.map(ref=>{const e=articleEntries.find(x=>matchesReference(x,ref));return e?{title:e.data.title,description:e.data.description,href:`/artikel/${e.slug??e.id}/`}:null;}).filter((item): item is NonNullable<typeof item> => item !== null)},
+  {label:'Panduan terkait',items:guides.map(ref=>{const e=guideEntries.find(x=>matchesReference(x,ref));return e?{title:e.data.title,description:e.data.description,href:`/panduan/${e.slug??e.id}/`}:null;}).filter((item): item is NonNullable<typeof item> => item !== null)},
 ].map(g=>({...g,items:g.items.filter(i=>i.href!==currentSlug)})).filter(g=>g.items.length);
 const unresolved = [
-  ...services.filter(slug=>!serviceEntries.some(e=>e.slug===slug||e.id===slug)).map(slug=>`service:${slug}`),
-  ...pages.filter(slug=>!pageEntries.some(e=>e.slug===slug||e.id===slug)).map(slug=>`page:${slug}`),
-  ...articles.filter(slug=>!articleEntries.some(e=>e.slug===slug||e.id===slug)).map(slug=>`article:${slug}`),
-  ...guides.filter(slug=>!guideEntries.some(e=>e.slug===slug||e.id===slug)).map(slug=>`guide:${slug}`),
+  ...services.filter(ref=>!serviceEntries.some(e=>matchesReference(e,ref))).map(ref=>`service:${ref}`),
+  ...pages.filter(ref=>!pageEntries.some(e=>matchesReference(e,ref))).map(ref=>`page:${ref}`),
+  ...articles.filter(ref=>!articleEntries.some(e=>matchesReference(e,ref))).map(ref=>`article:${ref}`),
+  ...guides.filter(ref=>!guideEntries.some(e=>matchesReference(e,ref))).map(ref=>`guide:${ref}`),
 ];
 if(unresolved.length) throw new Error(`Invalid related-content frontmatter: ${unresolved.join(', ')}`);
 ---

@@ -1,4 +1,6 @@
 ---
+id: 7
+ulid: "01K8SN00000000000000000007"
 type: "page"
 slug: "panduan"
 title: "Panduan Praktis SNI, TKDN, dan BMP"

@@ -1,4 +1,6 @@
 ---
+id: 6
+ulid: "01M5GEGM005JC059SJG74XVNKN"
 type: "page"
 slug: "not-found"
 title: "Halaman tidak ditemukan"
