@@ -10,10 +10,6 @@ type: "service"
 slug: "konsultan-sni"
 updatedDate: "2026-10-23T12:00:13Z"
 socialImage: "/images/og-default.svg"
-relatedServices: ["konsultan-tkdn", "konsultan-bmp"]
-relatedPages: ["faq", "tentang-kami"]
-relatedArticles: []
-relatedGuides: ["persiapan-sni"]
 order: 10
 draft: false
 status: active
