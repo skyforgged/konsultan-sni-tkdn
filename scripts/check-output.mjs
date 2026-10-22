@@ -111,7 +111,7 @@ for (const page of htmlByRoute.values()) {
   const {html, relative, route} = page;
   for (const match of html.matchAll(/\\bhref=["']([^"']+)["']/gi)) {
     const href = decode(match[1].trim());
-    if (!href || /^(?:https?:|mailto:|tel:|sms:|javascript:|data:|#|\\/\\/)/i.test(href)) {
+    if (!href || /^(?:https?:|mailto:|tel:|sms:|javascript:|data:|\\/\\/)/i.test(href)) {
       if (/^(?:javascript|data):/i.test(href)) failures.push(`${relative}: skema URL berbahaya: ${href}`);
       continue;
     }
