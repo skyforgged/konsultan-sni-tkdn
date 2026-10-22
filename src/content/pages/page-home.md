@@ -1,3 +1,4 @@
+---
 id: "page-home"
 type: "page"
 slug: "home"
