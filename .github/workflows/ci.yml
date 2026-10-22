@@ -22,4 +22,6 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Check and build site
+        env:
+          SITE_URL: https://example.invalid
         run: npm run build
