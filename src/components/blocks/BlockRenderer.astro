@@ -1,0 +1,7 @@
+---
+import blocks from '../blocks.ts';
+const { block } = Astro.props;
+const Component = block ? blocks[block.component] : undefined;
+if (block && !Component) throw new Error(`Unknown content block component: ${block.component}`);
+---
+{Component && <Component {...(block.props ?? block)} />}
