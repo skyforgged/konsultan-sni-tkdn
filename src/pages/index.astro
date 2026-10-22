@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ServiceCard from '../components/ServiceCard.astro';
-import {getCollection,getEntry} from 'astro:content';
-const home = await getEntry('pages','home');
-if (!home) throw new Error('Missing frontmatter source: src/content/pages/home.md');
+import {getCollection} from 'astro:content';
+const pages = await getCollection('pages', ({data}) => !data.draft);
+const home = pages.find(entry => entry.data.pageKind === 'home' || entry.slug === 'home');
+if (!home) throw new Error('Missing page content with pageKind: home or slug: home.');
 const pageData = home.data;
 const serviceEntries = (await getCollection('services',({data})=>!data.draft && data.status!=='inactive')).sort((a,b)=>(a.data.order??999)-(b.data.order??999));
 const services = serviceEntries.map((entry,i)=>({title:entry.data.title,description:entry.data.description,href:`/layanan/${entry.slug??entry.id}/`,eyebrow:entry.data.eyebrow,number:String(i+1).padStart(2,'0')}));
