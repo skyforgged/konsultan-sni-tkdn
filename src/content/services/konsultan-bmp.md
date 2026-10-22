@@ -1,7 +1,7 @@
 ---
 title: "Konsultan BMP"
 description: "Konsultasi pemetaan kebutuhan dan penyiapan dokumen terkait Bobot Manfaat Perusahaan sesuai konteks dan ketentuan yang terverifikasi."
-pubDate: "2026-10-22T00:00:00Z"
+pubDate: "2026-10-22T00:00:12Z"
 eyebrow: "BOBOT MANFAAT PERUSAHAAN"
 intro: "Kebutuhan terkait BMP harus dipahami dalam konteks penerapan dan ketentuan yang relevan. Pendampingan dimulai dari klarifikasi tujuan, pemetaan dokumen, dan pemeriksaan data."
 audience:
@@ -29,7 +29,7 @@ faqs:
 tags: ["BMP","dokumen perusahaan","kesiapan"]
 type: "service"
 slug: "konsultan-bmp"
-updatedDate: "2026-10-22T00:00:00Z"
+updatedDate: "2026-10-22T12:00:12Z"
 socialImage: "/images/og-default.svg"
 relatedServices: ["konsultan-tkdn", "layanan-terpadu"]
 relatedPages: ["faq", "kontak"]
