@@ -1,4 +1,8 @@
 ---
-import BlockShell from './BlockShell.astro';
+const { heading = 'Ringkasan data', title, items = [], stats = [] } = Astro.props;
+const entries = items.length ? items : stats;
 ---
-<BlockShell kind="stats-grid" {...Astro.props} />
+<section class="tkdn-block tkdn-block--stats-grid">
+  <h2 class="tkdn-block__title">{title ?? heading}</h2>
+  <div class="tkdn-stat-grid">{entries.map((item: any) => <article class="tkdn-stat"><strong>{typeof item === 'string' ? item : item.value ?? item.number ?? item.title}</strong><span>{typeof item !== 'string' ? item.label ?? item.text ?? item.description ?? item.title : ''}</span></article>)}</div>
+</section>
