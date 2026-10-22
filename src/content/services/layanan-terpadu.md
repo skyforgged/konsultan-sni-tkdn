@@ -37,6 +37,8 @@ relatedPages: ["faq", "kontak"]
 relatedArticles: []
 relatedGuides: ["persiapan-dokumen-tkdn", "persiapan-sni"]
 order: 40
+draft: false
+status: active
 ---
 ## Kapan pendekatan terpadu membantu?
 Pendekatan terpadu berguna ketika beberapa kebutuhan berbagi data atau melibatkan tim internal yang sama. Pemetaan awal membantu mencegah pekerjaan berulang dan membuat dependensi terlihat tanpa mengasumsikan semua persyaratan identik.
