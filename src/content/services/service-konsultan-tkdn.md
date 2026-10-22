@@ -9,7 +9,7 @@ intro: "Persiapan TKDN memerlukan data yang konsisten dan bukti yang dapat ditel
 tags: ["TKDN","komponen dalam negeri","dokumen"]
 type: "service"
 slug: "konsultan-tkdn"
-updatedDate: "2026-10-22T12:00:14Z"
+updatedDate: "2026-10-23T12:00:14Z"
 socialImage: "/images/og-default.svg"
 relatedServices: ["konsultan-sni", "layanan-terpadu"]
 relatedPages: ["faq", "kontak"]
