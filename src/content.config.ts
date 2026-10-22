@@ -16,7 +16,7 @@ const base = z.object({
   title: z.string().min(3),
   description: z.string().min(30).max(180),
   pubDate: z.coerce.date(),
-  updatedDate: z.coerce.date().optional(),
+  updatedDate: z.coerce.date(),
   draft: z.boolean().default(false),
   status: z.enum(['active', 'inactive', 'archived']).default('active'),
   navLabel: z.string().optional(),
