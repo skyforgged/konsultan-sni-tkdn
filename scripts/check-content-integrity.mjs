@@ -25,7 +25,8 @@ for (const collection of collectionNames) {
     }
     const frontmatter = match[1];
     const body = source.slice(match[0].length).trim();
-    if (!body) errors.push(`${label}: body konten kosong`);
+    const blockCount = [...frontmatter.matchAll(/^\\s*-\\s*(?:component:\\s*["']?[\\w-]+|\\{\\s*"component"\\s*:\\s*"[^"]+" )/gm)].length;
+    if (!body && blockCount === 0) errors.push(`${label}: body konten kosong dan tidak ada component blocks`);
 
     const id = scalar(frontmatter, 'id');
     const slug = scalar(frontmatter, 'slug') || path.basename(file, '.md');
