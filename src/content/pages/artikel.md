@@ -1,4 +1,5 @@
 ---
+id: "page-artikel"
 type: "page"
 slug: "artikel"
 title: "Artikel SNI, TKDN, dan BMP"

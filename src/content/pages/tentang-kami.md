@@ -1,4 +1,5 @@
 ---
+id: "page-tentang-kami"
 type: "page"
 slug: "tentang-kami"
 title: "Tentang Kami"

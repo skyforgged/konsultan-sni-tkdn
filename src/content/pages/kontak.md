@@ -1,4 +1,5 @@
 ---
+id: "page-kontak"
 type: "page"
 slug: "kontak"
 title: "Kontak dan Konsultasi"

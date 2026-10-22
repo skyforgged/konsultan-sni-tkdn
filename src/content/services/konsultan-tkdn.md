@@ -1,4 +1,5 @@
 ---
+id: "service-konsultan-tkdn"
 title: "Konsultan TKDN"
 description: "Pendampingan pemetaan komponen dalam negeri, penataan data biaya dan bukti pendukung, serta pemeriksaan kesiapan awal pengajuan TKDN."
 pubDate: "2026-10-22T00:00:14Z"

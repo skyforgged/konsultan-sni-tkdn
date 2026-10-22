@@ -1,4 +1,5 @@
 ---
+id: "page-not-found"
 type: "page"
 slug: "not-found"
 title: "Halaman tidak ditemukan"

@@ -1,4 +1,5 @@
 ---
+id: "page-panduan"
 type: "page"
 slug: "panduan"
 title: "Panduan Praktis SNI, TKDN, dan BMP"

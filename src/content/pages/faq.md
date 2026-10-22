@@ -1,4 +1,5 @@
 ---
+id: "page-faq"
 type: "page"
 slug: "faq"
 title: "FAQ SNI, TKDN, dan BMP"

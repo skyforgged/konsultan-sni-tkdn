@@ -1,4 +1,5 @@
 ---
+id: "page-layanan"
 type: "page"
 slug: "layanan"
 title: "Layanan Konsultan SNI, TKDN, dan BMP"
