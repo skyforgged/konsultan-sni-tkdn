@@ -58,15 +58,25 @@ const howToSchema = processSteps.length >= 2 ? {
     {howToSchema && <SeoJsonLd data={howToSchema} />}
   </Fragment>
   <section class="content-hero">
-    <div class="container">
-      <p class="breadcrumbs"><a href={siteConfig.navigation[0].href}>{siteConfig.navigation[0].label}</a> / <a href={siteConfig.navigation[1].href}>{siteConfig.navigation[1].label}</a> / {entry.data.title}</p>
-      <h1>{entry.data.title}</h1>
-      {(entry.data.image ?? entry.data.socialImage) && (
-        <figure class="article-featured-image">
-          <img src={entry.data.image ?? entry.data.socialImage} alt={entry.data.imageAlt ?? entry.data.title} loading="eager" width="1200" height="630" />
-        </figure>
-      )}
-      {heroBlock && <BlockRenderer block={heroBlock} />}
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="breadcrumbs"><a href={siteConfig.navigation[0].href}>{siteConfig.navigation[0].label}</a> / <a href={siteConfig.navigation[1].href}>{siteConfig.navigation[1].label}</a> / {entry.data.title}</p>
+        <p class="eyebrow">{entry.data.eyebrow}</p>
+        <h1>{entry.data.title}</h1>
+        <p class="hero-lead">{entry.data.description}</p>
+        <div class="hero-actions">
+          <a class="button button-light" href="/kontak/">Diskusikan kebutuhan Anda ↗</a>
+          <a class="button" href="/layanan/" style="background:transparent;border-color:#ffffff55">Jelajahi layanan →</a>
+        </div>
+      </div>
+      <div class="hero-visual" role="img" aria-label={`Ilustrasi ${entry.data.title}`}>
+        {(entry.data.image ?? entry.data.socialImage) && (
+          <figure class="article-featured-image">
+            <img src={entry.data.image ?? entry.data.socialImage} alt={entry.data.imageAlt ?? entry.data.title} loading="eager" width="1200" height="630" />
+          </figure>
+        )}
+        {heroBlock && <BlockRenderer block={heroBlock} />}
+      </div>
     </div>
   </section>
   <section class="section">
