@@ -22,7 +22,7 @@ const matchesReference = (entry: { slug?: string; id: string; data: { id: number
 const groups=[
   {label:'Layanan terkait',items:services.map(ref=>{const e=serviceEntries.find(x=>matchesReference(x,ref));return e?{title:e.data.title,description:e.data.description,href:`/layanan/${e.slug??e.id}/`}:null;}).filter((item): item is NonNullable<typeof item> => item !== null)},
   {label:'Halaman terkait',items:pages.map(ref=>{const e=pageEntries.find(x=>matchesReference(x,ref));return e?{title:e.data.title,description:e.data.description,href:e.data.canonical??(e.slug==='home'?'/':`/${e.slug??e.id}/`)}:null;}).filter((item): item is NonNullable<typeof item> => item !== null)},
-  {label:'Artikel terkait',items:articles.map(ref=>{const e=articleEntries.find(x=>matchesReference(x,ref));return e?{title:e.data.title,description:e.data.description,href:`/artikel/${e.slug??e.id}/`}:null;}).filter((item): item is NonNullable<typeof item> => item !== null)},
+  {label:'Artikel terkait',items:articles.map(ref=>{const e=articleEntries.find(x=>matchesReference(x,ref));return e?{title:e.data.title,description:e.data.description,href:`/artikel/${e.slug??e.data.id}/`}:null;}).filter((item): item is NonNullable<typeof item> => item !== null)},
   {label:'Panduan terkait',items:guides.map(ref=>{const e=guideEntries.find(x=>matchesReference(x,ref));return e?{title:e.data.title,description:e.data.description,href:`/panduan/${e.slug??e.id}/`}:null;}).filter((item): item is NonNullable<typeof item> => item !== null)},
 ].map(g=>({...g,items:g.items.filter(i=>i.href!==currentSlug)})).filter(g=>g.items.length);
 const unresolved = [
