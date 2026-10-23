@@ -51,7 +51,7 @@ const howToSchema = processSteps.length >= 2 ? {
   description={entry.data.description}
   image={entry.data.socialImage ?? entry.data.image}
   canonical={entry.data.canonical}
-  brandCopy={`${siteConfig.name} menyediakan ${entry.data.title}`}
+  brandCopy={`${siteConfig.name} menyediakan ${entry.data.title.startsWith('Layanan') ? entry.data.title : 'Layanan ' + entry.data.title}`}
 >
   <Fragment slot="head">
     <SeoJsonLd data={schema} />

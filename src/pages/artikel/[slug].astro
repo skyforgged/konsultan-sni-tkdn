@@ -18,7 +18,7 @@ if (entry.data.relatedServices && entry.data.relatedServices.length > 0) {
   const services = await getCollection('services', ({data}) => !data.draft && data.status === 'active');
   const svc = services.find(s => (typeof related === 'string' ? s.slug === related : s.data.id === related));
   if (svc) {
-    brandCopy = `${siteConfig.name} menyediakan ${svc.data.title}`;
+    brandCopy = `${siteConfig.name} menyediakan ${svc.data.title.startsWith('Layanan') ? svc.data.title : 'Layanan ' + svc.data.title}`;
   }
 }
 ---

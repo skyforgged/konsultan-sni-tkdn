@@ -9,7 +9,7 @@ const articles = (await getCollection('articles', ({data}) => !data.draft && dat
 {articles.length > 0 && <section class="tkdn-block tkdn-block--article-list" aria-labelledby="article-previous-title">
   <h2 class="tkdn-block__title" id="article-previous-title">{title}</h2>
   <div class="tkdn-block__items">{articles.map(article => <article class="tkdn-block__item">
-    <h3><a href={`/artikel/${(article.data as Record<string,unknown>).slug ?? article.id?.replace(/\.md$/, '') ?? ''}/`}>{article.data.title}</a></h3>
+    <h3><a href={`/artikel/${(article.data as any).slug ?? article.slug ?? article.id?.replace(/\.md$/, '') ?? ''}/`}>{article.data.title}</a></h3>
     <p>{article.data.description}</p>
   </article>)}</div>
 </section>}
