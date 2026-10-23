@@ -1,0 +1,7 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#12372d"/>
+  <circle cx="1050" cy="500" r="200" fill="#d4f078" opacity="0.1"/>
+  <circle cx="150" cy="130" r="150" fill="#d4f078" opacity="0.05"/>
+  {{TITLE_LINES}}
+  <text x="600" y="560" font-family="Manrope, sans-serif" font-size="24" fill="#d4f078" font-weight="600" text-anchor="middle">{{BRAND}}</text>
+</svg>

@@ -10,8 +10,8 @@ author: "Tim Editorial"
 type: "article"
 slug: "manfaat-dokumen-bmp"
 updatedDate: "2026-10-23T00:01:03Z"
-image: "/images/hero-default.webp"
-socialImage: "/images/hero-default.webp"
+image: "/images/og-manfaat-dokumen-bmp.webp"
+socialImage: "/images/og-manfaat-dokumen-bmp.webp"
 relatedServices: [11]
 relatedPages: ["faq", "kontak"]
 relatedArticles: []

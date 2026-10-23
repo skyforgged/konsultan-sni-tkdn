@@ -10,8 +10,8 @@ author: "Tim Editorial"
 type: "article"
 slug: "panduan-memilih-standar-produk"
 updatedDate: "2026-10-23T00:01:01Z"
-image: "/images/hero-default.webp"
-socialImage: "/images/hero-default.webp"
+image: "/images/og-panduan-memilih-standar-produk.webp"
+socialImage: "/images/og-panduan-memilih-standar-produk.webp"
 relatedServices: [9]
 relatedPages: ["faq", "kontak"]
 relatedArticles: [13]

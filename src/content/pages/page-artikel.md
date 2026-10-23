@@ -11,7 +11,8 @@ draft: false
 status: active
 pageKind: "listing"
 canonical: "/artikel/"
-socialImage: "/images/og-default.svg"
+socialImage: "/images/og-artikel.webp"
+image: "/images/og-artikel.webp"
 heroTitle: "Artikel untuk memahami konteks dan pilihan."
 heroIntro: "Penjelasan dan wawasan untuk membantu tim memahami istilah, peran, serta pertanyaan umum seputar persiapan SNI, TKDN, dan BMP."
 relatedServices: ["konsultan-sni", "konsultan-tkdn", "konsultan-bmp"]

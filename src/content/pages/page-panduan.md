@@ -11,7 +11,8 @@ draft: false
 status: active
 pageKind: "listing"
 canonical: "/panduan/"
-socialImage: "/images/og-default.svg"
+socialImage: "/images/og-panduan.webp"
+image: "/images/og-panduan.webp"
 heroTitle: "Langkah yang bisa diikuti, bukan hanya dibaca."
 heroIntro: "Panduan berorientasi tindakan untuk membantu tim menyiapkan informasi awal, meninjau dokumen, dan memahami urutan persiapan."
 relatedServices: ["konsultan-sni", "konsultan-tkdn", "konsultan-bmp"]

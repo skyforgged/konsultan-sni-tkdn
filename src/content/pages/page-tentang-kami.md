@@ -11,7 +11,8 @@ draft: false
 status: active
 pageKind: "standard"
 canonical: "/tentang-kami/"
-socialImage: "/images/og-default.svg"
+socialImage: "/images/og-tentang-kami.webp"
+image: "/images/og-tentang-kami.webp"
 navLabel: "Tentang Kami"
 heroTitle: "Kejelasan proses adalah bagian dari kualitas pendampingan."
 heroIntro: "Pendekatan konsultasi untuk membantu perusahaan memahami kebutuhan, memetakan kesenjangan, dan menyiapkan data dengan lebih terstruktur."

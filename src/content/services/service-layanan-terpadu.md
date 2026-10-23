@@ -9,7 +9,8 @@ tags: ["SNI","TKDN","BMP","konsultasi terpadu"]
 type: "service"
 slug: "layanan-terpadu"
 updatedDate: "2026-10-23T12:00:15Z"
-socialImage: "/images/og-default.svg"
+socialImage: "/images/og-layanan-terpadu.webp"
+image: "/images/og-layanan-terpadu.webp"
 order: 40
 draft: false
 status: active

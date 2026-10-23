@@ -10,8 +10,8 @@ author: "Tim Editorial"
 type: "article"
 slug: "keuntungan-pendekatan-terpadu"
 updatedDate: "2026-10-23T00:01:04Z"
-image: "/images/hero-default.webp"
-socialImage: "/images/hero-default.webp"
+image: "/images/og-keuntungan-pendekatan-terpadu.webp"
+socialImage: "/images/og-keuntungan-pendekatan-terpadu.webp"
 relatedServices: [12]
 relatedPages: ["faq", "kontak"]
 relatedArticles: [13, 16, 17, 18]

@@ -11,7 +11,8 @@ draft: false
 status: active
 pageKind: "home"
 canonical: "/"
-socialImage: "/images/og-default.svg"
+socialImage: "/images/og-home.webp"
+image: "/images/og-home.webp"
 navLabel: "Beranda"
 heroTitle: "Persiapan lebih terarah. Proses lebih jelas."
 heroEyebrow: "KONSULTASI INDUSTRI · SNI · TKDN · BMP"

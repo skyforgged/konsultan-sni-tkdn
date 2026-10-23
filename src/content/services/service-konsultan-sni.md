@@ -9,7 +9,8 @@ tags: ["SNI","sertifikasi produk","persiapan dokumen"]
 type: "service"
 slug: "konsultan-sni"
 updatedDate: "2026-10-23T12:00:13Z"
-socialImage: "/images/og-default.svg"
+socialImage: "/images/og-konsultan-sni.webp"
+image: "/images/og-konsultan-sni.webp"
 order: 10
 draft: false
 status: active

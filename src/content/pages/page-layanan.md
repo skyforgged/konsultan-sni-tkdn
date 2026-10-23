@@ -11,7 +11,8 @@ draft: false
 status: active
 pageKind: "listing"
 canonical: "/layanan/"
-socialImage: "/images/og-default.svg"
+socialImage: "/images/og-layanan.webp"
+image: "/images/og-layanan.webp"
 heroTitle: "Dukungan yang tepat dimulai dari memahami kebutuhan."
 heroIntro: "Pilih layanan berdasarkan tantangan perusahaan. Kami membantu memetakan persyaratan, meninjau kesiapan data, dan menjelaskan langkah persiapan berikutnya."
 relatedServices: ["konsultan-sni", "konsultan-tkdn", "konsultan-bmp", "layanan-terpadu"]

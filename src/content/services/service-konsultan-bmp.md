@@ -9,7 +9,8 @@ tags: ["BMP","dokumen perusahaan","kesiapan"]
 type: "service"
 slug: "konsultan-bmp"
 updatedDate: "2026-10-23T12:00:12Z"
-socialImage: "/images/og-default.svg"
+socialImage: "/images/og-konsultan-bmp.webp"
+image: "/images/og-konsultan-bmp.webp"
 order: 30
 draft: false
 status: active

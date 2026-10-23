@@ -11,7 +11,8 @@ draft: false
 status: active
 pageKind: "not-found"
 canonical: "/404/"
-socialImage: "/images/og-default.svg"
+socialImage: "/images/og-not-found.webp"
+image: "/images/og-not-found.webp"
 blocks:
   - component: "note"
     text: "Halaman mungkin dipindahkan atau alamatnya tidak tepat. Kembali ke beranda atau jelajahi layanan kami."

@@ -9,7 +9,8 @@ tags: ["TKDN","komponen dalam negeri","dokumen"]
 type: "service"
 slug: "konsultan-tkdn"
 updatedDate: "2026-10-23T12:00:14Z"
-socialImage: "/images/og-default.svg"
+socialImage: "/images/og-konsultan-tkdn.webp"
+image: "/images/og-konsultan-tkdn.webp"
 order: 20
 draft: false
 status: active

@@ -11,7 +11,8 @@ draft: false
 status: active
 pageKind: "contact"
 canonical: "/kontak/"
-socialImage: "/images/og-default.svg"
+socialImage: "/images/og-kontak.webp"
+image: "/images/og-kontak.webp"
 relatedServices: ["konsultan-sni", "konsultan-tkdn", "konsultan-bmp", "layanan-terpadu"]
 relatedPages: ["faq", "tentang-kami"]
 relatedArticles: ["perbedaan-konsultasi-pengujian-sertifikasi"]

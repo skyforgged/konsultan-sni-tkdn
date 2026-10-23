@@ -11,7 +11,8 @@ draft: false
 status: active
 pageKind: "faq"
 canonical: "/faq/"
-socialImage: "/images/og-default.svg"
+socialImage: "/images/og-faq.webp"
+image: "/images/og-faq.webp"
 heroTitle: "Hal yang perlu diketahui sebelum memulai."
 heroIntro: "Jawaban umum untuk membantu menyiapkan konsultasi. Kebutuhan akhir bergantung pada produk, skema, dan ketentuan yang berlaku."
 faqs:

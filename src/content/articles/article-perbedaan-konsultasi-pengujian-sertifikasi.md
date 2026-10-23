@@ -10,8 +10,8 @@ author: "Tim Editorial"
 type: "article"
 slug: "perbedaan-konsultasi-pengujian-sertifikasi"
 updatedDate: "2026-10-22T12:00:01Z"
-image: "/images/hero-default.webp"
-socialImage: "/images/hero-default.webp"
+image: "/images/og-perbedaan-konsultasi-pengujian-sertifikasi.webp"
+socialImage: "/images/og-perbedaan-konsultasi-pengujian-sertifikasi.webp"
 relatedServices: [9]
 relatedPages: ["faq", "kontak"]
 relatedArticles: []

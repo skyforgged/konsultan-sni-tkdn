@@ -26,7 +26,8 @@ howTo:
 type: "guide"
 slug: "persiapan-dokumen-tkdn"
 updatedDate: "2026-10-22T12:00:02Z"
-socialImage: "/images/og-default.svg"
+socialImage: "/images/og-persiapan-dokumen-tkdn.webp"
+image: "/images/og-persiapan-dokumen-tkdn.webp"
 relatedServices: ["konsultan-tkdn"]
 relatedPages: ["faq", "kontak"]
 relatedArticles: ["perbedaan-konsultasi-pengujian-sertifikasi"]

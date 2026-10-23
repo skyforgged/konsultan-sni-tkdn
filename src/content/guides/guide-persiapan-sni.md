@@ -26,7 +26,8 @@ howTo:
 type: "guide"
 slug: "persiapan-sni"
 updatedDate: "2026-10-22T12:00:03Z"
-socialImage: "/images/og-default.svg"
+socialImage: "/images/og-persiapan-sni.webp"
+image: "/images/og-persiapan-sni.webp"
 relatedServices: ["konsultan-sni"]
 relatedPages: ["faq", "kontak"]
 relatedArticles: ["perbedaan-konsultasi-pengujian-sertifikasi"]
