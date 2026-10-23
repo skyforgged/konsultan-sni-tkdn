@@ -40,6 +40,8 @@
 .tkdn-site-header nav a:hover,.tkdn-site-footer nav a:hover{color:var(--forest2)}
 .tkdn-site-footer{margin-top:4rem;padding:3rem 0 1.2rem;background:var(--forest);color:#eaf0e8}
 .tkdn-site-footer__inner{display:grid;grid-template-columns:2fr 1fr;gap:2rem}
+/* Brand column spans both columns on desktop, keeping Layanan and Jelajahi side‑by‑side */
+.tkdn-site-footer__inner > div:first-child{grid-column:1 / -1;}
 .tkdn-site-footer .tkdn-site-brand{color:#fff}
 .tkdn-site-footer p{max-width:50ch;color:#c9d8ce;line-height:1.8}
 .tkdn-site-footer nav{display:flex;flex-wrap:wrap;gap:1rem;align-content:start}
