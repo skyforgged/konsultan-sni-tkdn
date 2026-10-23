@@ -20,9 +20,9 @@ relatedPages: ["kontak", "faq"]
 relatedArticles: ["perbedaan-konsultasi-pengujian-sertifikasi"]
 relatedGuides: ["persiapan-sni", "persiapan-dokumen-tkdn"]
 blocks:
-  - component: "section"
-    heading: "Batas kewenangan dan kesiapan"
-    content:
-      - text: "Konsultasi membantu persiapan dan koordinasi; keputusan akhir, pengujian, verifikasi, dan penerbitan sertifikat tetap menjadi kewenangan lembaga atau pihak yang ditetapkan dalam skema dan peraturan terkait."
-      - text: "Identitas badan usaha, personel, pengalaman, dan mitra harus dilengkapi berdasarkan data faktual sebelum situs dipublikasikan sebagai situs komersial."
+  - component: "cta"
+    heading: "Siap berdiskusi?"
+    text: "Diskusikan kebutuhan pendampingan sertifikasi Anda bersama tim kami."
+    ctaHref: "/kontak/"
+    ctaLabel: "Diskusikan kebutuhan ↗"
 ---

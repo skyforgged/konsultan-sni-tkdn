@@ -8,5 +8,5 @@ if(!entry) throw new Error('Missing frontmatter source: pages/tentang-kami.md');
 ---
 <BaseLayout title={entry.data.title} description={entry.data.description} image={entry.data.socialImage} canonical={entry.data.canonical}>
 <section class="content-hero"><div class="container"><p class="breadcrumbs"><a href="/">Beranda</a> / {entry.data.title}</p><p class="section-kicker">{entry.data.navLabel??'TENTANG KAMI'}</p><h1>{entry.data.heroTitle}</h1><p class="lead">{entry.data.heroIntro}</p></div></section>
-<section class="section"><div class="container content-layout"><article class="prose"><PageBlocks blocks={entry.data.blocks}/><a class="button" href="/kontak/">Diskusikan kebutuhan ↗</a></article></div></section>
+<section class="section"><div class="container content-layout"><article class="prose"><PageBlocks blocks={entry.data.blocks}/></article></div></section>
 </BaseLayout>
