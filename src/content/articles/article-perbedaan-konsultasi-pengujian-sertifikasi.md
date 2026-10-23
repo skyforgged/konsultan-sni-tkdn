@@ -11,7 +11,7 @@ type: "article"
 slug: "perbedaan-konsultasi-pengujian-sertifikasi"
 updatedDate: "2026-10-22T12:00:01Z"
 socialImage: "/images/og-default.svg"
-relatedServices: ["konsultan-sni"]
+relatedServices: [9]
 relatedPages: ["faq", "kontak"]
 relatedArticles: []
 relatedGuides: ["persiapan-sni"]
