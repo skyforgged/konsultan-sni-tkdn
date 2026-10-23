@@ -16,6 +16,11 @@ const renderedBlocks=blocks.length?blocks:[{component:'section',heading:'Ringkas
       <p class="breadcrumbs"><a href="/">Beranda</a> / <a href="/panduan/">Panduan</a> / {entry.data.title}</p>
       <p class="section-kicker">{entry.data.category??'PANDUAN PRAKTIS'}</p><h1>{entry.data.title}</h1><p class="lead">{entry.data.description}</p>
       <p class="article-meta">Diterbitkan {new Date(entry.data.pubDate).toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'})} · {entry.data.author}</p>
+      {(entry.data.image ?? entry.data.socialImage) && (
+        <figure class="article-featured-image">
+          <img src={entry.data.image ?? entry.data.socialImage} alt={entry.data.imageAlt ?? entry.data.title} loading="eager" width="1200" height="630" />
+        </figure>
+      )}
     </div></header>
     <section class="section"><div class="container content-layout">
       <div class="prose component-article-content">{entry.data.howTo&&<HowTo {...entry.data.howTo} />}{renderedBlocks.map(block=><BlockRenderer block={block}/>)}

@@ -60,6 +60,7 @@
 @media(max-width:760px){.tkdn-site-header__inner{align-items:flex-start;flex-wrap:wrap;padding-block:1rem}.tkdn-site-header nav{order:3;width:100%;overflow-x:auto}.tkdn-site-header nav ul{gap:.9rem}.tkdn-site-header__cta{margin-left:auto}.tkdn-site-footer__inner{grid-template-columns:1fr}.tkdn-site-footer small{grid-column:auto}}
 
 
+.article-featured-image{margin:24px 0 0;border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}.article-featured-image img{display:block;width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover}
 .component-catalog{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem}
 .component-catalog .tkdn-block{margin:0}
 .tkdn-table-wrap{max-width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:.75rem}

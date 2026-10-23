@@ -61,6 +61,11 @@ const howToSchema = processSteps.length >= 2 ? {
     <div class="container">
       <p class="breadcrumbs"><a href={siteConfig.navigation[0].href}>{siteConfig.navigation[0].label}</a> / <a href={siteConfig.navigation[1].href}>{siteConfig.navigation[1].label}</a> / {entry.data.title}</p>
       <h1>{entry.data.title}</h1>
+      {(entry.data.image ?? entry.data.socialImage) && (
+        <figure class="article-featured-image">
+          <img src={entry.data.image ?? entry.data.socialImage} alt={entry.data.imageAlt ?? entry.data.title} loading="eager" width="1200" height="630" />
+        </figure>
+      )}
       {heroBlock && <BlockRenderer block={heroBlock} />}
     </div>
   </section>
