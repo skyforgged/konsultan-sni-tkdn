@@ -1,5 +1,5 @@
 ---
-interface Props {title:string;description:string;href:string;eyebrow?:string;number?:string}
-const {title,description,href,eyebrow='LAYANAN KONSULTASI',number='01'}=Astro.props;
+interface Props {title:string;description:string;href:string;eyebrow:string;number?:string}
+const {title,description,href,eyebrow,number='01'}=Astro.props;
 ---
 <a class="service-card" href={href}><div class="service-card-top"><span class="service-number">{number}</span><span class="card-arrow">↗</span></div><p class="card-eyebrow">{eyebrow}</p><h3>{title}</h3><p class="card-description">{description}</p><span class="text-link">Pelajari layanan <span>→</span></span></a>

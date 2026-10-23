@@ -1,8 +1,9 @@
 ---
 import SeoJsonLd from './SeoJsonLd.astro';
+import {siteConfig} from '../config/site';
 interface Step {title:string;text:string}
 interface Props {title:string;description:string;steps:Step[]}
 const {title,description,steps}=Astro.props;
 const schema={'@context':'https://schema.org','@type':'HowTo',name:title,description,step:steps.map((s,i)=>({'@type':'HowToStep',position:i+1,name:s.title,text:s.text}))};
 ---
-<section class="howto-block" aria-labelledby="howto-title"><p class="section-kicker">PANDUAN PRAKTIS</p><h2 id="howto-title">{title}</h2><p class="howto-intro">{description}</p><ol class="howto-steps">{steps.map((s,i)=><li><span class="step-number">{String(i+1).padStart(2,'0')}</span><div><h3>{s.title}</h3><p>{s.text}</p></div></li>)}</ol><p class="small-note">Persyaratan dapat berbeda menurut produk, ruang lingkup, dan ketentuan yang berlaku. Panduan ini bukan jaminan hasil resmi.</p><SeoJsonLd data={schema}/></section>
+<section class="howto-block" aria-labelledby="howto-title"><p class="section-kicker">{siteConfig.howToKicker}</p><h2 id="howto-title">{title}</h2><p class="howto-intro">{description}</p><ol class="howto-steps">{steps.map((s,i)=><li><span class="step-number">{String(i+1).padStart(2,'0')}</span><div><h3>{s.title}</h3><p>{s.text}</p></div></li>)}</ol><p class="small-note">{siteConfig.howToNote}</p><SeoJsonLd data={schema}/></section>

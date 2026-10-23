@@ -1,1 +1,42 @@
-export const siteConfig = { name:'Konsultan SNI–TKDN', description:'Konsultasi dan pendampingan persiapan SNI, TKDN, dan BMP dengan ruang lingkup yang jelas, data yang tertata, dan proses yang transparan.', locale:'id_ID', email:'', whatsapp:'', phone:'', address:'', socialImage:'/images/og-default.svg', navigation:[{label:'Beranda',href:'/'},{label:'Layanan',href:'/layanan/'},{label:'Artikel & Panduan',href:'/artikel/'},{label:'Tentang Kami',href:'/tentang-kami/'}], services:[{label:'Konsultan SNI',href:'/layanan/konsultan-sni/'},{label:'Konsultan TKDN',href:'/layanan/konsultan-tkdn/'},{label:'Konsultan BMP',href:'/layanan/konsultan-bmp/'},{label:'Layanan Terpadu',href:'/layanan/layanan-terpadu/'}] } as const;
+export const siteConfig = {
+  name: 'Konsultan SNI–TKDN',
+  description: 'Konsultasi dan pendampingan persiapan SNI, TKDN, dan BMP dengan ruang lingkup yang jelas, data yang tertata, dan proses yang transparan.',
+  locale: 'id_ID',
+  email: '',
+  whatsapp: '',
+  phone: '',
+  address: '',
+  socialImage: '/images/og-default.svg',
+  navigation: [
+    { label: 'Beranda', href: '/' },
+    { label: 'Layanan', href: '/layanan/' },
+    { label: 'Artikel & Panduan', href: '/artikel/' },
+    { label: 'Tentang Kami', href: '/tentang-kami/' },
+  ],
+  services: [
+    { label: 'Konsultan SNI', href: '/layanan/konsultan-sni/' },
+    { label: 'Konsultan TKDN', href: '/layanan/konsultan-tkdn/' },
+    { label: 'Konsultan BMP', href: '/layanan/konsultan-bmp/' },
+    { label: 'Layanan Terpadu', href: '/layanan/layanan-terpadu/' },
+  ],
+  // New configuration fields for UI text (no hard‑coded strings in components)
+  brandTagline: 'SNI · TKDN · BMP',
+  headerCtaLabel: 'Konsultasi ↗',
+  headerMobileCtaLabel: 'Kontak / Konsultasi',
+  footerCopyParagraphs: [
+    'Pendampingan persiapan dengan ruang lingkup kerja yang jelas, data yang tertata, dan proses yang transparan.',
+    'Informasi bersifat umum.',
+    'Konsultan membantu persiapan dan pendampingan; keputusan resmi berada pada pihak berwenang sesuai skema yang berlaku.'
+  ],
+  relatedLinksTitle: 'Konten terkait',
+  updatedArticlesKicker: 'PENGETAHUAN',
+  updatedArticlesAllLinkLabel: 'Semua artikel →',
+  updatedArticlesEmptyMessage: 'Artikel baru akan ditampilkan di sini.',
+  faqKicker: 'FAQ',
+  faqDefaultTitle: 'Pertanyaan yang sering diajukan',
+  howToKicker: 'PANDUAN PRAKTIS',
+  howToNote: 'Persyaratan dapat berbeda menurut produk, ruang lingkup, dan ketentuan yang berlaku. Panduan ini bukan jaminan hasil resmi.',
+  testimonialNote: 'Konten berikut adalah simulasi tampilan, bukan testimoni klien nyata.',
+  blockCtaLabelDefault: 'Konsultasikan kebutuhan',
+  blockLinkLabelDefault: 'Pelajari selengkapnya',
+} as const;

@@ -1,6 +1,7 @@
 ---
+import {siteConfig} from '../config/site';
 interface Item {question:string;answer:string}
 interface Props {items:Item[];title?:string}
-const {items,title='Pertanyaan yang sering diajukan'}=Astro.props;
+const {items,title=siteConfig.faqDefaultTitle}=Astro.props;
 ---
-{items.length>0&&<section class="faq-section"><p class="section-kicker">FAQ</p><h2>{title}</h2><div class="faq-list">{items.map(item=><details class="faq-item"><summary>{item.question}<span>+</span></summary><div class="faq-answer"><p>{item.answer}</p></div></details>)}</div></section>}
+{items.length>0&&<section class="faq-section"><p class="section-kicker">{siteConfig.faqKicker}</p><h2>{title}</h2><div class="faq-list">{items.map(item=><details class="faq-item"><summary>{item.question}<span>+</span></summary><div class="faq-answer"><p>{item.answer}</p></div></details>)}</div></section>}

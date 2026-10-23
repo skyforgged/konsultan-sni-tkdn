@@ -4,9 +4,9 @@ const { variant = 'default', ariaLabel = 'Navigasi utama' } = Astro.props;
 ---
 <header class={`tkdn-site-header tkdn-site-header--${variant} site-header`}>
   <div class="container tkdn-site-header__inner header-inner">
-    <a class="tkdn-site-brand brand" href="/" aria-label={`${siteConfig.name} — Beranda`}><span class="tkdn-site-brand__mark brand-mark" aria-hidden="true">S<span>+</span></span><span class="brand-copy"><strong>Konsultan</strong><small>SNI · TKDN · BMP</small></span></a>
+    <a class="tkdn-site-brand brand" href="/" aria-label={`${siteConfig.name} — Beranda`}><span class="tkdn-site-brand__mark brand-mark" aria-hidden="true">S<span>+</span></span><span class="brand-copy"><strong>Konsultan</strong><small>{siteConfig.brandTagline}</small></span></a>
     <nav class="main-nav" aria-label={ariaLabel}>{siteConfig.navigation.map(n=><a href={n.href} class:list={{active:Astro.url.pathname===n.href}}>{n.label}</a>)}</nav>
-    <a class="button button-small header-cta tkdn-site-header__cta" href="/kontak/">Konsultasi ↗</a>
-    <details class="mobile-menu"><summary aria-label="Buka menu"><span></span><span></span><span></span></summary><nav aria-label="Navigasi seluler">{siteConfig.navigation.map(n=><a href={n.href}>{n.label}</a>)}<a href="/kontak/">Kontak / Konsultasi</a></nav></details>
+    <a class="button button-small header-cta tkdn-site-header__cta" href="/kontak/">{siteConfig.headerCtaLabel}</a>
+    <details class="mobile-menu"><summary aria-label="Buka menu"><span></span><span></span><span></span></summary><nav aria-label="Navigasi seluler">{siteConfig.navigation.map(n=><a href={n.href}>{n.label}</a>)}<a href="/kontak/">{siteConfig.headerMobileCtaLabel}</a></nav></details>
   </div>
 </header>

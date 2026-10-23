@@ -1,4 +1,5 @@
 ---
+import {siteConfig} from '../../config/site';
 interface Props { kind: string; [key: string]: any }
 const { kind, ...props } = Astro.props as Props;
 const heading = props.heading ?? props.title ?? props.question ?? props.label ?? props.name;
@@ -20,9 +21,9 @@ const itemText = (item: any) => typeof item === 'string' ? '' : item?.text ?? it
     {itemTitle(item) && <h3>{itemTitle(item)}</h3>}
     {itemText(item) && <p>{itemText(item)}</p>}
     {item.items && <ul>{item.items.map((child: any) => <li>{itemTitle(child)} {itemText(child)}</li>)}</ul>}
-    {item.href && <a href={item.href}>{item.linkLabel ?? item.label ?? 'Pelajari selengkapnya'} <span aria-hidden="true">→</span></a>}
+    {item.href && <a href={item.href}>{item.linkLabel ?? item.label ?? siteConfig.blockLinkLabelDefault} <span aria-hidden="true">→</span></a>}
     {item.src && <img src={item.src} alt={item.alt ?? ''} loading="lazy"/>}
   </article>)}</div>}
-  {props.ctaHref && <p class="tkdn-block__action"><a class="button" href={props.ctaHref}>{props.ctaLabel ?? 'Konsultasikan kebutuhan'}</a></p>}
+  {props.ctaHref && <p class="tkdn-block__action"><a class="button" href={props.ctaHref}>{props.ctaLabel ?? siteConfig.blockCtaLabelDefault}</a></p>}
   <slot />
 </section>

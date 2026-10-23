@@ -1,5 +1,6 @@
 ---
 import {getCollection} from 'astro:content';
+import {siteConfig} from '../config/site';
 type ContentReference = string | number;
 interface Props {
   services?: ContentReference[];
@@ -9,7 +10,7 @@ interface Props {
   currentSlug?: string;
   title?: string;
 }
-const {services=[],pages=[],articles=[],guides=[],currentSlug='',title='Konten terkait'}=Astro.props as Props;
+const {services=[],pages=[],articles=[],guides=[],currentSlug='',title=siteConfig.relatedLinksTitle}=Astro.props as Props;
 const [serviceEntries,pageEntries,articleEntries,guideEntries]=await Promise.all([
   getCollection('services',({data})=>!data.draft && data.status==='active'),
   getCollection('pages',({data})=>!data.draft && data.status==='active'),
