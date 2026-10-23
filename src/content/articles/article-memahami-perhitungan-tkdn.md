@@ -10,7 +10,8 @@ author: "Tim Editorial"
 type: "article"
 slug: "memahami-perhitungan-tkdn"
 updatedDate: "2026-10-23T00:01:02Z"
-socialImage: "/images/og-default.svg"
+image: "/images/hero-default.webp"
+socialImage: "/images/hero-default.webp"
 relatedServices: [10]
 relatedPages: ["faq", "kontak"]
 relatedArticles: []

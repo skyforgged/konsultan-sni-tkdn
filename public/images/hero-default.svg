@@ -1,0 +1,7 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#12372d"/>
+  <circle cx="1050" cy="500" r="200" fill="#d4f078" opacity="0.1"/>
+  <path d="M100 100 L300 100 L200 300 Z" fill="#d4f078"/>
+  <text x="100" y="400" font-family="Manrope, sans-serif" font-size="60" fill="white" font-weight="bold">Konsultan SNI–TKDN</text>
+  <text x="100" y="480" font-family="Manrope, sans-serif" font-size="40" fill="#c9d8ce">Pendampingan Profesional</text>
+</svg>
